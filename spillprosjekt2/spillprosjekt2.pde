@@ -1,5 +1,6 @@
 import processing.sound.*;
-SoundFile file;
+
+//SoundFile file = new SoundFile(this, "seenoevil.mp3");
 ground g = new ground();
 car c = new car();
 sky s = new sky();
@@ -16,8 +17,8 @@ void setup()
   size(1200,1000);
   a = width/4;
   a1 = height/4;
-  file = new SoundFile(this, "seenoevil.mp3");
-  file.play();
+ 
+  //file.play();
 }
 void draw()
 {
@@ -122,14 +123,16 @@ class car {
   if(keyPressed && (key == CODED)) {
    
    if(keyCode == LEFT) {
-     x = x - 10;
+    if(x >= 280){
+       x = x - 10;}
      x--;
      float x1 = constrain(x,280,670);
      photo = loadImage("carleft.png");
      image(photo,x1,750);
    }
    if(keyCode == RIGHT) {
-    x = x + 10;
+   if(x <= 650){
+   x = x + 10;}
      x++;
    float x2 = constrain(x,280,650); 
    photo = loadImage("carright.png");
