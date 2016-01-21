@@ -86,8 +86,8 @@ class sky {
   image(photo,400 + a,150);
   image(photo,0 + a, 30);
   noStroke();
-  a = a + 10;
-  a2 = a2 + 10;
+  a = a + 1;
+ 
   if ( a > 1200) {
     a = -700; }
   
@@ -100,9 +100,27 @@ class sky {
 }
 
 class ground {
-  void drawGround() {          // lager bakken med elementer
+  void drawGround() {// lager bakken med elementer
    fill(179,107,0);
-  ellipse(600,800,4000,800);  //ground
+  rect(0,400,1200,600);  //ground
+  fill(204, 122, 0);
+  rect(0,450 + a2,1200,600);  //ground
+  fill(179,107,0);
+  rect(0,500 + a2,1200,500);  //ground
+  fill(204, 122, 0);
+  rect(0,550 + a2,1200,500);  //ground
+    fill(179,107,0);
+  rect(0,600 + a2,1200,400);  //ground
+  fill(204, 122, 0);
+  rect(0,650 +a2 ,1200,400);  //ground
+  fill(179,107,0);
+  rect(0,700 + a2,1200,300);  //ground
+  fill(204, 122, 0);
+  rect(0,750 + a2,1200,500);  //ground
+  a2 = a2 + 15;
+ 
+  if ( a2 > 50) {
+    a2 = -50; }
   }
 }
 
