@@ -81,33 +81,12 @@ class sky {
    
    
   photo = loadImage("sky.png");    
-  image(photo,400,80);
+  image(photo,400 + a,100);
   
-  
-  fill(255);
-  ellipse( a,100,200,50);  //cloud
-  ellipse(a,100,100,70);  //cloud
-  stroke(0);
-  fill(0);
-  ellipse( a - 15,95,10,10);  //cloud
-  ellipse( 15 + a,95,10,10);  //cloud
-  noFill();
-  strokeWeight(4);
-  arc(a,110, 30,30,0,PI);
   noStroke();
-  fill(255);
-  ellipse(400 + a,300,150,50);  //cloud
-  ellipse(400 + a,300,100,70);  //cloud
-  stroke(0);
-  fill(0);
-  ellipse( 385 + a,290,10,10);  //cloud
-  ellipse( 415 + a,290,10,10);  //cloud
-  noFill();
-  arc(400 + a,305, 30,30,0,PI);
-  noStroke();
-  a = a + 0.3;
-  if ( a > 1400) {
-    a = -400; }
+  a = a + 1;
+  if ( a > 1000) {
+    a = -700; }
     fill(255);
     rect(1000,0,200,30);   // tidstavle
     fill(255);
