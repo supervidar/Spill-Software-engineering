@@ -71,10 +71,15 @@ void draw()
 
 
 class sky {
-  void drawSky() {              // himmelen med elementer
-    fill(255,255,0);
-    ellipse(100,100,100,100);  // sun
-   noStroke();
+  void drawSky() {      // himmelen med elementer
+  
+    //fill(255,255,0);
+    //ellipse(100,100,100,100);  // sun
+   //noStroke();
+   photo = loadImage("sol.png");     // car rear image
+   image(photo,-150,-100); 
+   
+   
     fill(255);
   ellipse( a,100,200,50);  //cloud
   ellipse(a,100,100,70);  //cloud
