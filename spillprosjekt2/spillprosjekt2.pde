@@ -10,6 +10,7 @@ sky s = new sky();
 objekt o = new objekt();
 float a;
 float a1;
+float a2;
 PImage photo;
 int x = 500;
 boolean end=false;
@@ -18,6 +19,7 @@ int score=0;
 int startTime;
 int timer;
 float sc;
+
 void setup()
 {
   size(1200,1000);
@@ -81,12 +83,15 @@ class sky {
    
    
   photo = loadImage("sky.png");    
-  image(photo,400 + a,100);
-  
+  image(photo,400 + a,150);
+  image(photo,0 + a, 30);
   noStroke();
-  a = a + 1;
-  if ( a > 1000) {
+  a = a + 10;
+  a2 = a2 + 10;
+  if ( a > 1200) {
     a = -700; }
+  
+  
     fill(255);
     rect(1000,0,200,30);   // tidstavle
     fill(255);
