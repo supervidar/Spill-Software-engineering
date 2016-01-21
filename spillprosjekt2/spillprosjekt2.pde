@@ -76,11 +76,15 @@ class sky {
     //fill(255,255,0);
     //ellipse(100,100,100,100);  // sun
    //noStroke();
-   photo = loadImage("sol.png");     // car rear image
+   photo = loadImage("sol.png");    
    image(photo,-150,-100); 
    
    
-    fill(255);
+  photo = loadImage("sky.png");    
+  image(photo,400,80);
+  
+  
+  fill(255);
   ellipse( a,100,200,50);  //cloud
   ellipse(a,100,100,70);  //cloud
   stroke(0);
