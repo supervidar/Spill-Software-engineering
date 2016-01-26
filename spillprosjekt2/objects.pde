@@ -1,0 +1,7 @@
+
+ 
+class objekt {
+   void drawObjekt(){
+
+}
+}

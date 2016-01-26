@@ -8,27 +8,19 @@ road r = new road();
 car c = new car();
 sky s = new sky();
 objekt o = new objekt();
-float a;
-float a1;
-float a2;
 PImage photo;
-int x = 500;
 boolean end=false;
 boolean intro=true;
 int score=0;
 int startTime;
-int timer;
-float sc;
 
 void setup()
 {
   size(1200,1000);
-  a = width/4;
-  a1 = height/4;
   minim = new Minim(this);
   player = minim.loadFile("seenoevil.mp3", 2048);
   player.play();
-   frameRate(30);
+  //frameRate(30);
 }
 void draw()
 {
@@ -39,6 +31,7 @@ void draw()
     g.drawGround();
     r.drawRoad();
     c.drawCar();
+    
     startTime = millis();
      fill(0);
      textSize(20);
@@ -69,149 +62,6 @@ void draw()
       text(startTime,600,600);
       }
   }
-}
-
-
-class sky {
-  void drawSky() {      // himmelen med elementer
-  
-    //fill(255,255,0);
-    //ellipse(100,100,100,100);  // sun
-   //noStroke();
-   photo = loadImage("sol.png");    
-   image(photo,-150,-100); 
-   
-   
-  photo = loadImage("sky.png");    
-  image(photo,400 + a,150);
-  image(photo,0 + a, 30);
-  noStroke();
-  a = a + 1;
- 
-  if ( a > 1200) {
-    a = -700; }
-  
-  
-    fill(255);
-    rect(1000,0,200,30);   // tidstavle
-    fill(255);
-    rect(1000,40,200,30);   // poengtavle
-  }
-}
-
-class ground {
-  void drawGround() {// lager bakken med elementer
-   fill(179,107,0);
-  rect(0,400,1200,600);  //ground
-  fill(204, 122, 0);
-  rect(0,450 + a2,1200,600);  //ground
-  fill(179,107,0);
-  rect(0,500 + a2,1200,500);  //ground
-  fill(204, 122, 0);
-  rect(0,550 + a2,1200,500);  //ground
-    fill(179,107,0);
-  rect(0,600 + a2,1200,400);  //ground
-  fill(204, 122, 0);
-  rect(0,650 +a2 ,1200,400);  //ground
-  fill(179,107,0);
-  rect(0,700 + a2,1200,300);  //ground
-  fill(204, 122, 0);
-  rect(0,750 + a2,1200,500);  //ground
-  a2 = a2 + 15;
- 
-  if ( a2 > 50) {
-    a2 = -50; }
-  }
-}
-
-class road {
-  void drawRoad() {
-  fill(102, 102, 102);
-  rect(570,400,60,600);  // road
-  triangle(-200,1000,570,400,570,1000); //road
-  triangle(630,1000,630,400,1400,1000); //road
-  fill(255,204,128);
-  triangle(-250,1000,570,400,-200,1000); //sidelines
-  triangle(1400,1000,630,400,1450,1000); //sidelines
-  
-  fill(255);    // field divider
-   rect(598,400 + a1,2,10);
-  rect(598,460 + a1,3,15);
-  rect(598,525 + a1,5,20);
-  rect(597,595 + a1,7,40);
-  rect(597,685 + a1,9,60);
-  rect(597,795 + a1,11,80);
-  rect(596,925 + a1,13,100);
-
-  a1 = a1 + 20;
-  if ( a1 > 50) {
-    a1 = 0;
-     }
-  if(keyPressed && (key == CODED)) {
-   
-   if(keyCode == DOWN) {
-     a1 = a1 - 10;
-     float x3 = constrain(x,50,800);
-    photo = loadImage("car.png");     // car rear image
-      image(photo,x3,700); 
-    }
-    if(keyCode == UP) {
-     a1 = a1 + 20;
-     float x3 = constrain(x,50,800);
-    photo = loadImage("car.png");     // car rear image
-      image(photo,x3,700); 
-     
-   }
-     
-   }
-  
-   if(a1 > 25) {
-     score = score + 5;
-   }
-   
-  }
-}
- 
-class car {
- void drawCar() {                   // setter bilen i spillet.
- 
-  if(keyPressed && (key == CODED)) {
-   
-   if(keyCode == LEFT) {
-     if (x >= 0) {
-     x = x - 25;
-     x--;
-     }
-     float x1 = constrain(x,0,700);
-     photo = loadImage("carleft.png");   // car left image
-     image(photo,x1,700);
-   }
-   if(keyCode == RIGHT) {
-    if ( x <= 800) {
-    x = x + 25;
-     x++;
-    }
-   float x2 = constrain(x,0,800); 
-   photo = loadImage("carright.png");  // rightcar image
-   image(photo,x2,700);
-   }
-    
-    
-    
-   
-    } 
-    else {
-     float x3 = constrain(x,50,800);
-    photo = loadImage("car.png");     // car rear image
-      image(photo,x3,700);  
-    }
-   }
-  }
- 
-class objekt {
-   void drawObjekt(){
-
-}
 }
   
 void reset(){
