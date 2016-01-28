@@ -20,10 +20,13 @@ class road {
   rect(597,795 + a1,11,80);
   rect(596,925 + a1,13,100);
 
-  a1 = a1 + 30;
+   aks = millis()/1000;
+  
+  a1 = a1 + 20;
   if ( a1 > 50) {
     a1 = 0;
      }
+     
   if(keyPressed && (key == CODED)) {
    
    if(keyCode == DOWN) {
