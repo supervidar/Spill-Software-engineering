@@ -21,12 +21,12 @@ void setup()
   minim = new Minim(this);
   player = minim.loadFile("seenoevil.mp3", 2048);
   player.play();
-  photo1 = loadImage("fjell3.png");
+  photo1 = loadImage("mountainsky250.jpg");
 }
 void draw()
 {
  
-  background(0,92,230);
+  background(photo1);
    
   //if(end) {
     s.drawSky();

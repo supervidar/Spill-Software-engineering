@@ -2,8 +2,8 @@ float a;
 
 class sky {
   void drawSky() {      // himmelen med elementer
-   photo = loadImage("sol.png");    
-   image(photo,-150,-100); 
+   photo = loadImage("sun2.png");    
+   image(photo,-100,-50); 
    photo = loadImage("sky.png");    
    image(photo,400 + a,150);
    image(photo,0 + a, 30);
