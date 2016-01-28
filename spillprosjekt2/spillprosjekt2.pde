@@ -17,7 +17,7 @@ int startTime;
 int aks;
 void setup()
 {
-  size(1199,1024);
+  size(1200,1200);
   minim = new Minim(this);
   player = minim.loadFile("seenoevil.mp3", 2048);
   player.play();
@@ -25,8 +25,8 @@ void setup()
 }
 void draw()
 {
-  background(photo1);
-  //background(0,92,230);
+ 
+  background(0,92,230);
    
   //if(end) {
     s.drawSky();

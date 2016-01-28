@@ -13,7 +13,7 @@ class car {
      }
      float x1 = constrain(x,0,700);
      photo = loadImage("carleft.png");   // car left image
-     image(photo,x1,700);
+     image(photo,x1,900);
    }
    if(keyCode == RIGHT) {
     if ( x <= 800) {
@@ -22,7 +22,7 @@ class car {
     }
    float x2 = constrain(x,0,800); 
    photo = loadImage("carright.png");  // rightcar image
-   image(photo,x2,700);
+   image(photo,x2,900);
    }
     
     
@@ -32,7 +32,7 @@ class car {
     else {
      float x3 = constrain(x,50,800);
     photo = loadImage("car.png");     // car rear image
-      image(photo,x3,700);  
+      image(photo,x3,900);  
     }
    }
   }

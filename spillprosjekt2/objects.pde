@@ -3,7 +3,7 @@
 class objekt {
    void drawObjekt(){
      photo = loadImage("øl.png");
-     image(photo,550,400 + b);
+     image(photo,520,600 + b);
      
      b = b + 10;
      if(b > 1100) {
