@@ -5,16 +5,37 @@ Minim minim;          //audio context
 
 ground g = new ground();
 road r = new road();
-car c = new car();
+carSport cs = new carSport();
+carHippie ch = new carHippie();
 sky s = new sky();
 objekt o = new objekt();
+
 PImage photo;
 PImage photo1;
-boolean end=false;
+
+//boolean end=false;
 boolean intro=true;
+
+
+
 int score=0;
 int startTime;
 int aks;
+
+int rectXS, rectYS; // Posisjon til Sportsbil knapp
+int rectSizeS = 90; // diameter av Sportsbil knapp
+int rectXH, rectYH; // posisjon til  Hippiebil knapp
+int rectSizeH = 90; // diameter av Hippiebil knapp
+
+color rectColorSport, rectColorHippie; //farge til knappene
+color rectHighlight;  // highlight farge til knapp               
+
+boolean sportsBil = false;
+boolean hippieBil = false;
+boolean startSportsBil = false;
+boolean startHippieBil = false;
+
+
 void setup()
 {
   size(1200,1200);
@@ -22,25 +43,61 @@ void setup()
   player = minim.loadFile("seenoevil.mp3", 2048);
   player.play();
   photo1 = loadImage("mountainsky250.jpg");
+  
+  rectColorSport = color(0);
+  rectColorHippie = color(0);
+  rectHighlight = color(51);
+  
+  
+  rectXS = width/2-rectSizeS+200;
+  rectYS= height/2-rectSizeS/10;
+  
+  rectXH = width/2-rectSizeH-200;
+  rectYH= height/2-rectSizeH/10;
+  
 }
 void draw()
 {
- 
+  update(mouseX, mouseY); 
   background(photo1);
+  
+  if (sportsBil) {         // skifter farge når vi holder over knapp
+    fill(rectHighlight);
+  } else {
+    fill(rectColorSport);
+  }
+  
+  if (hippieBil) {
+    fill(rectHighlight);
+  } else {
+    fill(rectColorHippie);
+  }
    
-  //if(end) {
+  if(startSportsBil) {
     s.drawSky();
     g.drawGround();
     r.drawRoad();
     o.drawObjekt();
-    c.drawCar();
+    cs.drawSportsCar();
      startTime = millis();
      fill(0);
      textSize(20);
      text("Tid: " + millis()/1000 + " Sekund",1020,20);
      textSize(20);
      text("Poeng: " + score,1020,60);
-  /*}
+  }else if(startHippieBil){
+     s.drawSky();
+    g.drawGround();
+    r.drawRoad();
+    o.drawObjekt();
+    ch.drawHippieCar();
+     startTime = millis();
+     fill(0);
+     textSize(20);
+     text("Tid: " + millis()/1000 + " Sekund",1020,20);
+     textSize(20);
+     text("Poeng: " + score,1020,60);
+  }
   else{
       background(255);
       photo = loadImage("carintro.png");  // intro bilde
@@ -48,14 +105,20 @@ void draw()
       fill(150);
       //rect(450,200,200,50);
       strokeWeight(3);
-      rect(530,300,200,50);
+      //rect(530,300,200,50);
+      stroke(255);
+      rect(rectXS, rectYS, rectSizeS, rectSizeS);
+      stroke(255);
+      rect(rectXH, rectYH, rectSizeH, rectSizeH);
       fill(128, 128, 128);
       if(intro) {                     // startside spill
         textSize(100);
         text("Runaway car",350,240);
-        textSize(32);
-        fill(0);
-        text("Spill",600,340);
+        stroke(255);
+        rect(rectXS, rectYS, rectSizeS, rectSizeS); //knapp til sportsbil
+        stroke(255);
+        rect(rectXH, rectYH, rectSizeH, rectSizeH); // knapp til hippie bil
+       
       }
       else {                         // spill avsluttet med score og tid.
       text("Spill slutt",380,240);
@@ -64,26 +127,62 @@ void draw()
       text("Tid brukt: ",600,600);
       text(startTime,600,600);
       }
-  }*/
+  }
 }
-  
-void reset(){
-     end=true;
+
+
+void startSportsBil(){
+     startSportsBil=true; // starter spill mes sportsbil
      score=0;
+     }
      
-     
-    }
-    void mousePressed(){
+void startHippieBil(){
+     startHippieBil=true; // starter spill med hippiebil
+     score=0;
+     }
     
-     intro=false;
-     if(end==false){
-     reset();
-     }
+    
+void update(int x, int y){
+    if (overSport(rectXS, rectYS, rectSizeS, rectSizeS)){ //sjekker om mus er over sportsbil knapp
+    sportsBil = true; 
+    hippieBil = false;
+    
+    }else if(overHippie(rectXH,rectYH,rectSizeH, rectSizeH)){ //sjekker om mus er over sportsbilknapp
+    hippieBil = true;
+    sportsBil = false;
     }
-    void keyPressed(){
-     
-     intro=false;
-     if(end==false){
-       reset();
-     }
+  }
+    
+    
+    
+void mousePressed() { 
+  
+    
+    if(sportsBil){
+      intro = false;
+      startSportsBil();
+    } 
+    if(hippieBil){
+      intro = false;
+    startHippieBil();
     }
+  
+} 
+    
+boolean overSport(int x, int y, int width,int height) { //kordinater til sportsbil
+    if (mouseX >= x && mouseX <= x+width && 
+      mouseY >= y && mouseY <= y+height) {
+    return true;
+    } else {
+    return false;
+    }
+  }
+boolean overHippie(int x, int y, int width, int height)  { //kordinater til hippiebil
+    if (mouseX >= x && mouseX <= x+width && 
+      mouseY >= y && mouseY <= y+height) {
+    return true;
+    } else {
+    return false;
+    }
+  }
+    

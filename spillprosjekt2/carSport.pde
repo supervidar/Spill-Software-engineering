@@ -1,8 +1,8 @@
 
 int x = 500;
 
-class car {
- void drawCar() {                   // setter bilen i spillet.
+class carSport {
+ void drawSportsCar() {                   // setter bilen i spillet.
  
   if(keyPressed && (key == CODED)) {
    
