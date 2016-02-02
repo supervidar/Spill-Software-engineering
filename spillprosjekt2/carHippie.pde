@@ -11,7 +11,7 @@ class carHippie {
      y--;
      }
      float y1 = constrain(y,0,700);
-     photo = loadImage("carleft.png");   // car left image
+     photo = loadImage("hippiebilback2.png");   // car left image
      image(photo,y1,900);
    }
    if(keyCode == RIGHT) {
@@ -20,7 +20,7 @@ class carHippie {
      y++;
     }
    float y2 = constrain(y,0,800); 
-   photo = loadImage("carright.png");  // rightcar image
+   photo = loadImage("hippiebilback2.png");  // rightcar image
    image(photo,y2,900);
    }
     
@@ -30,7 +30,7 @@ class carHippie {
     } 
     else {
      float y3 = constrain(y,50,800);
-    photo = loadImage("car.png");     // car rear image
+    photo = loadImage("hippiebilback2.png");     // car rear image
       image(photo,y3,900);  
     }
    }
