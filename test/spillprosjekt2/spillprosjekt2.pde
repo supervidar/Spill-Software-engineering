@@ -72,6 +72,7 @@ void draw()
   } else {
     fill(rectColorHippie);
   }
+  
    
   if(startSportsBil) {
     s.drawSky();
