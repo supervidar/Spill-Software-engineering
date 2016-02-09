@@ -10,8 +10,9 @@ carHippie ch = new carHippie();
 sky s = new sky();
 objekt o = new objekt();
 
-PImage photo;
-PImage photo1;
+PImage carS;
+PImage carH;
+PImage photoSky;
 
 
 int score=0;
@@ -40,7 +41,7 @@ void setup()
   minim = new Minim(this);
   player = minim.loadFile("seenoevil.mp3", 2048);
   player.play();
-  photo1 = loadImage("mountainsky250.jpg");
+  photoSky = loadImage("mountainsky250.jpg");
 
   rectColorSport = color(132, 0, 250);
   rectColorHippie = color(250, 130, 0);

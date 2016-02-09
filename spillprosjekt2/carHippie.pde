@@ -1,37 +1,32 @@
 
-int y = 500;
+//int y = 500;
 
 class carHippie {
  void drawHippieCar() {                   // setter bilen i spillet.
- if(keyPressed && (key == CODED)) {
-   
+ if(keyPressed && (key == CODED)) 
+ {
+   x1 = constrain(x,0,800);
    if(keyCode == LEFT) {
-     if (y >= 0) {
-     y = y - 35;
-     y--;
+     if (x >= 0) {
+     x = x - 35;
+     x--;
      }
-     float y1 = constrain(y,0,700);
-     photo = loadImage("hippiebilback2.png");   // car left image
-     image(photo,y1,900);
+     carH = loadImage("hippiebilback2.png");   // car left image
+     image(carH,x1,y1);
    }
    if(keyCode == RIGHT) {
-    if ( y <= 800) {
-    y = y + 35;
-     y++;
-    }
-   float y2 = constrain(y,0,800); 
-   photo = loadImage("hippiebilback2.png");  // rightcar image
-   image(photo,y2,900);
-   }
-    
-    
-    
-   
+    if ( x <= 800) {
+    x = x+ 35;
+     x++;
     } 
-    else {
-     float y3 = constrain(y,50,800);
-    photo = loadImage("hippiebilback2.png");     // car rear image
-      image(photo,y3,900);  
+   carH = loadImage("hippiebilback2.png");  // rightcar image
+   image(carH,x1,y1);
+   }
+     
+ } 
+   else {
+    carH = loadImage("hippiebilback2.png");     // car rear image
+      image(carH,x1,y1);  
     }
    }
   }
