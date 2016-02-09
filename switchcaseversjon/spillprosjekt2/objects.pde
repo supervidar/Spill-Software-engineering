@@ -1,6 +1,8 @@
 
 float moveY;
 
+
+
 int olX = 520;
 int olY = 600;
 
@@ -27,10 +29,7 @@ class objekt {
     sunLiv = loadImage("sunliv.png");      // liv
     image(sunLiv,livY,livX + moveY); 
     
-    if()
-    {
-      
-    }
+    
     
   }
 }

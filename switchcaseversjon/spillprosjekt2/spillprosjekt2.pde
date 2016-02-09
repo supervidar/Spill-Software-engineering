@@ -10,8 +10,8 @@ carHippie ch = new carHippie();
 sky s = new sky();
 objekt o = new objekt();
 
-PImage phCarIntro;
-PImage phFjell;
+PImage Intro;
+PImage background;
 
 int score=0;
 int startTime;
@@ -26,10 +26,6 @@ color rectHighlight;                              // highlight farge til knapp
 
 boolean sportsBil = false;
 boolean hippieBil = false;
-//boolean startSportsBil = false;
-//boolean startHippieBil = false;
-
-//boolean intro=true;                               // meny
 
 int state = 0;
 
@@ -40,7 +36,7 @@ void setup()
   minim = new Minim(this);
   player = minim.loadFile("seenoevil.mp3", 2048);
   player.play();
-  phFjell = loadImage("mountainsky250.jpg");
+  background = loadImage("mountainsky250.jpg");
 
   rectColorSport = color(132, 0, 250);
   rectColorHippie = color(250, 130, 0);
@@ -56,15 +52,15 @@ void setup()
 void draw()
 {
   buttonUpdate(mouseX, mouseY);                          // tracker musen
-  collisionUpdate();
-  background(phFjell);
+  
+  background(background);
 
 
   switch(state) {
   case 0:    
     background(255);
-    phCarIntro = loadImage("carintro.png");                 // intro bilde
-    image(phCarIntro, -50, 150);
+    Intro = loadImage("carintro.png");                 // intro bilde
+    image(Intro, -50, 150);
     fill(150);      
     strokeWeight(3); 
     fill(128, 128, 128);
