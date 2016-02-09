@@ -14,13 +14,13 @@ PImage photo;
 PImage photo1;
 
 //boolean end=false;
-boolean intro=true;
+boolean intro=false;
 
 
 
 int score=0;
 int startTime;
-int aks;
+
 
 int rectXS, rectYS; // Posisjon til Sportsbil knapp
 int rectSizeS = 90; // diameter av Sportsbil knapp
@@ -79,7 +79,7 @@ void draw()
     r.drawRoad();
     o.drawObjekt();
     cs.drawSportsCar();
-     startTime = millis();
+    startTime = millis();
      fill(0);
      textSize(20);
      text("Tid: " + millis()/1000 + " Sekund",1020,20);
@@ -99,6 +99,7 @@ void draw()
      text("Poeng: " + score,1020,60);
   }
   else{
+       intro = true;
       background(255);
       photo = loadImage("carintro.png");  // intro bilde
       image(photo,-50,150);
