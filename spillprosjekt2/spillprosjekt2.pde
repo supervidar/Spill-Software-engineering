@@ -13,10 +13,12 @@ objekt o = new objekt();
 PImage photo;
 PImage photo1;
 
+<<<<<<< HEAD
 //boolean end=false;
 boolean intro=false;
-
-
+=======
+boolean intro=true;
+>>>>>>> origin/master
 
 int score=0;
 int startTime;
@@ -61,25 +63,33 @@ void draw()
   update(mouseX, mouseY); 
   background(photo1);
   
-  if (sportsBil) {         // skifter farge når vi holder over knapp
+  if (sportsBil) // skifter farge når vi holder over knapp
+  {         
     fill(rectHighlight);
-  } else {
+  } 
+  else 
+  {
     fill(rectColorSport);
   }
   
-  if (hippieBil) {
+  if (hippieBil) 
+  {
     fill(rectHighlight);
-  } else {
+  } 
+  else 
+  {
     fill(rectColorHippie);
   }
    
-  if(startSportsBil) {
+  if(startSportsBil) 
+  {
     s.drawSky();
     g.drawGround();
     r.drawRoad();
     o.drawObjekt();
     cs.drawSportsCar();
     startTime = millis();
+<<<<<<< HEAD
      fill(0);
      textSize(20);
      text("Tid: " + millis()/1000 + " Sekund",1020,20);
@@ -87,17 +97,29 @@ void draw()
      text("Poeng: " + score,1020,60);
   }else if(startHippieBil){
      s.drawSky();
+=======
+    fill(0);
+    textSize(20);
+    text("Tid: " + millis()/1000 + " Sekund",1020,20);
+    textSize(20);
+    text("Poeng: " + score,1020,60);
+  }
+  else if(startHippieBil)
+  {
+    s.drawSky();
+>>>>>>> origin/master
     g.drawGround();
     r.drawRoad();
     o.drawObjekt();
     ch.drawHippieCar();
-     startTime = millis();
-     fill(0);
-     textSize(20);
-     text("Tid: " + millis()/1000 + " Sekund",1020,20);
-     textSize(20);
-     text("Poeng: " + score,1020,60);
+    startTime = millis();
+    fill(0);
+    textSize(20);
+    text("Tid: " + millis()/1000 + " Sekund",1020,20);
+    textSize(20);
+    text("Poeng: " + score,1020,60);
   }
+<<<<<<< HEAD
   else{
        intro = true;
       background(255);
@@ -113,6 +135,23 @@ void draw()
       rect(rectXH, rectYH, rectSizeH, rectSizeH);
       fill(128, 128, 128);
       if(intro) {                     // startside spill
+=======
+  else
+  {
+    background(255);
+    photo = loadImage("carintro.png");  // intro bilde
+    image(photo,-50,150);
+    fill(150);
+    strokeWeight(3);
+    stroke(255);
+    rect(rectXS, rectYS, rectSizeS, rectSizeS);
+    stroke(255);
+    rect(rectXH, rectYH, rectSizeH, rectSizeH);
+    fill(128, 128, 128);
+    
+    if(intro) // startside spill
+    {                     
+>>>>>>> origin/master
         textSize(100);
         text("Runaway car",350,240);
         stroke(255);
@@ -120,14 +159,15 @@ void draw()
         stroke(255);
         rect(rectXH, rectYH, rectSizeH, rectSizeH); // knapp til hippie bil
        
-      }
-      else {                         // spill avsluttet med score og tid.
-      text("Spill slutt",380,240);
-      text("Poeng",600,440);
-      text(score,600,440);
-      text("Tid brukt: ",600,600);
-      text(startTime,600,600);
-      }
+     }
+     else 
+     {                         // spill avsluttet med score og tid.
+        text("Spill slutt",380,240);
+        text("Poeng",600,440);
+        text(score,600,440);
+        text("Tid brukt: ",600,600);
+        text(startTime,600,600);
+     }
   }
 }
 
@@ -137,53 +177,65 @@ void startSportsBil(){
      score=0;
      }
      
-void startHippieBil(){
-     startHippieBil=true; // starter spill med hippiebil
-     score=0;
+void startHippieBil()
+     {
+       startHippieBil=true; // starter spill med hippiebil
+       score=0;
      }
     
     
-void update(int x, int y){
-    if (overSport(rectXS, rectYS, rectSizeS, rectSizeS)){ //sjekker om mus er over sportsbil knapp
-    sportsBil = true; 
-    hippieBil = false;
+void update(int x, int y)
+    {
+      if (overSport(rectXS, rectYS, rectSizeS, rectSizeS))//sjekker om mus er over sportsbil knapp
+      { 
+        sportsBil = true; 
+        hippieBil = false;
     
-    }else if(overHippie(rectXH,rectYH,rectSizeH, rectSizeH)){ //sjekker om mus er over sportsbilknapp
-    hippieBil = true;
-    sportsBil = false;
-    }
+      }  
+      else if(overHippie(rectXH,rectYH,rectSizeH, rectSizeH)) //sjekker om mus er over sportsbilknapp
+      { 
+        hippieBil = true;
+        sportsBil = false;
+      }
   }
     
     
     
-void mousePressed() { 
-  
-    
-    if(sportsBil){
-      intro = false;
-      startSportsBil();
-    } 
-    if(hippieBil){
-      intro = false;
-    startHippieBil();
-    }
-  
+void mousePressed() 
+{ 
+      if(sportsBil)
+      {
+        intro = false;
+        startSportsBil();
+      } 
+      
+      if(hippieBil)
+      {
+        intro = false;
+        startHippieBil();
+      }  
 } 
     
-boolean overSport(int x, int y, int width,int height) { //kordinater til sportsbil
-    if (mouseX >= x && mouseX <= x+width && 
-      mouseY >= y && mouseY <= y+height) {
-    return true;
-    } else {
-    return false;
+boolean overSport(int x, int y, int width,int height) //kordinater til sportsbil
+{ 
+    if (mouseX >= x && mouseX <= x+width && mouseY >= y && mouseY <= y+height) 
+    {
+      return true;
+    } 
+    else 
+    {
+      return false;
     }
-  }
-boolean overHippie(int x, int y, int width, int height)  { //kordinater til hippiebil
-    if (mouseX >= x && mouseX <= x+width && 
-      mouseY >= y && mouseY <= y+height) {
-    return true;
-    } else {
-    return false;
+}
+boolean overHippie(int x, int y, int width, int height) //kordinater til hippiebil 
+{ 
+    if (mouseX >= x && mouseX <= x+width && mouseY >= y && mouseY <= y+height) 
+    {
+      return true;
+    } 
+    else 
+    {
+      return false;
     }
-  }
+}
     
