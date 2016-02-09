@@ -13,25 +13,20 @@ objekt o = new objekt();
 PImage carS;
 PImage carH;
 PImage photoSky;
-
-
+PImage objekt;
+PImage background;
 int score=0;
 int startTime;
-
-
 int rectXS, rectYS;                               // Posisjon til Sportsbil knapp
 int rectSizeS = 90;                               // diameter av Sportsbil knapp
 int rectXH, rectYH;                               // posisjon til  Hippiebil knapp
 int rectSizeH = 90;                               // diameter av Hippiebil knapp
-
 color rectColorSport, rectColorHippie;            //farge til knappene
 color rectHighlight;                              // highlight farge til knapp               
-
 boolean sportsBil = false;
 boolean hippieBil = false;
 boolean startSportsBil = false;
 boolean startHippieBil = false;
-
 boolean intro=true;                               // meny
 
 
@@ -41,7 +36,7 @@ void setup()
   minim = new Minim(this);
   player = minim.loadFile("seenoevil.mp3", 2048);
   player.play();
-  photoSky = loadImage("mountainsky250.jpg");
+  background = loadImage("mountainsky250.jpg");
 
   rectColorSport = color(132, 0, 250);
   rectColorHippie = color(250, 130, 0);
@@ -57,7 +52,7 @@ void setup()
 void draw()
 {
   update(mouseX, mouseY); 
-  background(photo1);
+  background(background);
 
   //if (sportsBil)                                 // skifter farge når vi holder over knapp
   //{         
@@ -105,8 +100,8 @@ void draw()
   }
     if (intro) {                                       // startside spill
     background(255);
-    photo = loadImage("carintro.png");                 // intro bilde
-    image(photo, -50, 150);
+    carS = loadImage("carintro.png");                 // intro bilde
+    image(carS, -50, 150);
     fill(150);      
     strokeWeight(3); 
     fill(128, 128, 128);

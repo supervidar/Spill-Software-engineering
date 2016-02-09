@@ -2,8 +2,8 @@
  float b;
 class objekt {
    void drawObjekt(){
-     photo = loadImage("øl.png");
-     image(photo,520,600 + b);
+     objekt = loadImage("øl.png");
+     image(objekt,520,600 + b);
      
      b = b + 10;
      if(b > 1100) {
