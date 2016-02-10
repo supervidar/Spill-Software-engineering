@@ -29,6 +29,8 @@ boolean hippieBil = false;
 
 int state = 0;
 
+String myName = "";
+
 
 void setup()
 {
@@ -47,12 +49,14 @@ void setup()
 
   rectXH = width/2-rectSizeH-100;
   rectYH= height/2-rectSizeH/10;
+  
+ 
 }
 
 void draw()
 {
   buttonUpdate(mouseX, mouseY);                          // tracker musen
-  
+
   background(background);
 
 
@@ -64,9 +68,17 @@ void draw()
     fill(150);      
     strokeWeight(3); 
     fill(128, 128, 128);
-
+    
+    rect(495,260,200,50);
+    
+    textSize(30);
+    fill(0);
+    text(myName, 500, 300);
+    
+    fill(0);
     textSize(100);
     text("Runaway car", 350, 240);
+
 
     stroke(255);
     rect(rectXS, rectYS, rectSizeS, rectSizeS);       //knapp til sportsbil
@@ -103,12 +115,17 @@ void draw()
     text("Poeng: " + score, 1020, 60);
     break;
 
+
+
+
   case 3:   // spill avsluttet med score og tid.
     text("Spill slutt", 380, 240);
     text("Poeng", 600, 440);
     text(score, 600, 440);
     text("Tid brukt: ", 600, 600);
     text(startTime, 600, 600);
+    text(myName,600,200);
+    break;
   }
 }
 
@@ -135,6 +152,23 @@ void buttonUpdate(int x, int y)
   { 
     hippieBil = true;
     sportsBil = false;
+  }
+}
+
+void keyPressed()
+{
+  if (keyCode == BACKSPACE)
+  {
+    if (myName.length()>0)
+    {
+      myName = myName.substring(0, myName.length()-1);
+    }
+  } else if (keyCode == DELETE)
+  {
+    myName ="";
+  } else if (keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT)
+  {
+    myName = myName + key;
   }
 }
 
