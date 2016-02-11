@@ -13,7 +13,7 @@ class objekt {
      scale(zoomLeft);
      image(objekt, -250, 300);
       l = l + 10;
-     if(l > 1100) {
+     if(l > 1150) {
        l = 0;}
 
 //------høgre felt--------------------------------------
@@ -24,7 +24,7 @@ class objekt {
      scale(zoomRight);
      image(objekt, 0, 300);
       h = h + 10;
-     if(h > 1100) {
+     if(h > 1150) {
        h = 0;}
 /*
      objekt = loadImage("oil.png");
