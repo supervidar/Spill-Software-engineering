@@ -1,5 +1,4 @@
 
-//int y = 500;
 PImage carH;
 
 class carHippie {
@@ -7,6 +6,7 @@ class carHippie {
  if(keyPressed && (key == CODED)) 
  {
    x1 = constrain(x,0,800);
+   
    if(keyCode == LEFT) {
      if (x >= 0) {
      x = x - 35;

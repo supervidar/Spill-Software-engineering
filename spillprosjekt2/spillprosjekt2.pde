@@ -72,24 +72,24 @@ void draw()
 
   if (startSportsBil) 
   {
+   
     s.drawSky();
     g.drawGround();
     r.drawRoad();
-    o.drawObjekt();
     cs.drawSportsCar();
     startTime = millis();
-
-    fill(0);
+   fill(0);
     textSize(20);
     text("Tid: " + millis()/1000 + " Sekund", 1020, 20);
     textSize(20);
     text("Poeng: " + score, 1020, 60);
+    o.drawObjekt();
+   
   }
   if (startHippieBil) {
     s.drawSky();
     g.drawGround();
     r.drawRoad();
-    o.drawObjekt();
     ch.drawHippieCar();
     startTime = millis();
     fill(0);
@@ -97,6 +97,7 @@ void draw()
     text("Tid: " + millis()/1000 + " Sekund", 1020, 20);
     textSize(20);
     text("Poeng: " + score, 1020, 60);
+     o.drawObjekt();
   }
     if (intro) {                                       // startside spill
     background(255);

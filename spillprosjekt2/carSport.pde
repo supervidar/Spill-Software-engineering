@@ -27,7 +27,7 @@ class carSport {
  } 
     else {
     carS = loadImage("car.png");     // car rear image
-      image(carS,x1,y1);  
+      image(carS,x1,y1 - 50);  
     }
    }
   }

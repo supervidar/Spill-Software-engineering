@@ -11,6 +11,7 @@ class carSport {
   if(keyPressed && (key == CODED)) 
  {
    x1 = constrain(x,0,800);
+   
    if(keyCode == LEFT) {
      if (x >= 0) {
      x = x - 35;
@@ -30,7 +31,7 @@ class carSport {
  } 
     else {
     carS = loadImage("car.png");     // car rear image
-      image(carS,x1,y1);  
+      image(carS,x1,y1 - 50);  
     }
    }
   }
