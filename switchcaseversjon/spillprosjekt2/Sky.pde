@@ -12,13 +12,13 @@ class sky {
    image(photoSky,0 + a, 30);
    
    a = a + 0.5;
-    if ( a > 1200) {
+    if ( a > 1600) {
         a = -700; 
       }
     noStroke();
     fill(255);
-    rect(1000,0,200,30);   // tidstavle
+    rect(1400,0,200,30);   // tidstavle
     fill(255);
-    rect(1000,40,200,30);   // poengtavle
+    rect(1400,40,200,30);   // poengtavle
   }
 }

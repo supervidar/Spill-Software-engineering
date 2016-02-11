@@ -8,23 +8,23 @@ class objekt {
 //------venstre felt-----------------------------
 
      objekt = loadImage("sunliv.png");
-     translate(600, 580);
-     float zoomLeft = map(600,50 + l , width, 0.1, 0);
+     translate(800, 490);
+     float zoomLeft = map(700,50 + l , width, 0.1, 0);
      scale(zoomLeft);
-     image(objekt, -250, 300);
+     image(objekt, -250, 100);
       l = l + 10;
-     if(l > 1150) {
+     if(l > 1550) {
        l = 0;}
 
 //------høgre felt--------------------------------------
 
      objekt = loadImage("øl.png");
-     translate(600, 580);
-     float zoomRight = map(600,50 + h, width, 0.3, 0);
+     translate(800, 490);
+     float zoomRight = map(700,50 + h, width, 0.3, 0);
      scale(zoomRight);
-     image(objekt, 0, 300);
+     image(objekt, 0, 100);
       h = h + 10;
-     if(h > 1150) {
+     if(h > 1550) {
        h = 0;}
 /*
      objekt = loadImage("oil.png");

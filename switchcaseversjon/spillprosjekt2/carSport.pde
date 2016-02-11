@@ -1,7 +1,7 @@
 
-int x = 500;
+int x = 800;
 float x1;
-float y1 = 900;
+float y1 = 700;
 
 PImage carS;
 
@@ -10,10 +10,10 @@ class carSport {
  
   if(keyPressed && (key == CODED)) 
  {
-   x1 = constrain(x,0,800);
+   x1 = constrain(x,100,1000);
    
    if(keyCode == LEFT) {
-     if (x >= 0) {
+     if (x >= 100) {
      x = x - 35;
      x--;
      }
@@ -21,7 +21,7 @@ class carSport {
      image(carS,x1,y1);
    }
     if(keyCode == RIGHT) {
-    if ( x <= 800) {
+    if ( x <= 1000) {
     x = x + 35;
      x++;
     } 

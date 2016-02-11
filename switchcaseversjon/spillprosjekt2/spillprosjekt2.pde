@@ -34,11 +34,11 @@ String myName = "";
 
 void setup()
 {
-  size(1200, 1200);
+  size(1600, 900);
   minim = new Minim(this);
   player = minim.loadFile("seenoevil.mp3", 2048);
   player.play();
-  background = loadImage("mountainsky250.jpg");
+  background = loadImage("fjellfull.jpg");
 
   rectColorSport = color(132, 0, 250);
   rectColorHippie = color(250, 130, 0);
@@ -56,7 +56,6 @@ void setup()
 void draw()
 {
   buttonUpdate(mouseX, mouseY);                          // tracker musen
-
   background(background);
 
 
@@ -96,9 +95,9 @@ void draw()
 
     fill(0);
     textSize(20);
-    text("Tid: " + millis()/1000 + " Sekund", 1020, 20);
+    text("Tid: " + millis()/1000 + " Sekund", 1420, 20);
     textSize(20);
-    text("Poeng: " + score, 1020, 60);
+    text("Poeng: " + score, 1420, 60);
     o.drawObjekt();
     break;
 
