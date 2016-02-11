@@ -8,7 +8,8 @@ road r = new road();
 carSport cs = new carSport();
 carHippie ch = new carHippie();
 sky s = new sky();
-objekt o = new objekt();
+object o = new object();
+
 
 PImage Intro;
 PImage background;
@@ -90,6 +91,7 @@ void draw()
     s.drawSky();
     g.drawGround();
     r.drawRoad();
+    
     //o.drawObjekt();
     cs.drawSportsCar();
     startTime = millis();
@@ -99,7 +101,7 @@ void draw()
     text("Tid: " + millis()/1000 + " Sekund", 1020, 20);
     textSize(20);
     text("Poeng: " + score, 1020, 60);
-    o.drawObjekt();
+    o.drawObject();
     break;
 
   case 2:
@@ -113,7 +115,7 @@ void draw()
     text("Tid: " + millis()/1000 + " Sekund", 1020, 20);
     textSize(20);
     text("Poeng: " + score, 1020, 60);
-    o.drawObjekt();
+    o.drawObject();
     break;
 
 
