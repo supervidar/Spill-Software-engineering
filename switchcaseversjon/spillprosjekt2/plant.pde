@@ -1,0 +1,108 @@
+float pll; //<>//
+float plr;
+int direction = 1;
+
+PImage plant;
+
+String[] draw = {"cactus1", "cactus2"};
+int index = 0;
+
+
+class plant {
+  void drawPlant() {
+
+      
+      switch(index)
+      {
+      case 0:    
+
+        if (direction == 0)                                    //venstre
+        {
+          pll = pll + 30;
+          plant = loadImage("cactus.png");
+           translate(700, 480);
+           float zoomL = map(1000,50 + pll , width, 0.1, 0);
+           scale(zoomL);
+           image(plant, -1850, 100);
+          
+          if (pll > 1550) {
+            index = int(random(draw.length));
+            direction = int(random(2));
+            pll = 0;
+          }
+        } else if (direction == 1)
+        {
+          plr = plr + 30;
+          plant = loadImage("cactus.png");
+          translate(900, 480);
+          float zoomRight = map(1000, 50 + plr, width, 0.1, 0);
+          scale(zoomRight);
+          image(plant, 1800, 300);
+          
+          if(plr > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+            index = int(random(draw.length));
+            direction = int(random(2));
+            plr = 0;
+          }
+        }
+        break;
+
+      case 1:       
+
+        if (direction == 0) 
+        {
+          pll = pll + 30;
+          plant = loadImage("cactus.png");
+           translate(400, 480);
+           float zoomL = map(1000,50 + pll , width, 0.1, 0);
+           scale(zoomL);
+           image(plant, -2850, 100);
+          
+          if (pll > 1550) {
+            index = int(random(draw.length));
+            direction = int(random(2));
+            pll = 0;
+          }
+        } else if (direction == 1)
+        {
+          plr = plr + 30;
+          plant = loadImage("cactus.png");
+          translate(1300, 480);
+          float zoomRight = map(1000, 50 + plr, width, 0.1, 0);
+          scale(zoomRight);
+          image(plant, 2700, 300);
+          
+          if(plr > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+            index = int(random(draw.length));
+            direction = int(random(2));
+            plr = 0;
+          }
+        }
+        break;
+      }
+    }
+  
+}
+/*
+float p;
+float pll;
+float plr;
+PImage plant;
+
+class plant {
+   void drawPlant(){
+     
+//------venstre felt-----------------------------
+      pll = pll + 20;
+     plant = loadImage("cactus.png");
+     translate(700, 490);
+     float zoomL = map(1000,50 + pll , width, 0.1, 0);
+     scale(zoomL);
+     image(plant, -1850, 100);
+      pll = pll + 20;
+     if(pll > 1550) {
+       pll = 0;}
+     
+   
+   }
+}*/

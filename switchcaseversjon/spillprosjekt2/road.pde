@@ -28,9 +28,10 @@ class road {
   }
  
   if ( a1 > 50) {
-    a1 = 0;
+       score = score + 50;
+       a1 = 0;
      }
-  
+ 
   
   }
 }
