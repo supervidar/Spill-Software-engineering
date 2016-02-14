@@ -1,22 +1,22 @@
 float pll; //<>//
 float plr;
-int direction = 1;
-
+int directionP = 1;
+int indexP;
 PImage plant;
 
-String[] draw = {"cactus1", "cactus2"};
-int index = 0;
+String[] drawp = {"cactus1", "cactus2"};
+int indexp = 0;
 
 
 class plant {
   void drawPlant() {
 
       
-      switch(index)
+      switch(indexp)
       {
       case 0:    
 
-        if (direction == 0)                                    //venstre
+        if (directionP == 0)                                    //venstre
         {
           pll = pll + 30;
           plant = loadImage("cactus.png");
@@ -26,11 +26,11 @@ class plant {
            image(plant, -1850, 100);
           
           if (pll > 1550) {
-            index = int(random(draw.length));
-            direction = int(random(2));
+            indexp = int(random(drawp.length));
+            directionP = int(random(2));
             pll = 0;
           }
-        } else if (direction == 1)
+        } else if (directionP == 1)
         {
           plr = plr + 30;
           plant = loadImage("cactus.png");
@@ -40,8 +40,8 @@ class plant {
           image(plant, 1800, 300);
           
           if(plr > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
-            index = int(random(draw.length));
-            direction = int(random(2));
+            indexp = int(random(drawp.length));
+            directionP = int(random(2));
             plr = 0;
           }
         }
@@ -49,7 +49,7 @@ class plant {
 
       case 1:       
 
-        if (direction == 0) 
+        if (directionP == 0) 
         {
           pll = pll + 30;
           plant = loadImage("cactus.png");
@@ -59,11 +59,11 @@ class plant {
            image(plant, -2850, 100);
           
           if (pll > 1550) {
-            index = int(random(draw.length));
-            direction = int(random(2));
+            indexp = int(random(drawp.length));
+            directionP = int(random(2));
             pll = 0;
           }
-        } else if (direction == 1)
+        } else if (directionP == 1)
         {
           plr = plr + 30;
           plant = loadImage("cactus.png");
@@ -73,8 +73,8 @@ class plant {
           image(plant, 2700, 300);
           
           if(plr > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
-            index = int(random(draw.length));
-            direction = int(random(2));
+            indexP = int(random(drawp.length));
+            directionP = int(random(2));
             plr = 0;
           }
         }

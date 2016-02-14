@@ -8,7 +8,7 @@ road r = new road();
 carSport cs = new carSport();
 carHippie ch = new carHippie();
 sky s = new sky();
-objekt o = new objekt();
+object o = new object();
 plant pl = new plant();
 PImage Intro;
 PImage background;
@@ -97,8 +97,8 @@ void draw()
     text("Tid: " + millis()/1000 + " Sekund", 1420, 20);
     textSize(20);
     text("Poeng: " + score, 1420, 60);
-    pl.drawPlant();
-    //o.drawObjekt();
+    //pl.drawPlant();
+    o.drawObject();
     break;
 
   case 2:
@@ -119,6 +119,7 @@ void draw()
 
 
   case 3:   // spill avsluttet med score og tid.
+    background(255,0,0);
     text("Spill slutt", 380, 240);
     text("Poeng", 600, 440);
     text(score, 600, 440);
@@ -139,6 +140,13 @@ void startHippieBil()
 {
   state=2;                                         // starter spill med hippiebil
   score=0;
+}
+
+void endGame()
+{
+  
+  state=3;                                         // avslutter spill og viser poeng
+  
 }
 
 
