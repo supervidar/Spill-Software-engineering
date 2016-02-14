@@ -1,7 +1,7 @@
 float l; //<>// //<>//
 float h;
 float aksO = 20;
-int direction = 1;
+int direction = 3;
 
 PImage objekt;
 
@@ -14,10 +14,10 @@ class object {
 
       l = l + aksO;
       h = h + aksO;
-      if(millis() - aksO >= 10000) {
+      /*if(millis() - aksO >= 10000) {
         aksO = aksO + 0.1;
         aksT = millis();
-        }
+        }*/
   
       switch(index)
       {
@@ -29,11 +29,10 @@ class object {
           translate(800, 480);
           float zoomLeft = map(600, 50 + l, width, 0.1, 0);
           scale(zoomLeft);
-          image(objekt, -250, 300);
-          
+          image(objekt, -450, 300);
           if (l > 1550) {
             index = int(random(draw.length));
-            direction = int(random(2));
+            direction = int(random(4));
             l = 0;
           }
         } else if (direction == 1)
@@ -42,11 +41,39 @@ class object {
           translate(800, 480);
           float zoomRight = map(600, 50 + h, width, 0.1, 0);
           scale(zoomRight);
-          image(objekt, 0, 300);
+          image(objekt, -150, 300);
           
           if(h > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
-            direction = int(random(2));
+            direction = int(random(4));
+            h = 0;
+          }
+        }
+        else if (direction == 2)
+        {
+          objekt = loadImage("sunliv.png");
+          translate(800, 480);
+          float zoomRight = map(600, 50 + h, width, 0.1, 0);
+          scale(zoomRight);
+          image(objekt, 50, 300);
+          
+          if(h > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+            index = int(random(draw.length));
+            direction = int(random(4));
+            h = 0;
+          }
+        }
+        else if (direction == 3)
+        {
+          objekt = loadImage("sunliv.png");
+          translate(800, 480);
+          float zoomRight = map(600, 50 + h, width, 0.1, 0);
+          scale(zoomRight);
+          image(objekt, 250, 300);
+          
+          if(h > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+            index = int(random(draw.length));
+            direction = int(random(4));
             h = 0;
           }
         }
@@ -60,11 +87,11 @@ class object {
           translate(800, 480);
           float zoomRight = map(600, 50 + h, width, 0.1, 0);
           scale(zoomRight);
-          image(objekt, 0, 300);
+          image(objekt, -450, 300);
           
           if (h > 1550) {
             index = int(random(draw.length));
-            direction = int(random(2));
+            direction = int(random(4));
             h = 0;
           }
         } else if (direction == 1)
@@ -73,12 +100,40 @@ class object {
           translate(800, 480);
           float zoomLeft = map(600, 50 + l, width, 0.1, 0);
           scale(zoomLeft);
-          image(objekt, -250, 300);
+          image(objekt, -150, 300);
           
           if (l > 1550) {
             index = int(random(draw.length));
-            direction = int(random(2));
+            direction = int(random(4));
             l = 0;
+          }
+        }
+        else if (direction == 2)
+        {
+          objekt = loadImage("øl.png");
+          translate(800, 480);
+          float zoomRight = map(600, 50 + h, width, 0.1, 0);
+          scale(zoomRight);
+          image(objekt, 50, 300);
+          
+          if(h > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+            index = int(random(draw.length));
+            direction = int(random(4));
+            h = 0;
+          }
+        }
+        else if (direction == 3)
+        {
+          objekt = loadImage("øl.png");
+          translate(800, 480);
+          float zoomRight = map(600, 50 + h, width, 0.1, 0);
+          scale(zoomRight);
+          image(objekt, 250, 300);
+          
+          if(h > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+            index = int(random(draw.length));
+            direction = int(random(2));
+            h = 0;
           }
         }
         break;
@@ -91,7 +146,7 @@ class object {
           translate(800, 480);
           float zoomRight = map(600, 50 + h, width, 0.1, 0);
           scale(zoomRight);
-          image(objekt, 0, 300);
+          image(objekt, -450, 300);
           
           if (h > 1550) {
             index = int(random(draw.length));
@@ -108,8 +163,36 @@ class object {
           
           if (l > 1550) {
             index = int(random(draw.length));
-            direction = int(random(2));
+            direction = int(random(4));
             l = 0;
+          }
+        }
+        else if (direction == 2)
+        {
+          objekt = loadImage("oil1.png");
+          translate(800, 480);
+          float zoomRight = map(600, 50 + h, width, 0.1, 0);
+          scale(zoomRight);
+          image(objekt, 50, 300);
+          
+          if(h > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+            index = int(random(draw.length));
+            direction = int(random(4));
+            h = 0;
+          }
+        }
+        else if (direction == 3)
+        {
+          objekt = loadImage("oil1.png");
+          translate(800, 480);
+          float zoomRight = map(600, 50 + h, width, 0.1, 0);
+          scale(zoomRight);
+          image(objekt, 250, 300);
+          
+          if(h > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+            index = int(random(draw.length));
+            direction = int(random(4));
+            h = 0;
           }
         }
         break;
