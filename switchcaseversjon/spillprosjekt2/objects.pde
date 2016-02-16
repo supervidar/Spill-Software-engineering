@@ -1,5 +1,7 @@
 float l; //<>// //<>//
 float h;
+float zoomLeft;
+float zoomRight;
 float aksO = 20;
 int direction = 3;
 
@@ -14,10 +16,11 @@ class object {
 
       l = l + aksO;
       h = h + aksO;
-      /*if(millis() - aksO >= 10000) {
-        aksO = aksO + 0.1;
+      if(millis() - aksO >= 10000) {
+        aksO = aksO + 0.05;
         aksT = millis();
-        }*/
+       
+        }
   
       switch(index)
       {
@@ -27,10 +30,10 @@ class object {
         {
           objekt = loadImage("sunliv.png");
           translate(800, 480);
-          float zoomLeft = map(600, 50 + l, width, 0.1, 0);
+           zoomLeft = map(600, 50 + l, width, 0.1, 0);
           scale(zoomLeft);
           image(objekt, -450, 300);
-          if (l > 1550) {
+          if (l > 1450) {
             index = int(random(draw.length));
             direction = int(random(4));
             l = 0;
@@ -39,11 +42,11 @@ class object {
         {
           objekt = loadImage("sunliv.png");
           translate(800, 480);
-          float zoomRight = map(600, 50 + h, width, 0.1, 0);
+          zoomRight = map(600, 50 + h, width, 0.1, 0);
           scale(zoomRight);
           image(objekt, -150, 300);
           
-          if(h > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+          if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
             h = 0;
@@ -53,11 +56,11 @@ class object {
         {
           objekt = loadImage("sunliv.png");
           translate(800, 480);
-          float zoomRight = map(600, 50 + h, width, 0.1, 0);
+          zoomRight = map(600, 50 + h, width, 0.1, 0);
           scale(zoomRight);
           image(objekt, 50, 300);
           
-          if(h > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+          if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
             h = 0;
@@ -67,11 +70,11 @@ class object {
         {
           objekt = loadImage("sunliv.png");
           translate(800, 480);
-          float zoomRight = map(600, 50 + h, width, 0.1, 0);
+          zoomRight = map(600, 50 + h, width, 0.1, 0);
           scale(zoomRight);
           image(objekt, 250, 300);
           
-          if(h > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+          if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
             h = 0;
@@ -85,11 +88,11 @@ class object {
         {
           objekt = loadImage("øl.png");
           translate(800, 480);
-          float zoomRight = map(600, 50 + h, width, 0.1, 0);
+          zoomRight = map(600, 50 + h, width, 0.1, 0);
           scale(zoomRight);
           image(objekt, -450, 300);
           
-          if (h > 1550) {
+          if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(4));
             h = 0;
@@ -98,11 +101,11 @@ class object {
         {
           objekt = loadImage("øl.png");
           translate(800, 480);
-          float zoomLeft = map(600, 50 + l, width, 0.1, 0);
+          zoomLeft = map(600, 50 + l, width, 0.1, 0);
           scale(zoomLeft);
           image(objekt, -150, 300);
           
-          if (l > 1550) {
+          if (l > 1450) {
             index = int(random(draw.length));
             direction = int(random(4));
             l = 0;
@@ -112,11 +115,11 @@ class object {
         {
           objekt = loadImage("øl.png");
           translate(800, 480);
-          float zoomRight = map(600, 50 + h, width, 0.1, 0);
+          zoomRight = map(600, 50 + h, width, 0.1, 0);
           scale(zoomRight);
           image(objekt, 50, 300);
           
-          if(h > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+          if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
             h = 0;
@@ -126,11 +129,11 @@ class object {
         {
           objekt = loadImage("øl.png");
           translate(800, 480);
-          float zoomRight = map(600, 50 + h, width, 0.1, 0);
+          zoomRight = map(600, 50 + h, width, 0.1, 0);
           scale(zoomRight);
           image(objekt, 250, 300);
           
-          if(h > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+          if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(2));
             h = 0;
@@ -144,11 +147,11 @@ class object {
         {
           objekt = loadImage("oil1.png");
           translate(800, 480);
-          float zoomRight = map(600, 50 + h, width, 0.1, 0);
+          zoomRight = map(600, 50 + h, width, 0.1, 0);
           scale(zoomRight);
           image(objekt, -450, 300);
           
-          if (h > 1550) {
+          if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(2));
             h = 0;
@@ -157,11 +160,11 @@ class object {
         {
           objekt = loadImage("oil1.png");
           translate(800, 480);
-          float zoomLeft = map(600, 50 + l, width, 0.1, 0);
+          zoomLeft = map(600, 50 + l, width, 0.1, 0);
           scale(zoomLeft);
           image(objekt, -250, 300);
           
-          if (l > 1550) {
+          if (l > 1450) {
             index = int(random(draw.length));
             direction = int(random(4));
             l = 0;
@@ -171,11 +174,11 @@ class object {
         {
           objekt = loadImage("oil1.png");
           translate(800, 480);
-          float zoomRight = map(600, 50 + h, width, 0.1, 0);
+          zoomRight = map(600, 50 + h, width, 0.1, 0);
           scale(zoomRight);
           image(objekt, 50, 300);
           
-          if(h > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+          if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
             h = 0;
@@ -185,11 +188,11 @@ class object {
         {
           objekt = loadImage("oil1.png");
           translate(800, 480);
-          float zoomRight = map(600, 50 + h, width, 0.1, 0);
+          zoomRight = map(600, 50 + h, width, 0.1, 0);
           scale(zoomRight);
           image(objekt, 250, 300);
           
-          if(h > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+          if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
             h = 0;

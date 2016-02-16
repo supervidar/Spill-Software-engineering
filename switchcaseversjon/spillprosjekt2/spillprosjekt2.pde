@@ -92,13 +92,14 @@ void draw()
     cs.drawSportsCar();
     startTime = millis();
 
-    fill(0);
+    fill(255);
     textSize(20);
-    text("Tid: " + millis()/1000 + " Sekund", 1420, 20);
+    text("Tid: " + millis()/1000 + " Sekund", 1420, 30);
     textSize(20);
-    text("Poeng: " + score, 1420, 60);
-    //pl.drawPlant();
+    text("Poeng: " + score, 1420, 80);
+   // pl.drawPlant();
     o.drawObject();
+
     break;
 
   case 2:

@@ -5,7 +5,7 @@ int indexP;
 PImage plant;
 
 String[] drawp = {"cactus1", "cactus2"};
-int indexp = 0;
+int indexp = 1;
 
 
 class plant {

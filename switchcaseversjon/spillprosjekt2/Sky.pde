@@ -1,6 +1,7 @@
 float a;
 
 PImage photoSky;
+PImage tavle;
 
 class sky {
   void drawSky() {      // himmelen med elementer
@@ -16,9 +17,13 @@ class sky {
         a = -700; 
       }
     noStroke();
-    fill(255);
+    photoSky = loadImage("tavle.png");    
+   image(photoSky,1350,2); 
+   photoSky = loadImage("tavle.png");    
+   image(photoSky,1350,50);
+    /*fill(255);
     rect(1400,0,200,30);   // tidstavle
     fill(255);
-    rect(1400,40,200,30);   // poengtavle
+    rect(1400,40,200,30);   // poengtavle*/
   }
 }
