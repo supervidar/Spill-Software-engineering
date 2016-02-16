@@ -20,7 +20,8 @@ class road {
   rect(597,885 + a1,9,60);
   rect(597,995 + a1,11,80);
   rect(596,1125 + a1,13,100);
- 
+  fill(255,0,0);
+  rect(0,800,1200,1);
    a1 = a1 + 3;
   aks = millis()/1000;
   for (aks = 0; aks < 5; aks = aks + 2) {

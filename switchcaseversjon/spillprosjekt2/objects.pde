@@ -1,9 +1,9 @@
-float l; //<>// //<>//
+ //<>//
 float h;
 float zoomLeft;
 float zoomRight;
-float aksO = 20;
-int direction = 3;
+float aksO = 10;
+int direction = 0;
 
 PImage objekt;
 
@@ -14,10 +14,9 @@ int index = 0;
 class object {
   void drawObject() {
 
-      l = l + aksO;
       h = h + aksO;
       if(millis() - aksO >= 10000) {
-        aksO = aksO + 0.05;
+        aksO = aksO + 0.5;
         aksT = millis();
        
         }
@@ -30,14 +29,15 @@ class object {
         {
           objekt = loadImage("sunliv.png");
           translate(800, 480);
-           zoomLeft = map(600, 50 + l, width, 0.1, 0);
+          zoomLeft = map(600, 50 + h, width, 0.1, 0);
           scale(zoomLeft);
           image(objekt, -450, 300);
-          if (l > 1450) {
+          if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(4));
-            l = 0;
+            h = 0;
           }
+        
         } else if (direction == 1)
         {
           objekt = loadImage("sunliv.png");
@@ -101,14 +101,14 @@ class object {
         {
           objekt = loadImage("øl.png");
           translate(800, 480);
-          zoomLeft = map(600, 50 + l, width, 0.1, 0);
+          zoomLeft = map(600, 50 + h, width, 0.1, 0);
           scale(zoomLeft);
           image(objekt, -150, 300);
           
-          if (l > 1450) {
+          if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(4));
-            l = 0;
+            h = 0;
           }
         }
         else if (direction == 2)
@@ -160,14 +160,14 @@ class object {
         {
           objekt = loadImage("oil1.png");
           translate(800, 480);
-          zoomLeft = map(600, 50 + l, width, 0.1, 0);
+          zoomLeft = map(600, 50 + h, width, 0.1, 0);
           scale(zoomLeft);
           image(objekt, -250, 300);
           
-          if (l > 1450) {
+          if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(4));
-            l = 0;
+            h = 0;
           }
         }
         else if (direction == 2)

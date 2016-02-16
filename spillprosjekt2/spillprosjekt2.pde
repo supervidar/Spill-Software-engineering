@@ -13,7 +13,7 @@ objekt o = new objekt();
 PImage carS;
 PImage carH;
 PImage photoSky;
-PImage objekt;
+PShape objekt;
 PImage background;
 int score=0;
 int startTime;

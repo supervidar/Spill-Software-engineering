@@ -1,11 +1,11 @@
-float pll; //<>//
+float pll; //<>// //<>//
 float plr;
-int directionP = 1;
+int directionP = 5;
 int indexP;
 PImage plant;
 
 String[] drawp = {"cactus1", "cactus2"};
-int indexp = 1;
+int indexp = 5;
 
 
 class plant {
@@ -16,9 +16,9 @@ class plant {
       {
       case 0:    
 
-        if (directionP == 0)                                    //venstre
+        if (directionP == 4)                                    //venstre
         {
-          pll = pll + 30;
+          pll = pll + 10;
           plant = loadImage("cactus.png");
            translate(700, 480);
            float zoomL = map(1000,50 + pll , width, 0.1, 0);
@@ -27,10 +27,10 @@ class plant {
           
           if (pll > 1550) {
             indexp = int(random(drawp.length));
-            directionP = int(random(2));
-            pll = 0;
+            directionP = int(random(4));
+            pll = 4;
           }
-        } else if (directionP == 1)
+        } else if (directionP == 5)
         {
           plr = plr + 30;
           plant = loadImage("cactus.png");
@@ -41,15 +41,15 @@ class plant {
           
           if(plr > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             indexp = int(random(drawp.length));
-            directionP = int(random(2));
-            plr = 0;
+            directionP = int(random(4));
+            plr = 4;
           }
         }
         break;
 
       case 1:       
 
-        if (directionP == 0) 
+        if (directionP == 4) 
         {
           pll = pll + 30;
           plant = loadImage("cactus.png");
@@ -61,9 +61,9 @@ class plant {
           if (pll > 1550) {
             indexp = int(random(drawp.length));
             directionP = int(random(2));
-            pll = 0;
+            pll = 4;
           }
-        } else if (directionP == 1)
+        } else if (directionP == 5)
         {
           plr = plr + 30;
           plant = loadImage("cactus.png");
@@ -75,7 +75,7 @@ class plant {
           if(plr > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             indexP = int(random(drawp.length));
             directionP = int(random(2));
-            plr = 0;
+            plr = 4;
           }
         }
         break;

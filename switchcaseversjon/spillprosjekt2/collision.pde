@@ -1,10 +1,10 @@
-
+/*
 
 class collision
 {
-  void collisionDitection()
+  void collisionDetection()
   {
     if(x1 > 450 && x1 < 600) && h == 900)
   }
   
-}
+}*/

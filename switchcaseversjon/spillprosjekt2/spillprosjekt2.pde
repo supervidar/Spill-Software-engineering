@@ -97,7 +97,7 @@ void draw()
     text("Tid: " + millis()/1000 + " Sekund", 1420, 30);
     textSize(20);
     text("Poeng: " + score, 1420, 80);
-   // pl.drawPlant();
+    //pl.drawPlant();
     o.drawObject();
 
     break;
