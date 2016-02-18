@@ -1,8 +1,9 @@
  //<>//
 float h;
+float z;
 float zoomLeft;
 float zoomRight;
-float aksO = 10;
+float aksO = 1;
 int direction = 0;
 
 PImage objekt;
@@ -28,11 +29,14 @@ class object {
         if (direction == 0)                                    //venstre
         {
           objekt = loadImage("sunliv.png");
+          z = map(0,0, width, 10 + h, 80);
+          image(objekt,800,490 + h,z,z);
+          /*objekt = loadImage("sunliv.png");
           translate(800, 480);
           zoomLeft = map(600, 50 + h, width, 0.1, 0);
           scale(zoomLeft);
-          image(objekt, -450, 300);
-          if (h > 1450) {
+          image(objekt, -450, 300);*/
+          if (h > 110) {
             index = int(random(draw.length));
             direction = int(random(4));
             h = 0;
