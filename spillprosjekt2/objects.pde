@@ -1,19 +1,18 @@
 float b;
 float b1;
-float zoomLeft;
+float z;
 class objekt {
    void drawObjekt(){
-     objekt = loadShape("ok_øl.svgz");
-    translate(600, 570);
-     float zoomLeft = map(600,0 + b, width, 0.1, 0);
-     scale(zoomLeft);
-     shape(objekt);
+     b = b + 1.5;
+    objekt = loadImage("sunliv.png");
+    z = map(0,0, width, 10 + b, 100);
+    image(objekt,600,590 + b,z,z);
 
 
    
   
-     b = b + 80;
-     if(b > 1200) {
+    
+     if(b > 110) {
        b = 0;}
 }
 }

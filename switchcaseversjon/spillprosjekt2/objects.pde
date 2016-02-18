@@ -15,11 +15,11 @@ class object {
   void drawObject() {
 
       h = h + aksO;
-      if(millis() - aksO >= 10000) {
+     /* if(millis() - aksO >= 10000) {
         aksO = aksO + 0.5;
         aksT = millis();
        
-        }
+        }*/
   
       switch(index)
       {

@@ -1,7 +1,7 @@
 
-int a1;
+float a1;
 int aksT;
-int aksC = 3;
+float aksC = 3;
 class road {
   void drawRoad() {
   fill(102, 102, 102);
@@ -22,8 +22,8 @@ class road {
   rect(796,1025 + a1,13,100);
  
   a1 = a1 + aksC;
-  if(millis() - aksT >= 10000) {
-     aksC += 3;
+  if(millis() - aksT >= 30000) {
+     aksC = aksC + 0.01;
     aksT = millis();
   }
  
@@ -31,7 +31,12 @@ class road {
        score = score + 50;
        a1 = 0;
      }
- 
+ fill(255,0,0);
+ rect(480,700,200,2);
+ fill(0,255,0);
+  rect(700,700,200,2);
+  fill(0,0,255);
+  rect(920,700,200,2);
   
   }
 }
