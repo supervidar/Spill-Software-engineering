@@ -30,7 +30,7 @@ class plant {
             directionP = int(random(4));
             pll = 4;
           }
-        } else if (directionP == 5)
+        } else if (directionP == 5)                              //høyre
         {
           plr = plr + 30;
           plant = loadImage("cactus.png");
@@ -49,7 +49,7 @@ class plant {
 
       case 1:       
 
-        if (directionP == 4) 
+        if (directionP == 4)                                    //Venstre ytterkant
         {
           pll = pll + 30;
           plant = loadImage("cactus.png");
@@ -63,7 +63,7 @@ class plant {
             directionP = int(random(2));
             pll = 4;
           }
-        } else if (directionP == 5)
+        } else if (directionP == 5)                             // høyre ytterkant
         {
           plr = plr + 30;
           plant = loadImage("cactus.png");
@@ -72,7 +72,7 @@ class plant {
           scale(zoomRight);
           image(plant, 2700, 300);
           
-          if(plr > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+          if(plr > 1550) {             
             indexP = int(random(drawp.length));
             directionP = int(random(2));
             plr = 4;

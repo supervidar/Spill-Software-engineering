@@ -1,19 +1,18 @@
 
-int x = 800;
-float x1;
-float y1 = 700;
-
+int x;
+int x1 = 200;
+int y1 = 650;
 PImage carS;
 
 class carSport {
- void drawSportsCar() {                   // setter bilen i spillet.
- 
+ void drawSportsCar() {       // setter bilen i spillet.
+  
   if(keyPressed && (key == CODED)) 
  {
    x1 = constrain(x,100,1000);
    
    if(keyCode == LEFT) {
-     if (x >= 100) {
+     if (x >= 200) {
      x = x - 35;
      x--;
      }

@@ -1,9 +1,8 @@
  //<>//
 float h;
 float z;
-float zoomLeft;
-float zoomRight;
-float aksO = 10;
+float zoom;
+float aksO = 20;
 int direction = 1;
 
 PImage objekt;
@@ -28,15 +27,15 @@ class object {
   
         if (direction == 0)                                    //venstre
         {
-          objekt = loadImage("sunliv.png");
+         /* objekt = loadImage("sunliv.png");
           z = map(0,0, width, 10 + h, 80);
-          image(objekt,800,490 + h,z,z);
-          /*objekt = loadImage("sunliv.png");
+          image(objekt,800,490 + h,z,z);*/
+          objekt = loadImage("sunliv.png");
           translate(800, 480);
-          zoomLeft = map(600, 50 + h, width, 0.1, 0);
-          scale(zoomLeft);
-          image(objekt, -450, 300);*/
-          if (h > 110) {
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
+          image(objekt, -450, 300);
+          if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(4));
             h = 0;
@@ -47,11 +46,11 @@ class object {
         {
           objekt = loadImage("sunliv.png");
           translate(800, 480);
-          zoomRight = map(600, 50 + h, width, 0.1, 0);
-          scale(zoomRight);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
           image(objekt, -150, 300);
           
-          if(h > 1400) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+          if(h > 1450 || (x1 > 450 && x1 < 750) && h == 1340) {
             index = int(random(draw.length));
             direction = int(random(4));
             h = 0;
@@ -61,8 +60,8 @@ class object {
         {
           objekt = loadImage("sunliv.png");
           translate(800, 480);
-          zoomRight = map(600, 50 + h, width, 0.1, 0);
-          scale(zoomRight);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
           image(objekt, 50, 300);
           
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
@@ -75,8 +74,8 @@ class object {
         {
           objekt = loadImage("sunliv.png");
           translate(800, 480);
-          zoomRight = map(600, 50 + h, width, 0.1, 0);
-          scale(zoomRight);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
           image(objekt, 250, 300);
           
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
@@ -93,8 +92,8 @@ class object {
         {
           objekt = loadImage("øl.png");
           translate(800, 480);
-          zoomRight = map(600, 50 + h, width, 0.1, 0);
-          scale(zoomRight);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
           image(objekt, -450, 300);
           
           if (h > 1450) {
@@ -106,8 +105,8 @@ class object {
         {
           objekt = loadImage("øl.png");
           translate(800, 480);
-          zoomLeft = map(600, 50 + h, width, 0.1, 0);
-          scale(zoomLeft);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
           image(objekt, -150, 300);
           
           if (h > 1450) {
@@ -120,8 +119,8 @@ class object {
         {
           objekt = loadImage("øl.png");
           translate(800, 480);
-          zoomRight = map(600, 50 + h, width, 0.1, 0);
-          scale(zoomRight);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
           image(objekt, 50, 300);
           
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
@@ -134,8 +133,8 @@ class object {
         {
           objekt = loadImage("øl.png");
           translate(800, 480);
-          zoomRight = map(600, 50 + h, width, 0.1, 0);
-          scale(zoomRight);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
           image(objekt, 250, 300);
           
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
@@ -152,8 +151,8 @@ class object {
         {
           objekt = loadImage("oil1.png");
           translate(800, 480);
-          zoomRight = map(600, 50 + h, width, 0.1, 0);
-          scale(zoomRight);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
           image(objekt, -450, 300);
           
           if (h > 1450) {
@@ -165,8 +164,8 @@ class object {
         {
           objekt = loadImage("oil1.png");
           translate(800, 480);
-          zoomLeft = map(600, 50 + h, width, 0.1, 0);
-          scale(zoomLeft);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
           image(objekt, -250, 300);
           
           if (h > 1450) {
@@ -179,8 +178,8 @@ class object {
         {
           objekt = loadImage("oil1.png");
           translate(800, 480);
-          zoomRight = map(600, 50 + h, width, 0.1, 0);
-          scale(zoomRight);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
           image(objekt, 50, 300);
           
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
@@ -193,8 +192,8 @@ class object {
         {
           objekt = loadImage("oil1.png");
           translate(800, 480);
-          zoomRight = map(600, 50 + h, width, 0.1, 0);
-          scale(zoomRight);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
           image(objekt, 250, 300);
           
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
@@ -211,8 +210,8 @@ class object {
         {
           objekt = loadImage("bCar1.png");
           translate(800, 480);
-          zoomRight = map(600, 50 + h, width, 0.1, 0);
-          scale(zoomRight);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
           image(objekt, -450, 300);
           
           if (h > 1450) {
@@ -224,8 +223,8 @@ class object {
         {
           objekt = loadImage("bCar1.png");
           translate(800, 480);
-          zoomLeft = map(600, 50 + h, width, 0.1, 0);
-          scale(zoomLeft);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
           image(objekt, -250, 300);
           
           if (h > 1450) {
@@ -238,8 +237,8 @@ class object {
         {
           objekt = loadImage("bCar1.png");
           translate(800, 480);
-          zoomRight = map(600, 50 + h, width, 0.1, 0);
-          scale(zoomRight);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
           image(objekt, 50, 300);
           
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
@@ -252,8 +251,8 @@ class object {
         {
           objekt = loadImage("bCar1.png");
           translate(800, 480);
-          zoomRight = map(600, 50 + h, width, 0.1, 0);
-          scale(zoomRight);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
           image(objekt, 250, 300);
           
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {

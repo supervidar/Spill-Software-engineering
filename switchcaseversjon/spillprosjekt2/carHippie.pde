@@ -8,7 +8,7 @@ class carHippie {
    x1 = constrain(x,100,1000);
    
    if(keyCode == LEFT) {
-     if (x >= 100) {
+     if (x >= 200) {
      x = x - 35;
      x--;
      }

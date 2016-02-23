@@ -12,7 +12,6 @@ object o = new object();
 plant pl = new plant();
 PImage Intro;
 PImage background;
-
 int score=0;
 int startTime;
 
@@ -85,7 +84,7 @@ void draw()
     rect(rectXH, rectYH, rectSizeH, rectSizeH);       // knapp til hippie bil
     break;
 
-  case 1:
+  case 1:                                            // Starter dpill med sportsbil.
     s.drawSky();
     g.drawGround();
     r.drawRoad();
@@ -102,7 +101,7 @@ void draw()
 
     break;
 
-  case 2:
+  case 2:                                          // Starter spill med hippibil.
     s.drawSky();
     g.drawGround();
     r.drawRoad();
@@ -119,7 +118,7 @@ void draw()
 
 
 
-  case 3:   // spill avsluttet med score og tid.
+  case 3:                                           // spill avsluttet med score og tid.
     background(255,0,0);
     text("Spill slutt", 380, 240);
     text("Poeng", 600, 440);
