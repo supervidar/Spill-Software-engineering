@@ -11,6 +11,7 @@ sky s = new sky();
 object o = new object();
 plant pl = new plant();
 collision coll = new collision();
+theGrid grid = new theGrid();
 
 PImage Intro;
 PImage background;
@@ -58,6 +59,7 @@ void draw()
 {
   buttonUpdate(mouseX, mouseY);                          // tracker musen
   background(background);
+ grid.drawGrid();
 
   switch(state) {
   case 0:    
@@ -87,11 +89,11 @@ void draw()
     break;
 
   case 1:                                            // Starter dpill med sportsbil.
-    s.drawSky();
-    g.drawGround();
+    //s.drawSky();
+    //g.drawGround();
     r.drawRoad();
     cs.drawSportsCar();
-    //grid.drawGrid();
+    grid.drawGrid();
     startTime = millis();
 
     fill(255);
@@ -101,7 +103,7 @@ void draw()
     text("Poeng: " + score, 1420, 80);
     //pl.drawPlant();
     
-    o.drawObject();
+    //o.drawObject();
     
 
     break;
