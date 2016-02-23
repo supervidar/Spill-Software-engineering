@@ -24,7 +24,7 @@ class object {
           float zoomLeft = map(600, 50 + l, width, 0.1, 0);
           scale(zoomLeft);
           image(objekt, -250, 300);
-          
+          coll.collectionDetection();
           if (l > 1150) {
             index = int(random(draw.length));
             direction = int(random(2));
@@ -38,8 +38,8 @@ class object {
           float zoomRight = map(600, 50 + h, width, 0.1, 0);
           scale(zoomRight);
           image(objekt, 0, 300);
-          
-          if(h > 1150) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+          coll.collectionDetection();
+          if(h > 1150) {
             index = int(random(draw.length));
             direction = int(random(2));
             h = 0;
@@ -57,7 +57,7 @@ class object {
           float zoomRight = map(600, 50 + h, width, 0.1, 0);
           scale(zoomRight);
           image(objekt, 0, 300);
-          
+          coll.collectionDetection();
           if (h > 1150) {
             index = int(random(draw.length));
             direction = int(random(2));
@@ -71,7 +71,7 @@ class object {
           float zoomLeft = map(600, 50 + l, width, 0.1, 0);
           scale(zoomLeft);
           image(objekt, -250, 300);
-          
+          coll.collectionDetection();
           if (l > 1150) {
             index = int(random(draw.length));
             direction = int(random(2));
@@ -90,7 +90,7 @@ class object {
           float zoomRight = map(600, 50 + h, width, 0.1, 0);
           scale(zoomRight);
           image(objekt, 0, 300);
-          
+          coll.collectionDetection();
           if (h > 1150) {
             index = int(random(draw.length));
             direction = int(random(2));
@@ -104,7 +104,7 @@ class object {
           float zoomLeft = map(600, 50 + l, width, 0.1, 0);
           scale(zoomLeft);
           image(objekt, -250, 300);
-          
+          coll.collectionDetection();
           if (l > 1150) {
             index = int(random(draw.length));
             direction = int(random(2));

@@ -9,6 +9,7 @@ carSport cs = new carSport();
 carHippie ch = new carHippie();
 sky s = new sky();
 object o = new object();
+collision coll = new collision();
 
 
 PImage Intro;
