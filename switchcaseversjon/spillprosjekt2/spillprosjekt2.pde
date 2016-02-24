@@ -93,7 +93,7 @@ void draw()
     cs.drawSportsCar();
     //grid.drawGrid();
     startTime = millis();
-
+    coll.collisionDetect();
     fill(255);
     textSize(20);
     text("Tid: " + millis()/1000 + " Sekund", 1420, 30);
@@ -111,13 +111,14 @@ void draw()
     g.drawGround();
     r.drawRoad();
     ch.drawHippieCar();
+    coll.collisionDetect();
     startTime = millis();
     fill(0);
     textSize(20);
     text("Tid: " + millis()/1000 + " Sekund", 1020, 20);
     textSize(20);
     text("Poeng: " + score, 1020, 60);
-   // o.drawObjekt();
+    o.drawObject();
     break;
 
 
