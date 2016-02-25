@@ -12,6 +12,7 @@ object o = new object();
 plant pl = new plant();
 collision coll = new collision();
 
+PImage end;
 PImage Intro;
 PImage background;
 int score=0;
@@ -40,7 +41,7 @@ void setup()
   player = minim.loadFile("seenoevil.mp3", 2048);
   player.play();
   background = loadImage("fjellfull.jpg");
-
+  end = loadImage("gameover.png");
   rectColorSport = color(132, 0, 250);
   rectColorHippie = color(250, 130, 0);
   rectHighlight = color(0, 255, 130);
@@ -125,13 +126,21 @@ void draw()
 
 
   case 3:                                           // spill avsluttet med score og tid.
-    background(255,0,0);
-    text("Spill slutt", 380, 240);
-    text("Poeng", 600, 440);
-    text(score, 600, 440);
-    text("Tid brukt: ", 600, 600);
-    text(startTime, 600, 600);
-    text(myName,600,200);
+    
+    //background(end);
+    image(end,0,0);
+    //end = loadImage("gameover.png");
+    /*for(int i = 0; i<100 ; i++)                  //blood
+    {
+      fill(187,10,11);
+      rect(0,0,1600,i);
+      
+    }*/
+    fill(255);
+    text("Spillet er slutt", 700, 240);
+    text("Poeng: "+ score, 700, 340);   
+    text("Tid: " + startTime/1000, 700, 440);   
+    text("Navn: "+myName,700,540);
     break;
   }
 }
