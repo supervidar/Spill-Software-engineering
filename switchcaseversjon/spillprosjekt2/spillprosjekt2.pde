@@ -41,7 +41,7 @@ void setup()
   player = minim.loadFile("seenoevil.mp3", 2048);
   player.play();
   background = loadImage("fjellfull.jpg");
-  end = loadImage("gameover.png");
+  end = loadImage("cGlass.png");
   rectColorSport = color(132, 0, 250);
   rectColorHippie = color(250, 130, 0);
   rectHighlight = color(0, 255, 130);
@@ -127,8 +127,8 @@ void draw()
 
   case 3:                                           // spill avsluttet med score og tid.
     
-    //background(end);
-    image(end,0,0);
+    background(end);
+    //image(end,0,0);
     //end = loadImage("gameover.png");
     /*for(int i = 0; i<100 ; i++)                  //blood
     {
