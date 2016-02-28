@@ -12,6 +12,8 @@ object o = new object();
 plant pl = new plant();
 collision coll = new collision();
 
+PFont font;
+
 PImage end;
 PImage Intro;
 PImage background;
@@ -42,6 +44,10 @@ void setup()
   player.play();
   background = loadImage("fjellfull.jpg");
   end = loadImage("cGlass.png");
+  
+  font = createFont("game_over.ttf",32);
+  textFont(font);
+  
   rectColorSport = color(132, 0, 250);
   rectColorHippie = color(250, 130, 0);
   rectHighlight = color(0, 255, 130);
@@ -76,7 +82,7 @@ void draw()
     text(myName, 500, 300);
     
     fill(0);
-    textSize(100);
+    textSize(200);
     text("Runaway car", 350, 240);
 
 
@@ -96,9 +102,9 @@ void draw()
     startTime = millis();
     coll.collisionDetect();
     fill(255);
-    textSize(20);
+    textSize(60);
     text("Tid: " + millis()/1000 + " Sekund", 1420, 30);
-    textSize(20);
+    textSize(60);
     text("Poeng: " + score, 1420, 80);
     //pl.drawPlant();
     
@@ -115,7 +121,7 @@ void draw()
     coll.collisionDetect();
     startTime = millis();
     fill(0);
-    textSize(20);
+    textSize(100);
     text("Tid: " + millis()/1000 + " Sekund", 1020, 20);
     textSize(20);
     text("Poeng: " + score, 1020, 60);
@@ -128,16 +134,10 @@ void draw()
   case 3:                                           // spill avsluttet med score og tid.
     
     background(end);
-    //image(end,0,0);
-    //end = loadImage("gameover.png");
-    /*for(int i = 0; i<100 ; i++)                  //blood
-    {
-      fill(187,10,11);
-      rect(0,0,1600,i);
-      
-    }*/
-    fill(255);
-    text("Spillet er slutt", 700, 240);
+    
+    textSize(200);
+    fill(255);   
+    text("Game Over", 700, 240);
     text("Poeng: "+ score, 700, 340);   
     text("Tid: " + startTime/1000, 700, 440);   
     text("Navn: "+myName,700,540);
