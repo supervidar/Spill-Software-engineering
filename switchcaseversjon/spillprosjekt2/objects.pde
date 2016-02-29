@@ -2,8 +2,8 @@
 float h;
 float z;
 float zoom;
-float aksO = 20;
-int direction = 1;
+float aksO = 15;
+int direction = 0;
 
 PImage objekt;
 
@@ -15,11 +15,11 @@ class object {
   void drawObject() {
 
       h = h + aksO;
-     /* if(millis() - aksO >= 10000) {
-        aksO = aksO + 0.5;
+      if(millis() - aksT >= 10000) {
+        aksO += 10;
         aksT = millis();
        
-        }*/
+        }
   
       switch(index)
       {
@@ -27,9 +27,6 @@ class object {
   
         if (direction == 0)                                    //venstre
         {
-         /* objekt = loadImage("sunliv.png");
-          z = map(0,0, width, 10 + h, 80);
-          image(objekt,800,490 + h,z,z);*/
           objekt = loadImage("sunliv.png");
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);

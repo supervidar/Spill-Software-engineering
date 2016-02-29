@@ -85,20 +85,20 @@ void draw()
   case 0:    
     background(255);
     Intro = loadImage("carintro.png");                 // intro bilde
-    image(Intro, -50, 150);
+    image(Intro, -50, 0);
     fill(150);      
     strokeWeight(3); 
     fill(128, 128, 128);
     
-    rect(495,260,200,50);
+    rect(695,200,200,50);
     
-    textSize(30);
+    textSize(70);
     fill(0);
-    text(myName, 500, 300);
+    text(myName, 700, 240);
     
     fill(0);
-    textSize(200);
-    text("Runaway car", 350, 240);
+    textSize(300);
+    text("Runaway car", 450, 140);
 
 
     stroke(255);
@@ -118,7 +118,7 @@ void draw()
     coll.collisionDetect();
     fill(255);
     textSize(60);
-    text("Tid: " + millis()/1000 + " Sekund", 1420, 30);
+    text("Level: " + level, 1420, 30);
     textSize(60);
     text("Poeng: " + score, 1420, 80);
     //pl.drawPlant();
@@ -151,11 +151,11 @@ void draw()
     background(end);
     
     textSize(200);
-    fill(255);   
-    text("Game Over", 700, 240);
-    text("Poeng: "+ score, 700, 340);   
-    text("Tid: " + startTime/1000, 700, 440);   
-    text("Navn: "+myName,700,540);
+    fill(0);   
+    text("Game Over", 300, 240);
+    text("Poeng: "+ score, 300, 340);   
+    text("Tid: " + startTime/1000, 300, 440);   
+    text("Navn: "+myName,300,540);
     break;
   }
 }

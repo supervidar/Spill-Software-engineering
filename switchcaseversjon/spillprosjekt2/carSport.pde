@@ -13,25 +13,36 @@ class carSport {
    
    if(keyCode == LEFT) {
      if (x >= 200) {
-     x = x - 35;
+     x = x - 45;
      x--;
      }
-     carS = loadImage("carleft.png");   // car left image
+     carS = loadImage("carleft.png");   // car left  move image
      image(carS,x1,y1);
    }
     if(keyCode == RIGHT) {
     if ( x <= 1000) {
-    x = x + 35;
+    x = x + 45;
      x++;
     } 
-   carS = loadImage("carright.png");  // rightcar image
+   carS = loadImage("carright.png");  // rightcar  move image
    image(carS,x1,y1);
    } 
- } 
+ }
     else {
-    carS = loadImage("car.png");     // car rear image
-      image(carS,x1,y1 - 50);  
-    }
+      if(x < 550) {
+       carS = loadImage("carL.png");
+       image(carS,x1,y1 );
+       } 
+       if(x > 550 && x < 800) {
+      carS = loadImage("car.png");     // car rear image
+      image(carS,x1,y1 - 30);  
+     }  
+     if(x > 800) {
+      carS = loadImage("carR.png");
+      image(carS,x1,y1);
+      } 
+     
+  }
    }
   }
  
