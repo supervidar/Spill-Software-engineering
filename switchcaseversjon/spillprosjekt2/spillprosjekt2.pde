@@ -11,16 +11,12 @@ sky s = new sky();
 object o = new object();
 plant pl = new plant();
 collision coll = new collision();
-
-int life = 3;
-
+score sco = new score();
 PFont font;
 
 PImage end;
 PImage Intro;
-PImage background3;
-PImage background2;
-PImage background1;
+PImage background;
 int score=0;
 int startTime;
 
@@ -36,7 +32,6 @@ boolean sportsBil = false;
 boolean hippieBil = false;
 
 int state = 0;
-
 String myName = "";
 
 
@@ -46,9 +41,7 @@ void setup()
   minim = new Minim(this);
   player = minim.loadFile("seenoevil.mp3", 2048);
   player.play();
-  background3 = loadImage("fjellfull.jpg");
-  background2 = loadImage("fjellhalf.jpg");
-  background1 = loadImage("fjelllow.jpg");
+  background = loadImage("fjellfull.jpg");
   end = loadImage("cGlass.png");
   
   font = createFont("game_over.ttf",32);
@@ -63,23 +56,15 @@ void setup()
 
   rectXH = width/2-rectSizeH-100;
   rectYH= height/2-rectSizeH/10;
-  
+
+
  
 }
 
 void draw()
 {
   buttonUpdate(mouseX, mouseY);                          // tracker musen
-  if(life == 3)
-  {
-  background(background3);
-  }else if (life == 2)
-  {
-    background(background2);
-  }else if(life == 1)
-  {
-    background(background1);
-  }
+  background(background);
 
   switch(state) {
   case 0:    
@@ -94,21 +79,18 @@ void draw()
     
     textSize(70);
     fill(0);
-    text(myName, 700, 240);
-    
+    text(myName, 700, 240); 
     fill(0);
     textSize(300);
     text("Runaway car", 450, 140);
-
-
     stroke(255);
     rect(rectXS, rectYS, rectSizeS, rectSizeS);       //knapp til sportsbil
     stroke(255);
     rect(rectXH, rectYH, rectSizeH, rectSizeH);       // knapp til hippie bil
-    
+    sco.highScore();
     break;
 
-  case 1:  // Starter dpill med sportsbil.
+  case 1:                                            // Starter dpill med sportsbil.
     s.drawSky();
     g.drawGround();
     r.drawRoad();

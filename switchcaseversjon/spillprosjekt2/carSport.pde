@@ -9,10 +9,10 @@ class carSport {
   
   if(keyPressed && (key == CODED)) 
  {
-   x1 = constrain(x,100,1000);
+   x1 = constrain(x,250,1000);
    
    if(keyCode == LEFT) {
-     if (x >= 200) {
+     if (x >= 250) {
      x = x - 45;
      x--;
      }
