@@ -12,11 +12,15 @@ object o = new object();
 plant pl = new plant();
 collision coll = new collision();
 
+int life = 3;
+
 PFont font;
 
 PImage end;
 PImage Intro;
-PImage background;
+PImage background3;
+PImage background2;
+PImage background1;
 int score=0;
 int startTime;
 
@@ -42,7 +46,9 @@ void setup()
   minim = new Minim(this);
   player = minim.loadFile("seenoevil.mp3", 2048);
   player.play();
-  background = loadImage("fjellfull.jpg");
+  background3 = loadImage("fjellfull.jpg");
+  background2 = loadImage("fjellhalf.jpg");
+  background1 = loadImage("fjelllow.jpg");
   end = loadImage("cGlass.png");
   
   font = createFont("game_over.ttf",32);
@@ -64,7 +70,16 @@ void setup()
 void draw()
 {
   buttonUpdate(mouseX, mouseY);                          // tracker musen
-  background(background);
+  if(life == 3)
+  {
+  background(background3);
+  }else if (life == 2)
+  {
+    background(background2);
+  }else if(life == 1)
+  {
+    background(background1);
+  }
 
   switch(state) {
   case 0:    
@@ -93,7 +108,7 @@ void draw()
     
     break;
 
-  case 1:                                            // Starter dpill med sportsbil.
+  case 1:  // Starter dpill med sportsbil.
     s.drawSky();
     g.drawGround();
     r.drawRoad();
