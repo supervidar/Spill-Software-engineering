@@ -85,8 +85,8 @@ void draw()
     text("Runaway car", 450, 140);
     stroke(255);
     rect(rectXS, rectYS, rectSizeS, rectSizeS);       //knapp til sportsbil
-    stroke(255);
-    rect(rectXH, rectYH, rectSizeH, rectSizeH);       // knapp til hippie bil
+   // stroke(255);
+   // rect(rectXH, rectYH, rectSizeH, rectSizeH);       // knapp til hippie bil
     //sco.highScore();
     break;
 
@@ -134,7 +134,8 @@ void draw()
   case 3:                                           // spill avsluttet med score og tid.
     
     background(end);
-    
+    stroke(255);
+    rect(rectXH, rectYH, rectSizeH, rectSizeH);
     textSize(200);
     fill(0);   
     text("Game Over", 300, 240);
@@ -206,7 +207,7 @@ void mousePressed()
 
   if (hippieBil)
   {   
-    startHippieBil();
+    state = 0;
   }
 } 
 
