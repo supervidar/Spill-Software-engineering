@@ -21,6 +21,8 @@ class sky {
    image(photoSky,1350,2); 
    photoSky = loadImage("tavle.png");    
    image(photoSky,1350,50);
+   photoSky = loadImage("tavle.png");    
+   image(photoSky,1350,100);
     /*fill(255);
     rect(1400,0,200,30);   // tidstavle
     fill(255);

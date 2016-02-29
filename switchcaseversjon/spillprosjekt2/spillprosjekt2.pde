@@ -87,7 +87,7 @@ void draw()
     rect(rectXS, rectYS, rectSizeS, rectSizeS);       //knapp til sportsbil
     stroke(255);
     rect(rectXH, rectYH, rectSizeH, rectSizeH);       // knapp til hippie bil
-    sco.highScore();
+    //sco.highScore();
     break;
 
   case 1:                                            // Starter dpill med sportsbil.
@@ -103,6 +103,8 @@ void draw()
     text("Level: " + level, 1420, 30);
     textSize(60);
     text("Poeng: " + score, 1420, 80);
+    textSize(60);
+    text("Liv: " + life, 1420, 130);
     //pl.drawPlant();
     
     o.drawObject();
@@ -123,6 +125,7 @@ void draw()
     textSize(20);
     text("Poeng: " + score, 1020, 60);
     o.drawObject();
+    
     break;
 
 
