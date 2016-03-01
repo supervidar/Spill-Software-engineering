@@ -1,4 +1,3 @@
-
 processing.data.Table table;
 
 class score {
