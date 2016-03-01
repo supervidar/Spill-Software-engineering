@@ -16,14 +16,16 @@ PFont font;
 
 PImage end;
 PImage Intro;
-PImage background;
+PImage background1;
+PImage background2;
+PImage background3;
 int score=0;
 int startTime;
 
 int rectXS, rectYS;                               // Posisjon til Sportsbil knapp
 int rectSizeS = 90;                               // diameter av Sportsbil knapp
 int rectXH, rectYH;                               // posisjon til  Hippiebil knapp
-int rectSizeH = 90;                               // diameter av Hippiebil knapp
+int rectSizeH = 100;                               // diameter av Hippiebil knapp
 
 color rectColorSport, rectColorHippie;            //farge til knappene
 color rectHighlight;                              // highlight farge til knapp               
@@ -37,11 +39,14 @@ String myName = "";
 
 void setup()
 {
+ 
   size(1600, 900);
   minim = new Minim(this);
   player = minim.loadFile("seenoevil.mp3", 2048);
   player.play();
-  background = loadImage("fjellfull.jpg");
+  background3 = loadImage("fjellfull.jpg");
+  background2 = loadImage("fjellhalf.jpg");
+  background1 = loadImage("fjelllow.jpg");
   end = loadImage("cGlass.png");
   
   font = createFont("game_over.ttf",32);
@@ -51,11 +56,11 @@ void setup()
   rectColorHippie = color(250, 130, 0);
   rectHighlight = color(0, 255, 130);
 
-  rectXS = width/2-rectSizeS+100;
-  rectYS= height/2-rectSizeS/10;
+  rectXS = width/2-rectSizeS+260;
+  rectYS= height/2-270;
 
-  rectXH = width/2-rectSizeH-100;
-  rectYH= height/2-rectSizeH/10;
+  rectXH = 1300;
+  rectYH= 100;
 
 
  
@@ -64,7 +69,7 @@ void setup()
 void draw()
 {
   buttonUpdate(mouseX, mouseY);                          // tracker musen
-  background(background);
+  //background(background);
 
   switch(state) {
   case 0:    
@@ -79,18 +84,28 @@ void draw()
     
     textSize(70);
     fill(0);
+    text("Navn:",600,240);
     text(myName, 700, 240); 
     fill(0);
     textSize(300);
     text("Runaway car", 450, 140);
     stroke(255);
-    rect(rectXS, rectYS, rectSizeS, rectSizeS);       //knapp til sportsbil
+    rect(rectXS, rectYS, rectSizeS, rectSizeS);    //knapp til sportsbil
+    textSize(100);
+    fill(250);
+    text("Spill",975,230);
    // stroke(255);
    // rect(rectXH, rectYH, rectSizeH, rectSizeH);       // knapp til hippie bil
-    //sco.highScore();
     break;
 
-  case 1:                                            // Starter dpill med sportsbil.
+  case 1:                     // Starter dpill med sportsbil.
+    if(life == 3){
+      background(background3);
+    }else if(life == 2){
+      background(background2);
+    }else if(life == 1){
+      background(background1);
+    }
     s.drawSky();
     g.drawGround();
     r.drawRoad();
@@ -134,7 +149,7 @@ void draw()
   case 3:                                           // spill avsluttet med score og tid.
     
     background(end);
-    stroke(255);
+    stroke(0);
     rect(rectXH, rectYH, rectSizeH, rectSizeH);
     textSize(200);
     fill(0);   
@@ -142,6 +157,10 @@ void draw()
     text("Poeng: "+ score, 300, 340);   
     text("Tid: " + startTime/1000, 300, 440);   
     text("Navn: "+myName,300,540);
+    textSize(80);
+    text("Nytt", 1310, 140);
+    text("spill", 1310, 170);
+    sco.highScore();
     break;
   }
 }
