@@ -1,12 +1,16 @@
 int life = 3;
 int coTime;
+int crash = 0;
 
 class collision {
  void collisionDetect() {
    if( h > 1450 || (x > 200 && x < 450) && direction < 1 && h > 1340) {
+     
        if(millis() - coTime >1500 && life == 3) {
            life = 2;
            coTime = millis();
+           //Setter crash = 1, dette gjør at man endrer case i chrashInObject
+           crash = 1;
        }
         if(millis() - coTime >1500 && life == 2) {
            life = 1;

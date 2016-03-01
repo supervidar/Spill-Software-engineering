@@ -1,9 +1,9 @@
-<<<<<<< HEAD
+
+/*
 processing.data.Table table;
-=======
 
 Table table;
->>>>>>> origin/master
+
 
 class score {
  void highScore() { 
@@ -25,3 +25,4 @@ class score {
   }
  }
 }
+*/
