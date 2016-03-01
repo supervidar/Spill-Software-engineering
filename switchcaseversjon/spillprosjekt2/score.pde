@@ -1,11 +1,11 @@
 
-processing.data.Table table;
+Table table;
 
 class score {
  void highScore() { 
    File f = new File (sketchPath("") + "HighScore.csv");
    if(!f.exists()) {
-  table = new processing.data.Table();
+  table = new Table();
   table.addColumn("Nr");
   table.addColumn("Navn");
   table.addColumn("Score");

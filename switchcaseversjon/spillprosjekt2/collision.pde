@@ -15,18 +15,6 @@ class collision {
         if(millis() - coTime >1000 && life == 1) {
            state = 3;
        }
-     
-   /*  
-     if(life == 3)
-       {         
-         life = 2;
-       }else if(life ==2)
-       {
-         life = 1;
-       }else if (life==1)
-       {
-         state = 3;
-       }*/
    }
    if( h > 1450 || (x > 450 && x < 750) && direction < 2 && direction > 0 && h > 1340) {
       if(millis() - coTime >1500 && life == 3) {
