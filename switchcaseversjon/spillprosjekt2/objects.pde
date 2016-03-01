@@ -23,7 +23,63 @@ class object {
   
       switch(index)
       {
-      case 0:    
+     
+      case 0:       
+
+        if (direction == 0) 
+        {
+          objekt = loadImage("øl.png");
+          translate(800, 480);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
+          image(objekt, -450, 300);
+          if (h > 1450) {
+            index = int(random(draw.length));
+            direction = int(random(4));
+            h = 0;
+          }
+        } else if (direction == 1)
+        {
+          objekt = loadImage("øl.png");
+          translate(800, 480);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
+          image(objekt, -150, 300);
+          if (h > 1450) {
+            index = int(random(draw.length));
+            direction = int(random(4));
+            h = 0;
+          }
+        }
+        else if (direction == 2)
+        {
+          objekt = loadImage("øl.png");
+          translate(800, 480);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
+          image(objekt, 50, 300);
+          if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+            index = int(random(draw.length));
+            direction = int(random(4));
+            h = 0;
+          }
+        }
+        else if (direction == 3)
+        {
+          objekt = loadImage("øl.png");
+          translate(800, 480);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
+          image(objekt, 250, 300);
+          if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+            index = int(random(draw.length));
+            direction = int(random(2));
+            h = 0;
+          }
+        }
+        break;
+        
+         case 1:    
   
         if (direction == 0)                                    //venstre
         {
@@ -81,60 +137,6 @@ class object {
         }
         break;
 
-      case 1:       
-
-        if (direction == 0) 
-        {
-          objekt = loadImage("øl.png");
-          translate(800, 480);
-          zoom = map(600, 50 + h, width, 0.1, 0);
-          scale(zoom);
-          image(objekt, -450, 300);
-          if (h > 1450) {
-            index = int(random(draw.length));
-            direction = int(random(4));
-            h = 0;
-          }
-        } else if (direction == 1)
-        {
-          objekt = loadImage("øl.png");
-          translate(800, 480);
-          zoom = map(600, 50 + h, width, 0.1, 0);
-          scale(zoom);
-          image(objekt, -150, 300);
-          if (h > 1450) {
-            index = int(random(draw.length));
-            direction = int(random(4));
-            h = 0;
-          }
-        }
-        else if (direction == 2)
-        {
-          objekt = loadImage("øl.png");
-          translate(800, 480);
-          zoom = map(600, 50 + h, width, 0.1, 0);
-          scale(zoom);
-          image(objekt, 50, 300);
-          if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
-            index = int(random(draw.length));
-            direction = int(random(4));
-            h = 0;
-          }
-        }
-        else if (direction == 3)
-        {
-          objekt = loadImage("øl.png");
-          translate(800, 480);
-          zoom = map(600, 50 + h, width, 0.1, 0);
-          scale(zoom);
-          image(objekt, 250, 300);
-          if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
-            index = int(random(draw.length));
-            direction = int(random(2));
-            h = 0;
-          }
-        }
-        break;
         
        case 2:       
 
