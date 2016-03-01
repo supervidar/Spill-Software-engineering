@@ -3,8 +3,6 @@ import ddf.minim.*;
 AudioPlayer player;
 Minim minim;                                      //audio context
 
-crashInObjects cra = new crashInObjects();
-
 ground g = new ground();
 road r = new road();
 carSport cs = new carSport();
@@ -13,7 +11,7 @@ sky s = new sky();
 object o = new object();
 plant pl = new plant();
 collision coll = new collision();
-//score sco = new score();
+score sco = new score();
 PFont font;
 
 PImage end;
@@ -115,7 +113,6 @@ void draw()
     //grid.drawGrid();
     startTime = millis();
     coll.collisionDetect();
-    cra.crashEffect();
     fill(255);
     textSize(60);
     text("Level: " + level, 1420, 30);
@@ -153,6 +150,7 @@ void draw()
     
     background(end);
     stroke(0);
+    fill(255);
     rect(rectXH, rectYH, rectSizeH, rectSizeH);
     textSize(200);
     fill(0);   
@@ -163,7 +161,7 @@ void draw()
     textSize(80);
     text("Nytt", 1310, 140);
     text("spill", 1310, 170);
-    //sco.highScore();
+    sco.highScore();
     break;
   }
 }

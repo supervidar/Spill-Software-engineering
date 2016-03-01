@@ -23,8 +23,8 @@ class object {
   
       switch(index)
       {
-     
-      case 0:       
+      case 0:    
+        
 
         if (direction == 0) 
         {
@@ -79,9 +79,9 @@ class object {
         }
         break;
         
-         case 1:    
-  
-        if (direction == 0)                                    //venstre
+        case 1:
+        
+        if (direction == 1)                                    //venstre
         {
           objekt = loadImage("sunliv.png");
           translate(800, 480);
