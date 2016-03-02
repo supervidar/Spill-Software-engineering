@@ -3,150 +3,214 @@ import ddf.minim.*;
 AudioPlayer player;
 Minim minim;                                      //audio context
 
+crashInObjects cra = new crashInObjects();
+
 ground g = new ground();
 road r = new road();
 carSport cs = new carSport();
-carHippie ch = new carHippie();
+//carHippie ch = new carHippie();
 sky s = new sky();
-objekt o = new objekt();
+object o = new object();
+plant pl = new plant();
+collision coll = new collision();
+score sco = new score();
 
-PImage carS;
-PImage carH;
-PImage photoSky;
-PImage objekt;
-PImage background;
-int score=0;
+PFont font;
+PImage end;
+PImage Intro;
+PImage background1;
+PImage background2;
+PImage background3;
 int startTime;
+
 int rectXS, rectYS;                               // Posisjon til Sportsbil knapp
 int rectSizeS = 90;                               // diameter av Sportsbil knapp
-int rectXH, rectYH;                               // posisjon til  Hippiebil knapp
-int rectSizeH = 90;                               // diameter av Hippiebil knapp
+int rectXI, rectYI;                               // posisjon til  Hippiebil knapp
+int rectSizeI = 100;                               // diameter av Hippiebil knapp
+
 color rectColorSport, rectColorHippie;            //farge til knappene
 color rectHighlight;                              // highlight farge til knapp               
+
 boolean sportsBil = false;
 boolean hippieBil = false;
-boolean startSportsBil = false;
-boolean startHippieBil = false;
-boolean intro=true;                               // meny
+
+int state = 0;
 
 
 void setup()
 {
-  size(1200, 1200);
+ 
+  size(1600, 900);
   minim = new Minim(this);
   player = minim.loadFile("seenoevil.mp3", 2048);
   player.play();
-  background = loadImage("mountainsky250.jpg");
-
+  background3 = loadImage("fjellfull.jpg");
+  background2 = loadImage("fjellhalf.jpg");
+  background1 = loadImage("fjelllow.jpg");
+  end = loadImage("cGlass.png");
+  
+  font = createFont("game_over.ttf",32);
+  textFont(font);
+  
   rectColorSport = color(132, 0, 250);
   rectColorHippie = color(250, 130, 0);
   rectHighlight = color(0, 255, 130);
 
+  rectXS = width/2-rectSizeS+260;
+  rectYS= height/2-270;
 
-  rectXS = width/2-rectSizeS+100;
-  rectYS= height/2-rectSizeS/10;
+  rectXI = 1300;
+  rectYI= 100;
+  
 
-  rectXH = width/2-rectSizeH-100;
-  rectYH= height/2-rectSizeH/10;
+ 
 }
+
 void draw()
 {
-  update(mouseX, mouseY); 
-  background(background);
+  buttonUpdate(mouseX, mouseY);                          // tracker musen
 
-  //if (sportsBil)                                 // skifter farge når vi holder over knapp
-  //{         
-  //  fill(rectHighlight);
-  //} else 
-  //{
-  //  fill(rectColorSport);
-  //}
-
-  //if (hippieBil) 
-  //{
-  //  fill(rectHighlight);
-  //} else 
-  //{
-  //  fill(rectColorHippie);
-  //}
-
-  if (startSportsBil) 
-  {
+  switch(state) {
+  case 0:    
+    background(255);
+    Intro = loadImage("carintro.png");                 // intro bilde
+    image(Intro, -50, 0);
+    fill(150);      
+    strokeWeight(3); 
+    fill(128, 128, 128);
+    
+    rect(695,200,200,50);
    
+    textSize(70);
+    fill(0);
+    text("Navn:",600,240);
+    text(myName, 700, 240); 
+    fill(0);
+    textSize(300);
+    text("Runaway car", 450, 140);
+    stroke(255);
+    rect(rectXS, rectYS, rectSizeS, rectSizeS);    //knapp til sportsbil
+    textSize(100);
+    fill(250);
+    text("Spill",975,230);
+    
+    break;
+
+  case 1:                     // Starter spill med sportsbil.
+    if(life == 3){
+      background(background3);
+    }else if(life == 2){
+      background(background2);
+    }else if(life == 1){
+      background(background1);
+    }
     s.drawSky();
     g.drawGround();
     r.drawRoad();
     cs.drawSportsCar();
     startTime = millis();
-   fill(0);
-    textSize(20);
-    text("Tid: " + millis()/1000 + " Sekund", 1020, 20);
-    textSize(20);
-    text("Poeng: " + score, 1020, 60);
-    o.drawObjekt();
-   
-  }
-  if (startHippieBil) {
+    coll.collisionDetect();
+    cra.crashEffect();
+    fill(255);
+    textSize(60);
+    text("Level: " + level, 1420, 30);
+    textSize(60);
+    text("Poeng: " + score, 1420, 80);
+    textSize(60);
+    text("Liv: " + life, 1420, 130);
+    //pl.drawPlant();
+    sco.highScore();
+    o.drawObject();
+    
+
+    break;
+
+  case 2:                                          // Starter spill med hippibil.
     s.drawSky();
     g.drawGround();
     r.drawRoad();
-    ch.drawHippieCar();
+    //ch.drawHippieCar();
+    coll.collisionDetect();
     startTime = millis();
     fill(0);
-    textSize(20);
+    textSize(100);
     text("Tid: " + millis()/1000 + " Sekund", 1020, 20);
     textSize(20);
     text("Poeng: " + score, 1020, 60);
-     o.drawObjekt();
-  }
-    if (intro) {                                       // startside spill
-    background(255);
-    carS = loadImage("carintro.png");                 // intro bilde
-    image(carS, -50, 150);
-    fill(150);      
-    strokeWeight(3); 
-    fill(128, 128, 128);
-
-    textSize(100);
-    text("Runaway car", 350, 240);
+    o.drawObject();
     
-    stroke(255);
-    rect(rectXS, rectYS, rectSizeS, rectSizeS);       //knapp til sportsbil
-    stroke(255);
-    rect(rectXH, rectYH, rectSizeH, rectSizeH);       // knapp til hippie bil
-    }
-  // else {                                           // spill avsluttet med score og tid.
-  //  text("Spill slutt", 380, 240);
-  //  text("Poeng", 600, 440);
-  //  text(score, 600, 440);
-  //  text("Tid brukt: ", 600, 600);
-  //  text(startTime, 600, 600);
-  //}
+    break;
+
+
+
+
+  case 3:                                           // spill avsluttet med score og tid.
+    
+    background(end);
+    stroke(0);
+    fill(255);
+    rect(rectXI, rectYI, rectSizeI, rectSizeI);
+    textSize(200);
+    fill(0);   
+    text("Game Over", 300, 240);
+    text("Poeng: "+ score, 300, 340);   
+    text("Tid: " + startTime/1000, 300, 440);   
+    text("Navn: "+myName,300,540);
+    textSize(80);
+    text("Nytt", 1310, 140);
+    text("spill", 1310, 170);
+    
+    break;
+  }
 }
 
 
 void startSportsBil() {
-  startSportsBil=true;                                         // starter spill mes sportsbil
-  score=0;
+  state=1;                                         // starter spill mes sportsbil
+  score = 0;
 }
 
 void startHippieBil()
 {
-  startHippieBil=true;                                         // starter spill med hippiebil
+  state=2;                                         // starter spill med hippiebil
   score=0;
 }
 
+void endGame()
+{
+  
+  state=3;                                         // avslutter spill og viser poeng
+  
+}
 
-void update(int x, int y)
+
+void buttonUpdate(int x, int y)
 {
   if (overSport(rectXS, rectYS, rectSizeS, rectSizeS))         //sjekker om mus er over sportsbil knapp
   { 
     sportsBil = true; 
     hippieBil = false;
-  } else if (overHippie(rectXH, rectYH, rectSizeH, rectSizeH)) //sjekker om mus er over sportsbilknapp
+  } else if (overHippie(rectXI, rectYI, rectSizeI, rectSizeI)) //sjekker om mus er over sportsbilknapp
   { 
     hippieBil = true;
     sportsBil = false;
+  }
+}
+
+void keyPressed()
+{
+  if (keyCode == BACKSPACE)
+  {
+    if (myName.length()>0)
+    {
+      myName = myName.substring(0, myName.length()-1);
+    }
+  } else if (keyCode == DELETE)
+  {
+    myName ="";
+  } else if (keyCode != SHIFT && keyCode != CONTROL && keyCode != ALT)
+  {
+    myName = myName + key;
   }
 }
 
@@ -155,15 +219,13 @@ void update(int x, int y)
 void mousePressed() 
 { 
   if (sportsBil)
-  {
-    intro = false;
+  {    
     startSportsBil();
   } 
 
   if (hippieBil)
-  {
-    intro = false;
-    startHippieBil();
+  {   
+    state = 0;
   }
 } 
 
