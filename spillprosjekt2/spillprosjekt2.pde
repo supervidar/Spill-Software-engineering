@@ -1,7 +1,4 @@
-import ddf.minim.*;
-
-AudioPlayer player;
-Minim minim;                                      //audio context
+                                
 
 crashInObjects cra = new crashInObjects();
 
@@ -14,7 +11,7 @@ object o = new object();
 plant pl = new plant();
 collision coll = new collision();
 score sco = new score();
-
+sound so = new sound();
 PFont font;
 PImage end;
 PImage Intro;
@@ -42,8 +39,6 @@ void setup()
  
   size(1600, 900);
   minim = new Minim(this);
-  player = minim.loadFile("seenoevil.mp3", 2048);
-  player.play();
   background3 = loadImage("fjellfull.jpg");
   background2 = loadImage("fjellhalf.jpg");
   background1 = loadImage("fjelllow.jpg");
@@ -61,7 +56,7 @@ void setup()
 
   rectXI = 1300;
   rectYI= 100;
-  
+  so.carMusic();
 
  
 }
@@ -121,7 +116,6 @@ void draw()
     //pl.drawPlant();
     sco.highScore();
     o.drawObject();
-    
 
     break;
 

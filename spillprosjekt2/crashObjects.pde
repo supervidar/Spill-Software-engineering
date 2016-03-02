@@ -36,13 +36,27 @@ class crashInObjects {
 
 
     case 1: //ØL
+<<<<<<< Updated upstream
+=======
+<<<<<<< HEAD
+      
+      so.beerSound();
+=======
+>>>>>>> Stashed changes
       player = minim.loadFile("Beer.mp3");
       player.play();
       
 
+<<<<<<< Updated upstream
 
 
 
+=======
+
+
+
+>>>>>>> origin/master
+>>>>>>> Stashed changes
       crash = 0;
       crashCase = SET_IDLE;
       break;
