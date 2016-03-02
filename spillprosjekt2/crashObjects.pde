@@ -16,7 +16,7 @@ class crashInObjects {
   void crashEffect() {
     switch(crashCase) {
 
-    
+
 
     case 0: //IDLE
 
@@ -40,25 +40,42 @@ class crashInObjects {
       player.play();
 
 
+
+
+      crash = 0;
+
+
       crashCase = SET_IDLE;
       break;
 
     case 2: //LIV
 
+
+
+
+      crash = 0;
       crashCase = SET_IDLE;
       break;
 
     case 3: //OIL
 
+
+
+
+      crash = 0;
       crashCase = SET_IDLE;
       break;
 
     case 4: //BCAR
 
+
+
+
+      crash = 0;
       crashCase = SET_IDLE;
       break;
-      
-      case 5: //SET_IDLE
+
+    case 5: //SET_IDLE
       if (crash == 1) {
         crashCase = IDLE;
       } else {
