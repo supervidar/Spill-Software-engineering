@@ -36,15 +36,14 @@ class crashInObjects {
 
 
     case 1: //ØL
-      player = minim.loadFile("Beer.mp3", 2048);
+      player = minim.loadFile("Beer.mp3");
       player.play();
+      
 
 
 
 
       crash = 0;
-
-
       crashCase = SET_IDLE;
       break;
 
