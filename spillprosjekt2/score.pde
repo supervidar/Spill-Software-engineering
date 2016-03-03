@@ -20,7 +20,7 @@ class score {
   newRow.setString("Navn", myName);
   newRow.setInt("Score", score);
   if(table.getRowCount() > 10){
-    table.removeRow(0);
+    table.removeRow(10);
    
     }
   saveTable(table, "HighScore.csv");

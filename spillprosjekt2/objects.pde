@@ -12,10 +12,10 @@ int index = 0;
 
 class object {
   void drawObject() {
-
+     
       h = h + aksO;
       if(millis() - aksT >= 10000) {
-        aksO += 10;
+        aksO += 20;
         aksT = millis();
        
         }
@@ -31,7 +31,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, -450, 300);
+          image(objekt, -800, 300);
           if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -43,7 +43,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, -150, 300);
+          image(objekt, -450, 300);
           if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -56,7 +56,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, 50, 300);
+          image(objekt, 0, 300);
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -69,7 +69,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, 250, 300);
+          image(objekt, 400, 300);
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(2));
@@ -86,7 +86,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, -450, 300);
+          image(objekt, -800, 300);
           
           if (h > 1450) {
             index = int(random(draw.length));
@@ -101,7 +101,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, -150, 300);
+          image(objekt, -450, 300);
           if(h > 1450 ){//|| (x1 > 450 && x1 < 750) && h == 1340) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -114,7 +114,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, 50, 300);
+          image(objekt, 0, 300);
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -127,7 +127,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, 250, 300);
+          image(objekt, 400, 300);
            if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -136,7 +136,7 @@ class object {
         }
         break;
 
-        
+      
        case 2:       
 
         if (direction == 0) 
@@ -145,7 +145,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, -450, 300);
+          image(objekt, -800, 300);
           if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(2));
@@ -157,7 +157,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, -250, 300);
+          image(objekt, -450, 300);
           if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -170,7 +170,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, 50, 300);
+          image(objekt, 0, 300);
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -183,7 +183,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, 250, 300);
+          image(objekt, 400, 300);
          if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -200,7 +200,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, -450, 300);
+          image(objekt, -800, 300);
           if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(2));
@@ -212,7 +212,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, -250, 300);
+          image(objekt, -450, 300);
           if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -225,7 +225,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, 50, 300);
+          image(objekt, 0, 300);
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -238,7 +238,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, 250, 300);
+          image(objekt, 400, 300);
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -255,7 +255,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, -450, 300);
+          image(objekt, -800, 300);
           if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(2));
@@ -267,7 +267,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, -250, 300);
+          image(objekt, -450, 300);
           if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -280,7 +280,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, 50, 300);
+          image(objekt, 0, 300);
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -293,7 +293,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, 250, 300);
+          image(objekt, 400, 300);
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -310,7 +310,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, -450, 300);
+          image(objekt, -800, 300);
           if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(2));
@@ -322,7 +322,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, -250, 300);
+          image(objekt, -450, 300);
           if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -335,7 +335,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, 50, 300);
+          image(objekt, 0 , 300);
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -348,7 +348,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, 250, 300);
+          image(objekt, 400, 300);
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -365,7 +365,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, -450, 300);
+          image(objekt, -800, 300);
           if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(2));
@@ -377,7 +377,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, -250, 300);
+          image(objekt, -450, 300);
           if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -390,7 +390,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, 50, 300);
+          image(objekt, 0, 300);
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -403,7 +403,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, 250, 300);
+          image(objekt, 400, 300);
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -420,7 +420,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, -450, 300);
+          image(objekt, -800, 300);
           if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(2));
@@ -432,7 +432,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, -250, 300);
+          image(objekt, -450, 300);
           if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -445,7 +445,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, 50, 300);
+          image(objekt, 0, 300);
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -458,7 +458,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, 250, 300);
+          image(objekt, 400, 300);
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -475,7 +475,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, -450, 300);
+          image(objekt, -800, 300);
           if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(2));
@@ -487,7 +487,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, -250, 300);
+          image(objekt, -450, 300);
           if (h > 1450) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -500,7 +500,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, 50, 300);
+          image(objekt, 0, 300);
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));
@@ -513,7 +513,7 @@ class object {
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
-          image(objekt, 250, 300);
+          image(objekt, 400, 300);
           if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             index = int(random(draw.length));
             direction = int(random(4));

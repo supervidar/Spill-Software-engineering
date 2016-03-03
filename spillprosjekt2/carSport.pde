@@ -12,6 +12,8 @@ class carSport {
    x1 = constrain(x,250,1000);
    
    if(keyCode == LEFT) {
+     //so.breakSound();
+    
      if (x >= 250) {
      x = x - 45;
      x--;
@@ -20,6 +22,8 @@ class carSport {
      image(carS,x1,y1);
    }
     if(keyCode == RIGHT) {
+    //so.breakSound();
+    
     if ( x <= 1000) {
     x = x + 45;
      x++;

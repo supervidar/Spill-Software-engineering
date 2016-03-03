@@ -56,8 +56,9 @@ void setup()
 
   rectXI = 1300;
   rectYI= 100;
-  so.carMusic();
-
+  beer = minim.loadFile("Beer.mp3");
+  carmusic = minim.loadFile("seenoevil.mp3");
+  breaking = minim.loadFile("break2.mp3");
  
 }
 
@@ -116,7 +117,8 @@ void draw()
     //pl.drawPlant();
     sco.highScore();
     o.drawObject();
-
+   
+    
     break;
 
   case 2:                                          // Starter spill med hippibil.
@@ -160,6 +162,8 @@ void draw()
 
 
 void startSportsBil() {
+  so.carMusic();
+ 
   state=1;                                         // starter spill mes sportsbil
   score = 0;
 }
@@ -172,7 +176,9 @@ void startHippieBil()
 
 void endGame()
 {
-  
+   minim.stop();
+  //so.looserSound();
+ 
   state=3;                                         // avslutter spill og viser poeng
   
 }

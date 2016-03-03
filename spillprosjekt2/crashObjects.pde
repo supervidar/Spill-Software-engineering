@@ -38,12 +38,7 @@ class crashInObjects {
     case 1: //ØL
 
       
-      so.beerSound();
-
-      player = minim.loadFile("Beer.mp3");
-      player.play();
-      
-
+     so.beerSound();
 
       crash = 0;
       crashCase = SET_IDLE;
