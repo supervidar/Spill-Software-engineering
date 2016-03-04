@@ -23,14 +23,16 @@ int startTime;
 int rectXS, rectYS;                               // Posisjon til Sportsbil knapp
 int rectSizeS = 90;                               // diameter av Sportsbil knapp
 int rectXI, rectYI;                               // posisjon til  Hippiebil knapp
-int rectSizeI = 100;                               // diameter av Hippiebil knapp
+int rectSizeI = 100;                              // diameter av Hippiebil knapp
+int rectXHS, rectYHS;                               // posisjon til  Hippiebil knapp
+int rectSizeHS = 100;
 
 color rectColorSport, rectColorHippie;            //farge til knappene
 color rectHighlight;                              // highlight farge til knapp               
 
 boolean sportsBil = false;
-boolean hippieBil = false;
-
+boolean introSide = false;
+boolean hScore = false;
 int state = 0;
 
 
@@ -56,6 +58,8 @@ void setup()
 
   rectXI = 1300;
   rectYI= 100;
+  rectXHS = 1300;
+  rectYHS= 250;
   beer = minim.loadFile("Beer.mp3");
   carmusic = minim.loadFile("seenoevil.mp3");
   breaking = minim.loadFile("break2.mp3");
@@ -146,6 +150,7 @@ void draw()
     stroke(0);
     fill(255);
     rect(rectXI, rectYI, rectSizeI, rectSizeI);
+    rect(rectXHS, rectYHS, rectSizeHS, rectSizeHS);
     textSize(200);
     fill(0);   
     text("Game Over", 300, 240);
@@ -155,14 +160,32 @@ void draw()
     textSize(80);
     text("Nytt", 1310, 140);
     text("spill", 1310, 170);
-    
+    text("High", 1310, 290);
+    text("score", 1310, 320);
+    //sco.showScore();
     break;
+    
+  case 4:                                           // HighScore side.
+    
+    background(255);
+    Intro = loadImage("carFront.png");                 // intro bilde
+    image(Intro, 650, 350);
+    stroke(0);
+    fill(255);
+    rect(rectXI, rectYI, rectSizeI, rectSizeI);
+    fill(0);
+    textSize(80);
+    text("Nytt", 1310, 140);
+    text("spill", 1310, 170);
+    
+    sco.showScore();
+    break;  
   }
 }
 
 
 void startSportsBil() {
-  so.carMusic();
+ // so.carMusic();
  
   state=1;                                         // starter spill mes sportsbil
   score = 0;
@@ -188,13 +211,22 @@ void buttonUpdate(int x, int y)
 {
   if (overSport(rectXS, rectYS, rectSizeS, rectSizeS))         //sjekker om mus er over sportsbil knapp
   { 
+    hScore = false;
     sportsBil = true; 
-    hippieBil = false;
-  } else if (overHippie(rectXI, rectYI, rectSizeI, rectSizeI)) //sjekker om mus er over sportsbilknapp
+    introSide = false;
+  } else if (overIntro(rectXI, rectYI, rectSizeI, rectSizeI)) //sjekker om mus er over sportsbilknapp
   { 
-    hippieBil = true;
+    hScore = false;
+    introSide = true;
     sportsBil = false;
   }
+  else if (overHscore(rectXHS, rectYHS, rectSizeHS, rectSizeHS)) //sjekker om mus er over highscoreknapp
+  { 
+    hScore = true;
+    introSide = false;
+    sportsBil = false;
+  }
+  
 }
 
 void keyPressed()
@@ -223,9 +255,13 @@ void mousePressed()
     startSportsBil();
   } 
 
-  if (hippieBil)
+  if (introSide)
   {   
     state = 0;
+  }
+  if (hScore)
+  {   
+    state = 4;
   }
 } 
 
@@ -239,7 +275,17 @@ boolean overSport(int x, int y, int width, int height)                         /
     return false;
   }
 }
-boolean overHippie(int x, int y, int width, int height)                        //kordinater til hippiebil 
+boolean overIntro(int x, int y, int width, int height)                        //kordinater til hippiebil 
+{ 
+  if (mouseX >= x && mouseX <= x+width && mouseY >= y && mouseY <= y+height) 
+  {
+    return true;
+  } else 
+  {
+    return false;
+  }
+}
+boolean overHscore(int x, int y, int width, int height)                        //kordinater til Highscore 
 { 
   if (mouseX >= x && mouseX <= x+width && mouseY >= y && mouseY <= y+height) 
   {

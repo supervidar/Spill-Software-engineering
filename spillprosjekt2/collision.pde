@@ -1,4 +1,4 @@
-int life = 3;
+int life = 1;
 int coTime;
 int crash = 0;
 
