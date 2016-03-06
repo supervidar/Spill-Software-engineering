@@ -2,7 +2,7 @@ int level;
 int l;
 float a1;
 int aksT;
-float aksC = 10;
+float aksC = 15;
 class road {
   void drawRoad() {
   fill(102, 102, 102);
@@ -25,8 +25,8 @@ class road {
   level = 1;                             // Increases level  by time
   level = level + l;
   a1 = a1 + aksC;                        // Increases accleration by time
-  if(millis() - aksT >= 10000) {         
-     aksC += 2;
+  if(millis() - aksT >= 20000) {         
+     aksC += 4;
      l += 1;
     aksT = millis();
   }

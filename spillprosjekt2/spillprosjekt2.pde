@@ -27,8 +27,8 @@ int rectSizeI = 100;                              // diameter av Hippiebil knapp
 int rectXHS, rectYHS;                               // posisjon til  Hippiebil knapp
 int rectSizeHS = 100;
 
-color rectColorSport, rectColorHippie;            //farge til knappene
-color rectHighlight;                              // highlight farge til knapp               
+//color rectColorSport, rectColorHippie;            //farge til knappene
+//color rectHighlight;                              // highlight farge til knapp               
 
 boolean sportsBil = false;
 boolean introSide = false;
@@ -49,9 +49,9 @@ void setup()
   font = createFont("game_over.ttf",32);
   textFont(font);
   
-  rectColorSport = color(132, 0, 250);
-  rectColorHippie = color(250, 130, 0);
-  rectHighlight = color(0, 255, 130);
+  //rectColorSport = color(132, 0, 250);
+  //rectColorHippie = color(250, 130, 0);
+  //rectHighlight = color(0, 255, 130);
 
   rectXS = width/2-rectSizeS+260;
   rectYS= height/2-270;
@@ -137,7 +137,7 @@ void draw()
     text("Tid: " + millis()/1000 + " Sekund", 1020, 20);
     textSize(20);
     text("Poeng: " + score, 1020, 60);
-    o.drawObject();
+   o.drawObject();
     
     break;
 
@@ -148,7 +148,7 @@ void draw()
     
     background(end);
     stroke(0);
-    fill(255);
+    fill(0);
     rect(rectXI, rectYI, rectSizeI, rectSizeI);
     rect(rectXHS, rectYHS, rectSizeHS, rectSizeHS);
     textSize(200);
@@ -157,28 +157,29 @@ void draw()
     text("Poeng: "+ score, 300, 340);   
     text("Tid: " + startTime/1000, 300, 440);   
     text("Navn: "+myName,300,540);
+    fill(255);
     textSize(80);
     text("Nytt", 1310, 140);
     text("spill", 1310, 170);
     text("High", 1310, 290);
     text("score", 1310, 320);
-    //sco.showScore();
+ 
     break;
     
   case 4:                                           // HighScore side.
     
     background(255);
-    Intro = loadImage("carFront.png");                 // intro bilde
-    image(Intro, 650, 350);
+    Intro = loadImage("carintro.png");                 // intro bilde
+    image(Intro,0, 0);
     stroke(0);
-    fill(255);
-    rect(rectXI, rectYI, rectSizeI, rectSizeI);
     fill(0);
+    rect(rectXI, rectYI, rectSizeI, rectSizeI);
+    fill(255);
     textSize(80);
     text("Nytt", 1310, 140);
     text("spill", 1310, 170);
-    
     sco.showScore();
+    
     break;  
   }
 }
@@ -206,7 +207,6 @@ void endGame()
   
 }
 
-
 void buttonUpdate(int x, int y)
 {
   if (overSport(rectXS, rectYS, rectSizeS, rectSizeS))         //sjekker om mus er over sportsbil knapp
@@ -214,10 +214,12 @@ void buttonUpdate(int x, int y)
     hScore = false;
     sportsBil = true; 
     introSide = false;
-  } else if (overIntro(rectXI, rectYI, rectSizeI, rectSizeI)) //sjekker om mus er over sportsbilknapp
+  }
+  else if (overIntro(rectXI, rectYI, rectSizeI, rectSizeI)) //sjekker om mus er over introsideknapp
   { 
-    hScore = false;
+    
     introSide = true;
+    hScore = false;
     sportsBil = false;
   }
   else if (overHscore(rectXHS, rectYHS, rectSizeHS, rectSizeHS)) //sjekker om mus er over highscoreknapp
@@ -256,13 +258,16 @@ void mousePressed()
   } 
 
   if (introSide)
-  {   
+  { 
     state = 0;
+    
   }
   if (hScore)
   {   
-    state = 4;
+    
+    state  = 4;
   }
+ 
 } 
 
 boolean overSport(int x, int y, int width, int height)                         //kordinater til sportsbil
@@ -275,7 +280,7 @@ boolean overSport(int x, int y, int width, int height)                         /
     return false;
   }
 }
-boolean overIntro(int x, int y, int width, int height)                        //kordinater til hippiebil 
+boolean overIntro(int x, int y, int width, int height)                        //kordinater til introknapp 
 { 
   if (mouseX >= x && mouseX <= x+width && mouseY >= y && mouseY <= y+height) 
   {
