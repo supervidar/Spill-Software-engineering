@@ -10,7 +10,7 @@ sky s = new sky();
 object o = new object();
 plant pl = new plant();
 collision coll = new collision();
-score sco = new score();
+//score sco = new score();
 sound so = new sound();
 PFont font;
 PImage end;
@@ -119,7 +119,7 @@ void draw()
     textSize(60);
     text("Liv: " + life, 1420, 130);
     //pl.drawPlant();
-    sco.highScore();
+   // sco.highScore();
     o.drawObject();
    
     
@@ -178,7 +178,7 @@ void draw()
     textSize(80);
     text("Nytt", 1310, 140);
     text("spill", 1310, 170);
-    sco.showScore();
+    //sco.showScore();
     
     break;  
   }

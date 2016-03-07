@@ -16,7 +16,7 @@ class object {
  
       h = h + aksO;
       if(millis() - aksT >= 20000) {
-        aksO = aksO + 20;
+        aksO = aksO + 40;//20;
         aksT = millis();
        
         }
