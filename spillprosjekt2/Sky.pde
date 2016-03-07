@@ -9,9 +9,9 @@ class sky {
     if (life == 3) {
       photoSky = loadImage("sunFull.png");    
       image(photoSky, -100, -50); 
-      photoSky = loadImage("sky2.png");    
+      photoSky = loadImage("sky2full.png");    
       image(photoSky, 400 + a, 200);
-      photoSky = loadImage("sky.png");
+      photoSky = loadImage("skyfull.png");
       image(photoSky, 0 + a, 30);
 
       a = a + 0.5;
@@ -28,9 +28,9 @@ class sky {
     }else if (life == 2) {
       photoSky = loadImage("sunHalf.png");    
       image(photoSky, -100, -50); 
-      photoSky = loadImage("sky2.png");    
+      photoSky = loadImage("skySHalf.png");    
       image(photoSky, 400 + a, 200);
-      photoSky = loadImage("sky.png");
+      photoSky = loadImage("skyBHalf.png");
       image(photoSky, 0 + a, 30);
 
       a = a + 0.5;
@@ -47,9 +47,9 @@ class sky {
     }else if (life == 1) {
       photoSky = loadImage("sunLow.png");    
       image(photoSky, -100, -50); 
-      photoSky = loadImage("sky2.png");    
+      photoSky = loadImage("skySLow.png");    
       image(photoSky, 400 + a, 200);
-      photoSky = loadImage("sky.png");
+      photoSky = loadImage("skyBLow.png");
       image(photoSky, 0 + a, 30);
 
       a = a + 0.5;
