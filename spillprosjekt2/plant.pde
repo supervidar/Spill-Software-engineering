@@ -1,5 +1,4 @@
-float pll; //<>// //<>//
-float plr;
+float plh;  //<>//
 int directionP = 0;
 int indexP;
 PImage plant;
@@ -11,6 +10,14 @@ int indexp = 0 ;
 class plant {
   void drawPlant() {
 
+      plh = plh + aksO;
+      if(millis() - aksT >= 20000) {
+        aksO = aksO + 20;
+        aksT = millis();
+       
+        }
+    
+    
       
       switch(indexp)
       {
@@ -18,64 +25,64 @@ class plant {
 
         if (directionP == 0)                                    //venstre
         {
-          pll = pll + 10;
+          plh = plh + 10;
           plant = loadImage("cactus.png");
            translate(700, 480);
-           float zoomL = map(1000,50 + pll , width, 0.1, 0);
+           float zoomL = map(1000,50 + plh , width, 0.1, 0);
            scale(zoomL);
            image(plant, -1850, 100);
           
-          if (pll > 1550) {
+          if (plh > 1550) {
             indexp = int(random(drawp.length));
             directionP = int(random(4));
-            pll = 4;
+            plh = 0;
           }
         } else if (directionP == 1)                              //høyre
         {
-          plr = plr + 30;
+          plh = plh + 30;
           plant = loadImage("cactus.png");
           translate(900, 480);
-          float zoomRight = map(1000, 50 + plr, width, 0.1, 0);
+          float zoomRight = map(1000, 50 + plh, width, 0.1, 0);
           scale(zoomRight);
           image(plant, 1800, 300);
           
-          if(plr > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+          if(plh > 1550) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
             indexp = int(random(drawp.length));
             directionP = int(random(4));
-            plr = 4;
+            plh = 0;
           }
         }
         break;
 
       case 1:       
 
-        if (directionP == 1)                                    //Venstre ytterkant
+        if (directionP == 2)                                    //Venstre ytterkant
         {
-          pll = pll + 30;
+          plh = plh + 30;
           plant = loadImage("cactus.png");
            translate(400, 480);
-           float zoomL = map(1000,50 + pll , width, 0.1, 0);
+           float zoomL = map(1000,50 + plh , width, 0.1, 0);
            scale(zoomL);
            image(plant, -2850, 100);
           
-          if (pll > 1550) {
+          if (plh > 1550) {
             indexp = int(random(drawp.length));
-            directionP = int(random(2));
-            pll = 4;
+            directionP = int(random(4));
+            plh = 0;
           }
-        } else if (directionP == 2)                             // høyre ytterkant
+        } else if (directionP == 3)                             // høyre ytterkant
         {
-          plr = plr + 30;
+          plh = plh + 30;
           plant = loadImage("cactus.png");
           translate(1300, 480);
-          float zoomRight = map(1000, 50 + plr, width, 0.1, 0);
+          float zoomRight = map(1000, 50 + plh, width, 0.1, 0);
           scale(zoomRight);
           image(plant, 2700, 300);
           
-          if(plr > 1550) {             
+          if(plh > 1550) {             
             indexP = int(random(drawp.length));
-            directionP = int(random(2));
-            plr = 4;
+            directionP = int(random(4));
+            plh = 0;
           }
         }
         break;

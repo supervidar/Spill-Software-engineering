@@ -1,4 +1,4 @@
- //<>// //<>//
+ //<>// //<>// //<>//
 float h;
 float zoom;
 float aksO = 15;
@@ -13,7 +13,7 @@ int index = 0;
 
 class object {
   void drawObject() {
- 
+  
       h = h + aksO;
       if(millis() - aksT >= 20000) {
         aksO = aksO + 20;
@@ -28,6 +28,7 @@ class object {
 
         if (direction == 0) 
         {
+          
           objekt = loadImage("øl.png");
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
@@ -37,6 +38,7 @@ class object {
             index = int(random(draw.length));
             direction = int(random(4));
             h = 0;
+            
           }
         } else if (direction == 1)
         {

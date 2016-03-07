@@ -1,7 +1,7 @@
                                 
 
 crashInObjects cra = new crashInObjects();
-
+Snow sno = new Snow();
 ground g = new ground();
 road r = new road();
 carSport cs = new carSport();
@@ -63,6 +63,14 @@ void setup()
   beer = minim.loadFile("Beer.mp3");
   carmusic = minim.loadFile("seenoevil.mp3");
   breaking = minim.loadFile("break2.mp3");
+  
+  for(int i = 0; i < quantity; i++) {
+    flakeSize[i] = round(random(minFlakeSize, maxFlakeSize));
+    xPosition[i] = random(0, width);
+    yPosition[i] = random(0, height);
+    directionS[i] = round(random(0, 1));
+  }
+  
 }
 
 void draw()
@@ -118,11 +126,12 @@ void draw()
     text("Poeng: " + score, 1420, 80);
     textSize(60);
     text("Liv: " + life, 1420, 130);
-    //pl.drawPlant();
     sco.highScore();
+    if(level == 2 ) {
+       sno.drawSnow();
+    }
     o.drawObject();
-   
-    
+    //pl.drawPlant();
     break;
 
   case 2:                                          // Starter spill med hippibil.
@@ -137,8 +146,8 @@ void draw()
     text("Tid: " + millis()/1000 + " Sekund", 1020, 20);
     textSize(20);
     text("Poeng: " + score, 1020, 60);
-   o.drawObject();
-    
+    o.drawObject();
+    //pl.drawPlant();
     break;
 
 
@@ -185,10 +194,9 @@ void draw()
 }
 
 
-void startSportsBil() {
+void startSportsBil() {                            // Starter spill med sportsbil
  // so.carMusic();
- 
-  state=1;                                         // starter spill mes sportsbil
+  state=1;   
   score = 0;
 }
 
@@ -196,6 +204,7 @@ void startHippieBil()
 {
   state=2;                                         // starter spill med hippiebil
   score=0;
+  //pl.drawPlant();
 }
 
 void endGame()
