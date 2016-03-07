@@ -213,6 +213,7 @@ void reset() {
   h = 0;
   aksC = 15;
   aksO = 15;
+  aksT = 0;
   a1 = 0;
   l = 0;
   startTime = 0;
