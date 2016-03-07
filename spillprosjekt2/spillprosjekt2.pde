@@ -18,7 +18,7 @@ PImage Intro;
 PImage background1;
 PImage background2;
 PImage background3;
-int startTime;
+int startTime = millis();
 
 int rectXS, rectYS;                               // Posisjon til Sportsbil knapp
 int rectSizeS = 90;                               // diameter av Sportsbil knapp
@@ -63,7 +63,6 @@ void setup()
   beer = minim.loadFile("Beer.mp3");
   carmusic = minim.loadFile("seenoevil.mp3");
   breaking = minim.loadFile("break2.mp3");
- 
 }
 
 void draw()
@@ -71,7 +70,8 @@ void draw()
   buttonUpdate(mouseX, mouseY);                          // tracker musen
 
   switch(state) {
-  case 0:    
+  case 0:   
+    
     background(255);
     Intro = loadImage("carintro.png");                 // intro bilde
     image(Intro, -50, 0);
@@ -202,10 +202,22 @@ void endGame()
 {
    minim.stop();
   //so.looserSound();
- 
-  state=3;                                         // avslutter spill og viser poeng
-  
+  state=3;                                         // avslutter spill og viser poeng 
 }
+
+void reset() {
+  life = 3;
+  score = 0;
+  level = 0;
+  myName = " ";
+  h = 0;
+  aksC = 15;
+  aksO = 15;
+  a1 = 0;
+  l = 0;
+  startTime = 0;
+}
+
 
 void buttonUpdate(int x, int y)
 {
@@ -217,7 +229,6 @@ void buttonUpdate(int x, int y)
   }
   else if (overIntro(rectXI, rectYI, rectSizeI, rectSizeI)) //sjekker om mus er over introsideknapp
   { 
-    
     introSide = true;
     hScore = false;
     sportsBil = false;
@@ -253,18 +264,17 @@ void keyPressed()
 void mousePressed() 
 { 
   if (sportsBil)
-  {    
+  {   
     startSportsBil();
   } 
 
   if (introSide)
   { 
-    state = 0;
-    
+    reset();
+    state = 0;    
   }
   if (hScore)
   {   
-    
     state  = 4;
   }
  

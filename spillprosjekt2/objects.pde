@@ -13,7 +13,7 @@ int index = 0;
 
 class object {
   void drawObject() {
-     
+ 
       h = h + aksO;
       if(millis() - aksT >= 20000) {
         aksO = aksO + 20;

@@ -22,7 +22,7 @@ class road {
   rect(797,895 + a1,11,80);
   rect(796,1025 + a1,13,100);
   
-  level = 1;                             // Increases level  by time
+ level = 1;                             // Increases level  by time
   level = level + l;
   a1 = a1 + aksC;                        // Increases accleration by time
   if(millis() - aksT >= 20000) {         
