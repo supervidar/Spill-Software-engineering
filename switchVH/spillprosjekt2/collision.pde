@@ -1,19 +1,28 @@
+int life = 3;
+int coTime;
+int crash = 0;
 
-
-class collision
-{
-  void collectionDetection()
-  {
-    if(h > 1150 || (x1 > 450 && x1 < 600) && h == 1080)
-    {
-      state = 3;      
-    }else if(h > 1150 || (x1 > 300 && x1 < 450) && h == 1080)
-    {
-      state = 3;
-    }
-    else if(h > 1150 || (x1 > 150 && x1 < 300) && h == 1080)
-    {
-      state = 3;
-    }
-  }
+class collision {
+ void collisionDetect() {
+   if( h > 1450 || (x > 0 && x < 550) && direction == 0 && h > 1300) {
+       
+        crash = 1;
+      
+       }
+  
+   if( h > 1450 || (x > 450 && x < 720) && direction == 1 && h > 1300) {
+        
+        crash = 1;
+       
+   }
+   if( h > 1450 || (x > 700 && x < 950) && direction == 2 && h > 1300) {
+       
+        crash = 1;
+      
+   }
+   if( h > 1450 || (x > 850 && x < 1500) && direction == 3  && h > 1300) {
+     
+        crash = 1;
+   }
+ } 
 }
