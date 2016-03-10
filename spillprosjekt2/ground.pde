@@ -4,17 +4,26 @@ float a2;
 class ground {
   void drawGround() {   // lager bakken med elementer
  
-   if(level == 2) {
-      fill(255);
+   if(level > 4) {
+  fill(255);
   rect(0,500,1600,600);  //ground
+  fill(250);
   rect(0,550 + a2,1600,600);  //ground
+  fill(255);
   rect(0,600 + a2,1600,500);  //ground
+  fill(250);
   rect(0,650 + a2,1600,600);  //ground
+  fill(255);
   rect(0,700 + a2,1600,500);  //ground
+  fill(250);
   rect(0,750 + a2,1600,500);  //ground
+  fill(255);
   rect(0,800 + a2,1600,400);  //ground
+  fill(250);
   rect(0,850 +a2 ,1600,400);  //ground
-   rect(0,900 + a2,1600,300);  //ground
+  fill(255);
+  rect(0,900 + a2,1600,300);  //ground
+  fill(250);
   rect(0,950 + a2,1600,500);  //ground 
   }
   else {

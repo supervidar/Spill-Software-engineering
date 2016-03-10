@@ -6,8 +6,8 @@ int direction = 0;
 
 PImage objekt;
 
-String[] draw = {"Ol", "Liv","oil","bCar","politi",
-                 "ku","veteranbil","ku2","yCar"};
+String[] draw = {"OL", "LIV","OIL","BCAR","POCAR",
+                 "KU","OLDCAR","KU2","YCAR"};
 int index = 0;
 
 
@@ -16,7 +16,7 @@ class object {
   
       h = h + aksO;
       if(millis() - aksT >= 20000) {
-        aksO = aksO + 20;
+        aksO = aksO + 20;//20;
         aksT = millis();
        
         }

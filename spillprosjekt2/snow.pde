@@ -1,4 +1,4 @@
-int quantity = 300;
+int quantity = 500;
 float [] xPosition = new float[quantity];
 float [] yPosition = new float[quantity];
 int [] flakeSize = new int[quantity];

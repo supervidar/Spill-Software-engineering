@@ -70,7 +70,8 @@ void setup()
     yPosition[i] = random(0, height);
     directionS[i] = round(random(0, 1));
   }
-  
+   //reset(); 
+   so.introSound();
 }
 
 void draw()
@@ -79,7 +80,6 @@ void draw()
 
   switch(state) {
   case 0:   
-    
     background(255);
     Intro = loadImage("carintro.png");                 // intro bilde
     image(Intro, -50, 0);
@@ -115,7 +115,15 @@ void draw()
     s.drawSky();
     g.drawGround();
     r.drawRoad();
+    if( crashCase == OL) {
+      cs.drawDrunkCar();
+    }
+    else if(crashCase == OIL) {
+      cs.drawSlipperyCar();
+    }
+    else {
     cs.drawSportsCar();
+    }
     startTime = millis();
     coll.collisionDetect();
     cra.crashEffect();
@@ -126,12 +134,16 @@ void draw()
     text("Poeng: " + score, 1420, 80);
     textSize(60);
     text("Liv: " + life, 1420, 130);
+    
     sco.highScore();
-    if(level == 2 ) {
+    if(level > 4 ) {
        sno.drawSnow();
     }
+   
+   // sco.highScore();
+
     o.drawObject();
-    //pl.drawPlant();
+ 
     break;
 
   case 2:                                          // Starter spill med hippibil.
@@ -188,16 +200,17 @@ void draw()
     text("Nytt", 1310, 140);
     text("spill", 1310, 170);
     sco.showScore();
-    
+   
     break;  
   }
 }
 
 
-void startSportsBil() {                            // Starter spill med sportsbil
- // so.carMusic();
-  state=1;   
-  score = 0;
+void startSportsBil() {                 // Starter spill med sportsbil
+    minim.stop();
+    so.carMusic();
+    state=1;   
+    score = 0;
 }
 
 void startHippieBil()
@@ -210,14 +223,19 @@ void startHippieBil()
 void endGame()
 {
    minim.stop();
-  //so.looserSound();
+  so.breakSound();
+  so.crashSound();
   state=3;                                         // avslutter spill og viser poeng 
+}
+void intro () {
+    reset();
+    state = 0;
 }
 
 void reset() {
   life = 3;
   score = 0;
-  level = 0;
+  level = 1;
   myName = " ";
   h = 0;
   aksC = 15;
@@ -280,8 +298,7 @@ void mousePressed()
 
   if (introSide)
   { 
-    reset();
-    state = 0;    
+    intro();    
   }
   if (hScore)
   {   
