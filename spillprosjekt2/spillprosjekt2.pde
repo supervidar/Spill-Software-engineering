@@ -115,15 +115,7 @@ void draw()
     s.drawSky();
     g.drawGround();
     r.drawRoad();
-    if( crashCase == OL) {
-      cs.drawDrunkCar();
-    }
-    else if(crashCase == OIL) {
-      cs.drawSlipperyCar();
-    }
-    else {
     cs.drawSportsCar();
-    }
     startTime = millis();
     coll.collisionDetect();
     cra.crashEffect();

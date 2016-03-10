@@ -1,4 +1,4 @@
- //<>// //<>// //<>//
+ //<>// //<>// //<>// //<>//
 float h;
 float zoom;
 float aksO = 15;
@@ -7,7 +7,7 @@ int direction = 0;
 PImage objekt;
 
 String[] draw = {"OL", "LIV","OIL","BCAR","POCAR",
-                 "KU","OLDCAR","KU2","YCAR"};
+                 "KU","OLDCAR","KU2","YCAR","PAPIR"};
 int index = 0;
 
 
@@ -419,7 +419,7 @@ class object {
 
         if (direction == 0) 
         {
-          objekt = loadImage("cow1.png");
+          objekt = loadImage("kaffi.png");
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
@@ -431,7 +431,7 @@ class object {
           }
         } else if (direction == 1)
         {
-          objekt = loadImage("cow1.png");
+          objekt = loadImage("kaffi.png");
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
@@ -444,7 +444,7 @@ class object {
         }
         else if (direction == 2)
         {
-          objekt = loadImage("cow1.png");
+          objekt = loadImage("kaffi.png");
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
@@ -457,7 +457,7 @@ class object {
         }
         else if (direction == 3)
         {
-          objekt = loadImage("cow1.png");
+          objekt = loadImage("kaffi.png");
           translate(800, 480);
           zoom = map(600, 50 + h, width, 0.1, 0);
           scale(zoom);
@@ -523,7 +523,61 @@ class object {
             h = 0;
           }
         }
-        break;  
+        break;
+        
+        case 9: //papir
+        if (direction == 0) 
+        {
+          objekt = loadImage("papir.png");
+          translate(800, 480);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
+          image(objekt, -800, 300);
+          if (h > 1450) {
+            index = int(random(draw.length));
+            direction = int(random(2));
+            h = 0;
+          }
+        } else if (direction == 1)
+        {
+          objekt = loadImage("papir.png");
+          translate(800, 480);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
+          image(objekt, -450, 300);
+          if (h > 1450) {
+            index = int(random(draw.length));
+            direction = int(random(4));
+            h = 0;
+          }
+        }
+        else if (direction == 2)
+        {
+          objekt = loadImage("papir.png");
+          translate(800, 480);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
+          image(objekt, 0, 300);
+          if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+            index = int(random(draw.length));
+            direction = int(random(4));
+            h = 0;
+          }
+        }
+        else if (direction == 3)
+        {
+          objekt = loadImage("papir.png");
+          translate(800, 480);
+          zoom = map(600, 50 + h, width, 0.1, 0);
+          scale(zoom);
+          image(objekt, 400, 300);
+          if(h > 1450) {             // (h > 1150 || (x1 > 450 && x1 < 600) && h == 900) {
+            index = int(random(draw.length));
+            direction = int(random(4));
+            h = 0;
+          }
+        }
+        break;
       }
     }
   
