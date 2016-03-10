@@ -14,12 +14,14 @@ class crashInObjects {
 
         so.beerSound();
 
-
-        if (carState == 3 ) {
-          carState = 4;
-        } else if (carState == 1)
-        {
-          carState = 2;
+        if (millis() - coTime >1000) {
+          if (carState == 3 ) {
+            carState = 4;
+          } else if (carState == 1)
+          {
+            carState = 2;
+          }
+          coTime = millis();
         }
 
 
@@ -51,22 +53,24 @@ class crashInObjects {
 
       case 2: //OIL
 
+        if (millis() - coTime >1000) {
 
-        if (carState == 2 ) {
-          carState = 4;
-        } else if (carState == 1)
-        {
-          carState = 3;
+
+          if (carState == 2 ) {
+            carState = 4;
+          } else if (carState == 1)
+          {
+            carState = 3;
+          }
+          coTime = millis();
         }
-
-
         crash = 0;
 
 
 
         break;
 
-      case 4: //BCAR
+      case 3: //BCAR
 
         if (millis() - coTime >1000 && life == 3) {
           life = 2;
@@ -87,7 +91,7 @@ class crashInObjects {
 
         break;
 
-      case 5: //POLICECAR
+      case 4: //POLICECAR
 
         if (millis() - coTime >1000 && life == 3) {
           life = 2;
@@ -107,7 +111,7 @@ class crashInObjects {
 
         break;
 
-      case 6: // KU
+      case 5: // KU
 
         if (millis() - coTime >1000 && life == 3) {
           life = 2;
@@ -127,7 +131,7 @@ class crashInObjects {
 
         break;
 
-      case 7: // OLDCAR
+      case 6: // OLDCAR
 
         if (millis() - coTime >1000 && life == 3) {
           life = 2;
@@ -147,22 +151,25 @@ class crashInObjects {
 
         break;
 
-      case 8: // KAFFI  
+      case 7: // KAFFI  
 
-        if (carState == 4)
-        {
-          carState = 3;
-        } else if (carState == 2)
-        {
-          carState = 1;
-        }
+        
 
+          if (carState == 4)
+          {
+            carState = 3;
+          } else if (carState == 2)
+          {
+            carState = 1;
+          }
+         
+        
         crash = 0;
 
 
         break;
 
-      case 9: // YCAR
+      case 8: // YCAR
 
         if (millis() - coTime >1000 && life == 3) {
           life = 2;
@@ -182,15 +189,20 @@ class crashInObjects {
 
         break;
 
-      case 10: // PAPIR
+      case 9: // PAPIR
 
-        if (carState == 4)
-        {
-          carState = 2;
-        } else if (carState == 3)
-        {
-          carState = 1;
-        }
+        
+
+          if (carState == 4)
+          {
+            carState = 2;
+          } else if (carState == 3)
+          {
+            carState = 1;
+          }
+          if (millis() - coTime >1000) {
+          coTime = millis();
+          }
         crash = 0;
 
         break;
