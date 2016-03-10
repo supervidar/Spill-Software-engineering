@@ -1,4 +1,16 @@
-                               
+import ddf.minim.*;
+
+AudioPlayer carmusic;
+AudioPlayer intro;
+
+AudioPlayer papir;
+AudioPlayer beer;
+AudioPlayer carCrash;
+AudioPlayer breaking;
+
+Minim minim;  
+
+int soundTime;                             
 
 crashInObjects cra = new crashInObjects();
 Snow sno = new Snow();
@@ -38,17 +50,17 @@ int state = 0;
 
 void setup()
 {
- 
+
   size(1600, 900);
   minim = new Minim(this);
   background3 = loadImage("fjellfull.jpg");
   background2 = loadImage("fjellhalf.jpg");
   background1 = loadImage("fjelllow.jpg");
   end = loadImage("cGlass.png");
-  
-  font = createFont("game_over.ttf",32);
+
+  font = createFont("game_over.ttf", 32);
   textFont(font);
-  
+
   //rectColorSport = color(132, 0, 250);
   //rectColorHippie = color(250, 130, 0);
   //rectHighlight = color(0, 255, 130);
@@ -60,18 +72,18 @@ void setup()
   rectYI= 100;
   rectXHS = 1300;
   rectYHS= 250;
-  beer = minim.loadFile("Beer.mp3");
-  carmusic = minim.loadFile("seenoevil.mp3");
-  breaking = minim.loadFile("break2.mp3");
-  
-  for(int i = 0; i < quantity; i++) {
+  //beer = minim.loadFile("Beer.mp3");
+  //carmusic = minim.loadFile("seenoevil.mp3");
+  //breaking = minim.loadFile("break2.mp3");
+
+  for (int i = 0; i < quantity; i++) {
     flakeSize[i] = round(random(minFlakeSize, maxFlakeSize));
     xPosition[i] = random(0, width);
     yPosition[i] = random(0, height);
     directionS[i] = round(random(0, 1));
   }
-   //reset(); 
-   so.introSound();
+  //reset(); 
+  so.introSound();
 }
 
 void draw()
@@ -86,12 +98,12 @@ void draw()
     fill(150);      
     strokeWeight(3); 
     fill(128, 128, 128);
-    
-    rect(695,200,200,50);
-   
+
+    rect(695, 200, 200, 50);
+
     textSize(70);
     fill(0);
-    text("Navn:",600,240);
+    text("Navn:", 600, 240);
     text(myName, 700, 240); 
     fill(0);
     textSize(300);
@@ -100,16 +112,16 @@ void draw()
     rect(rectXS, rectYS, rectSizeS, rectSizeS);    //knapp til sportsbil
     textSize(100);
     fill(250);
-    text("Spill",975,230);
-    
+    text("Spill", 975, 230);
+
     break;
 
   case 1:                     // Starter spill med sportsbil.
-    if(life == 3){
+    if (life == 3) {
       background(background3);
-    }else if(life == 2){
+    } else if (life == 2) {
       background(background2);
-    }else if(life == 1){
+    } else if (life == 1) {
       background(background1);
     }
     s.drawSky();
@@ -126,16 +138,16 @@ void draw()
     text("Poeng: " + score, 1420, 80);
     textSize(60);
     text("Liv: " + life, 1420, 130);
-    
+
     sco.highScore();
-    if(level > 4 ) {
-       sno.drawSnow();
+    if (level > 4 ) {
+      sno.drawSnow();
     }
-   
-   // sco.highScore();
+
+    // sco.highScore();
 
     o.drawObject();
- 
+
     break;
 
   case 2:                                          // Starter spill med hippibil.
@@ -158,7 +170,7 @@ void draw()
 
 
   case 3:                                           // spill avsluttet med score og tid.
-    
+
     background(end);
     stroke(0);
     fill(0);
@@ -169,21 +181,21 @@ void draw()
     text("Game Over", 300, 240);
     text("Poeng: "+ score, 300, 340);   
     text("Tid: " + startTime/1000, 300, 440);   
-    text("Navn: "+myName,300,540);
+    text("Navn: "+myName, 300, 540);
     fill(255);
     textSize(80);
     text("Nytt", 1310, 140);
     text("spill", 1310, 170);
     text("High", 1310, 290);
     text("score", 1310, 320);
- 
+
     break;
-    
+
   case 4:                                           // HighScore side.
-    
+
     background(255);
     Intro = loadImage("carintro.png");                 // intro bilde
-    image(Intro,0, 0);
+    image(Intro, 0, 0);
     stroke(0);
     fill(0);
     rect(rectXI, rectYI, rectSizeI, rectSizeI);
@@ -192,17 +204,18 @@ void draw()
     text("Nytt", 1310, 140);
     text("spill", 1310, 170);
     sco.showScore();
-   
-    break;  
+
+    break;
   }
 }
 
 
 void startSportsBil() {                 // Starter spill med sportsbil
-    minim.stop();
-    so.carMusic();
-    state=1;   
-    score = 0;
+  minim.stop();
+  so.carMusic();
+  state=1;   
+  score = 0;
+ 
 }
 
 void startHippieBil()
@@ -214,14 +227,14 @@ void startHippieBil()
 
 void endGame()
 {
-   minim.stop();
+  minim.stop();
   so.breakSound();
   so.crashSound();
-  state=3;                                         // avslutter spill og viser poeng 
+  state=3;                                         // avslutter spill og viser poeng
 }
 void intro () {
-    reset();
-    state = 0;
+  reset();
+  state = 0;
 }
 
 void reset() {
@@ -246,20 +259,17 @@ void buttonUpdate(int x, int y)
     hScore = false;
     sportsBil = true; 
     introSide = false;
-  }
-  else if (overIntro(rectXI, rectYI, rectSizeI, rectSizeI)) //sjekker om mus er over introsideknapp
+  } else if (overIntro(rectXI, rectYI, rectSizeI, rectSizeI)) //sjekker om mus er over introsideknapp
   { 
     introSide = true;
     hScore = false;
     sportsBil = false;
-  }
-  else if (overHscore(rectXHS, rectYHS, rectSizeHS, rectSizeHS)) //sjekker om mus er over highscoreknapp
+  } else if (overHscore(rectXHS, rectYHS, rectSizeHS, rectSizeHS)) //sjekker om mus er over highscoreknapp
   { 
     hScore = true;
     introSide = false;
     sportsBil = false;
   }
-  
 }
 
 void keyPressed()
@@ -290,13 +300,12 @@ void mousePressed()
 
   if (introSide)
   { 
-    intro();    
+    intro();
   }
   if (hScore)
   {   
     state  = 4;
   }
- 
 } 
 
 boolean overSport(int x, int y, int width, int height)                         //kordinater til sportsbil

@@ -1,13 +1,4 @@
-import ddf.minim.*;
 
-AudioPlayer carmusic;
-AudioPlayer beer;
-AudioPlayer carCrash;
-AudioPlayer breaking;
-AudioPlayer intro;
-
-Minim minim;  
-int soundTime;
 
 class sound {
   void carMusic() { 
@@ -17,9 +8,14 @@ class sound {
     
     }
   void beerSound() {
-    // beer = minim.loadFile("Beer.mp3");
+     beer = minim.loadFile("Beer.mp3");
      beer.play();
      
+  }
+  void papirSound()
+  {
+        papir = minim.loadFile("papir.mp3");
+        papir.play();
   }
   void crashSound() {
       carCrash = minim.loadFile("Carcrash.mp3");

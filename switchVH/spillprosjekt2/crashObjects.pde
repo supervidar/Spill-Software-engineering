@@ -12,15 +12,17 @@ class crashInObjects {
 
       case 0: //ØL
 
-        so.beerSound();
+
 
         if (millis() - coTime >1000) {
+          so.beerSound();
           if (carState == 3 ) {
             carState = 4;
           } else if (carState == 1)
           {
             carState = 2;
           }
+
           coTime = millis();
         }
 
@@ -153,17 +155,17 @@ class crashInObjects {
 
       case 7: // KAFFI  
 
-        
 
-          if (carState == 4)
-          {
-            carState = 3;
-          } else if (carState == 2)
-          {
-            carState = 1;
-          }
-         
-        
+
+        if (carState == 4)
+        {
+          carState = 3;
+        } else if (carState == 2)
+        {
+          carState = 1;
+        }
+
+
         crash = 0;
 
 
@@ -191,8 +193,9 @@ class crashInObjects {
 
       case 9: // PAPIR
 
-        
-
+        if (millis() - coTime >1000) {
+          so.papirSound();                   
+          coTime = millis();      
           if (carState == 4)
           {
             carState = 2;
@@ -200,9 +203,8 @@ class crashInObjects {
           {
             carState = 1;
           }
-          if (millis() - coTime >1000) {
-          coTime = millis();
-          }
+        }
+
         crash = 0;
 
         break;
