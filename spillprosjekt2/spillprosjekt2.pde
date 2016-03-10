@@ -1,4 +1,4 @@
-                                
+                               
 
 crashInObjects cra = new crashInObjects();
 Snow sno = new Snow();
@@ -118,7 +118,7 @@ void draw()
     cs.drawSportsCar();
     startTime = millis();
     coll.collisionDetect();
-    cra.crashEffect();
+    cra.crashEffect(o.getIndex());
     fill(255);
     textSize(60);
     text("Level: " + level, 1420, 30);
