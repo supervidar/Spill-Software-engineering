@@ -9,6 +9,7 @@ AudioPlayer carCrash;
 AudioPlayer breaking;
 AudioPlayer sVoice;
 AudioPlayer slurp;
+AudioPlayer eTune;
 
 Minim minim;  
 
@@ -16,6 +17,7 @@ Minim minim;
 class sound {
   void carMusic() { 
       carmusic = minim.loadFile("seenoevil.mp3");
+      carmusic.setGain(-20.5);
       carmusic.play();
       carmusic.loop();
     
@@ -47,11 +49,17 @@ class sound {
   }
   void introSound() {
       intro = minim.loadFile("intro.mp3");
+      intro.setGain(-15.5);
       intro.play();
+      intro.loop();
       
   }
   void startVoice() {
     sVoice = minim.loadFile("Hang On To Your Seats 2.mp3");
     sVoice.play();
+  }
+   void endTune() {
+    eTune = minim.loadFile("Coming Soon.mp3");
+    eTune.play();
   }
 }

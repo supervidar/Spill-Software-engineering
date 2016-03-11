@@ -8,7 +8,7 @@ carSport cs = new carSport();
 sky s = new sky();
 object o = new object();
 collision coll = new collision();
-//score sco = new score();
+score sco = new score();
 sound so = new sound();
 PFont font;
 PImage end;
@@ -54,10 +54,10 @@ void setup()
   rectXHS = 1300;
   rectYHS= 250;
  
-  for (int i = 0; i < quantity; i++) {
-    flakeSize[i] = round(random(minFlakeSize, maxFlakeSize));
-    xPosition[i] = random(0, width);
-    yPosition[i] = random(0, height);
+  for (int i = 0; i < count; i++) {
+    snowSize[i] = round(random(minSnowSize, maxSnowSize));
+    xP[i] = random(0, width);
+    yP[i] = random(0, height);
     directionS[i] = round(random(0, 1));
   }
   //reset(); 
@@ -123,7 +123,7 @@ void draw()
       sno.drawSnow();
     }
 
-    // sco.highScore();
+     sco.highScore();
 
     o.drawObject();
 
@@ -184,11 +184,14 @@ void endGame()
   minim.stop();
   so.breakSound();
   so.crashSound();
+  so.endTune();
   state=2;                                         // avslutter spill og viser poeng
 }
 void intro () {
-  reset();
-  state = 0;
+   minim.stop();
+   so.introSound();
+   reset();
+   state = 0;
 }
 
 void reset() {
