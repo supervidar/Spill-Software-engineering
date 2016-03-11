@@ -1,6 +1,6 @@
 
 int x;
-int x1 = 200;
+int x1 = 300;
 int y1 = 650;
 PImage carS;
 int carState = 1;
@@ -26,7 +26,7 @@ class carSport {
      
       if (keyPressed && (key == CODED)) 
       {
-        x1 = constrain(x, 250, 1000);
+        x1 = constrain(x, 300, 1000);
 
         if (keyCode == LEFT) {
           //so.breakSound();

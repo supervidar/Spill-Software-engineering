@@ -1,4 +1,5 @@
-                            
+
+Night ni = new Night();
 GroundObject GrO = new GroundObject();
 crashInObjects cra = new crashInObjects();
 Snow sno = new Snow();
@@ -106,6 +107,9 @@ void draw()
     g.drawGround();
     r.drawRoad();
     GrO.drawGObject();
+    if( level > 9) {
+    ni.drawNight();
+    }
     cs.drawSportsCar();
     startTime = millis();
     coll.collisionDetect();
