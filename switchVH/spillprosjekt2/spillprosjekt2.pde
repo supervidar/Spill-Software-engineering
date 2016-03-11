@@ -8,7 +8,7 @@ carSport cs = new carSport();
 sky s = new sky();
 object o = new object();
 collision coll = new collision();
-score sco = new score();
+//score sco = new score();
 sound so = new sound();
 PFont font;
 PImage end;
@@ -118,7 +118,7 @@ void draw()
     textSize(60);
     text("Liv: " + life, 1420, 130);
 
-    sco.highScore();
+    //sco.highScore();
     if (level > 4 ) {
       sno.drawSnow();
     }

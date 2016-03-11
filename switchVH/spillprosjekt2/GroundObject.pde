@@ -6,8 +6,7 @@ float py1;
 class GroundObject {
  void drawGObject() { 
    
-  
-    if (millis() - aksT >= 20000) {
+   if (millis() - aksT >= 20000) {
       aksO = aksO + 20;//20;
       aksT = millis();
     }
@@ -17,6 +16,7 @@ class GroundObject {
       px = 0;
       py = 0;
     }
+    
    if( level < 5) {
   GO = loadImage("cactus.png");
   image(GO,500 - px,450 + py);
@@ -28,6 +28,7 @@ class GroundObject {
   GO = loadImage("cactus.png");
   image(GO,1550 + px,675 + py);
    }
+  
    if(level >= 5) {
   GO = loadImage("Snowman.png");
   image(GO,500 - px,450 + py);
