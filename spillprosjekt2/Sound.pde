@@ -17,9 +17,10 @@ class sound {
     
     }
   void beerSound() {
-    // beer = minim.loadFile("Beer.mp3");
-     beer.play();
-     
+    beer = minim.loadFile("Beer.mp3");
+    beer.play();
+   
+    
   }
   void crashSound() {
       carCrash = minim.loadFile("Carcrash.mp3");
@@ -31,7 +32,7 @@ class sound {
       
   }
   void introSound() {
-      intro = minim.loadFile("Coming Soon.mp3");
+      intro = minim.loadFile("intro.mp3");
       intro.play();
       
   }

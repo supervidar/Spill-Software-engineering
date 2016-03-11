@@ -1,31 +1,31 @@
-int quantity = 500;
-float [] xPosition = new float[quantity];
-float [] yPosition = new float[quantity];
-int [] flakeSize = new int[quantity];
-int [] directionS = new int[quantity];
-int minFlakeSize = 1;
-int maxFlakeSize = 5;
+int antall = 1000;
+float [] xP = new float[antall];
+float [] yP = new float[antall];
+int [] snowSize = new int[antall];
+int [] directionS = new int[antall];
+int minSnowSize = 1;
+int maxSnowSize = 5;
 
 
 class Snow {
  void drawSnow() { 
         //background(0);
   
-  for(int i = 0; i < xPosition.length; i++) {
+  for(int i = 0; i < xP.length; i++) {
     
-    ellipse(xPosition[i], yPosition[i], flakeSize[i], flakeSize[i]);
+    ellipse(xP[i], yP[i], snowSize[i], snowSize[i]);
     
     if(directionS[i] == 0) {
-      xPosition[i] += map(flakeSize[i], minFlakeSize, maxFlakeSize, .1, .5);
+      xP[i] += map(snowSize[i], minSnowSize, maxSnowSize, .1, .5);
     } else {
-      xPosition[i] -= map(flakeSize[i], minFlakeSize, maxFlakeSize, .1, .5);
+      xP[i] -= map(snowSize[i], minSnowSize, maxSnowSize, .1, .5);
     }
     
-    yPosition[i] += flakeSize[i] + directionS[i]; 
+    yP[i] += snowSize[i] + directionS[i]; 
     
-    if(xPosition[i] > width + flakeSize[i] || xPosition[i] < -flakeSize[i] || yPosition[i] > height + flakeSize[i]) {
-      xPosition[i] = random(0, width);
-      yPosition[i] = -flakeSize[i];
+    if(xP[i] > width + snowSize[i] || xP[i] < -snowSize[i] || yP[i] > height + snowSize[i]) {
+      xP[i] = random(0, width);
+      yP[i] = -snowSize[i];
     }
   
   } 

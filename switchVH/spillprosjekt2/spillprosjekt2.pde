@@ -1,26 +1,12 @@
-import ddf.minim.*;
-
-AudioPlayer carmusic;
-AudioPlayer intro;
-
-AudioPlayer papir;
-AudioPlayer beer;
-AudioPlayer carCrash;
-AudioPlayer breaking;
-
-Minim minim;  
-
-int soundTime;                             
-
+                            
+GroundObject GrO = new GroundObject();
 crashInObjects cra = new crashInObjects();
 Snow sno = new Snow();
 ground g = new ground();
 road r = new road();
 carSport cs = new carSport();
-//carHippie ch = new carHippie();
 sky s = new sky();
 object o = new object();
-plant pl = new plant();
 collision coll = new collision();
 score sco = new score();
 sound so = new sound();
@@ -36,11 +22,9 @@ int rectXS, rectYS;                               // Posisjon til Sportsbil knap
 int rectSizeS = 90;                               // diameter av Sportsbil knapp
 int rectXI, rectYI;                               // posisjon til  Hippiebil knapp
 int rectSizeI = 100;                              // diameter av Hippiebil knapp
-int rectXHS, rectYHS;                               // posisjon til  Hippiebil knapp
+int rectXHS, rectYHS;                             // posisjon til  Hippiebil knapp
 int rectSizeHS = 100;
 
-//color rectColorSport, rectColorHippie;            //farge til knappene
-//color rectHighlight;                              // highlight farge til knapp               
 
 boolean sportsBil = false;
 boolean introSide = false;
@@ -61,9 +45,6 @@ void setup()
   font = createFont("game_over.ttf", 32);
   textFont(font);
 
-  //rectColorSport = color(132, 0, 250);
-  //rectColorHippie = color(250, 130, 0);
-  //rectHighlight = color(0, 255, 130);
 
   rectXS = width/2-rectSizeS+260;
   rectYS= height/2-270;
@@ -72,10 +53,7 @@ void setup()
   rectYI= 100;
   rectXHS = 1300;
   rectYHS= 250;
-  //beer = minim.loadFile("Beer.mp3");
-  //carmusic = minim.loadFile("seenoevil.mp3");
-  //breaking = minim.loadFile("break2.mp3");
-
+ 
   for (int i = 0; i < quantity; i++) {
     flakeSize[i] = round(random(minFlakeSize, maxFlakeSize));
     xPosition[i] = random(0, width);
@@ -127,6 +105,7 @@ void draw()
     s.drawSky();
     g.drawGround();
     r.drawRoad();
+    GrO.drawGObject();
     cs.drawSportsCar();
     startTime = millis();
     coll.collisionDetect();
@@ -150,26 +129,7 @@ void draw()
 
     break;
 
-  case 2:                                          // Starter spill med hippibil.
-    s.drawSky();
-    g.drawGround();
-    r.drawRoad();
-    //ch.drawHippieCar();
-    coll.collisionDetect();
-    startTime = millis();
-    fill(0);
-    textSize(100);
-    text("Tid: " + millis()/1000 + " Sekund", 1020, 20);
-    textSize(20);
-    text("Poeng: " + score, 1020, 60);
-    o.drawObject();
-    //pl.drawPlant();
-    break;
-
-
-
-
-  case 3:                                           // spill avsluttet med score og tid.
+  case 2:                                           // spill avsluttet med score og tid.
 
     background(end);
     stroke(0);
@@ -180,7 +140,7 @@ void draw()
     fill(0);   
     text("Game Over", 300, 240);
     text("Poeng: "+ score, 300, 340);   
-    text("Tid: " + startTime/1000, 300, 440);   
+    text("Level: " + level, 300, 440);   
     text("Navn: "+myName, 300, 540);
     fill(255);
     textSize(80);
@@ -191,7 +151,7 @@ void draw()
 
     break;
 
-  case 4:                                           // HighScore side.
+  case 3:                                           // HighScore side.
 
     background(255);
     Intro = loadImage("carintro.png");                 // intro bilde
@@ -212,17 +172,11 @@ void draw()
 
 void startSportsBil() {                 // Starter spill med sportsbil
   minim.stop();
+  so.startVoice();
   so.carMusic();
   state=1;   
   score = 0;
  
-}
-
-void startHippieBil()
-{
-  state=2;                                         // starter spill med hippiebil
-  score=0;
-  //pl.drawPlant();
 }
 
 void endGame()
@@ -230,7 +184,7 @@ void endGame()
   minim.stop();
   so.breakSound();
   so.crashSound();
-  state=3;                                         // avslutter spill og viser poeng
+  state=2;                                         // avslutter spill og viser poeng
 }
 void intro () {
   reset();
@@ -304,7 +258,7 @@ void mousePressed()
   }
   if (hScore)
   {   
-    state  = 4;
+    state  = 3;
   }
 } 
 

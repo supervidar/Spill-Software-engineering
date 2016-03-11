@@ -553,6 +553,7 @@ class object {
           h = 0;
         }
       }
+<<<<<<< Updated upstream
       break;
     }
   }
@@ -560,4 +561,14 @@ class object {
   {
     return index;
   }
+=======
+      
+        }
+      int getIndexDraw() {
+        return index;
+      }
+      
+    
+  
+>>>>>>> Stashed changes
 }

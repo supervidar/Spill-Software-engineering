@@ -12,8 +12,6 @@ class crashInObjects {
 
       case 0: //ØL
 
-
-
         if (millis() - coTime >1000) {
           so.beerSound();
           if (carState == 3 ) {
@@ -45,7 +43,7 @@ class crashInObjects {
           h = h +200;
           coTime = millis();
         }
-        if (millis() - coTime >1000 && life == 3) {
+        if (millis() - coTime > 1000 && life == 3) {
           life = 3;
         } 
         crash = 0;
@@ -56,19 +54,17 @@ class crashInObjects {
       case 2: //OIL
 
         if (millis() - coTime >1000) {
-
-
+          
           if (carState == 2 ) {
             carState = 4;
-          } else if (carState == 1)
+          }
+          else if (carState == 1)
           {
             carState = 3;
           }
           coTime = millis();
-        }
-        crash = 0;
-
-
+          }
+          crash = 0;
 
         break;
 
@@ -156,7 +152,8 @@ class crashInObjects {
       case 7: // KAFFI  
 
 
-
+       if (millis() - coTime >1000) {
+         so.Cslurp();
         if (carState == 4)
         {
           carState = 3;
@@ -164,7 +161,8 @@ class crashInObjects {
         {
           carState = 1;
         }
-
+        coTime = millis();
+       }
 
         crash = 0;
 

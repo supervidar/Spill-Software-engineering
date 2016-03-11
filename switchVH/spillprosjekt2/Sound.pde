@@ -1,3 +1,16 @@
+import ddf.minim.*;
+
+AudioPlayer carmusic;
+AudioPlayer intro;
+
+AudioPlayer papir;
+AudioPlayer beer;
+AudioPlayer carCrash;
+AudioPlayer breaking;
+AudioPlayer sVoice;
+AudioPlayer slurp;
+
+Minim minim;  
 
 
 class sound {
@@ -10,6 +23,12 @@ class sound {
   void beerSound() {
      beer = minim.loadFile("Beer.mp3");
      beer.play();
+     
+  }
+  
+   void Cslurp() {
+     slurp = minim.loadFile("coffeSlurp.mp3");
+     slurp.play();
      
   }
   void papirSound()
@@ -27,8 +46,12 @@ class sound {
       
   }
   void introSound() {
-      intro = minim.loadFile("Coming Soon.mp3");
+      intro = minim.loadFile("intro.mp3");
       intro.play();
       
+  }
+  void startVoice() {
+    sVoice = minim.loadFile("Hang On To Your Seats 2.mp3");
+    sVoice.play();
   }
 }

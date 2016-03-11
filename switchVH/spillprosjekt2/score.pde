@@ -7,7 +7,7 @@ int hs;
 
 class score {
  void highScore() {                                                 // Looks if there are a table file 
- if(state == 3){                                                   // and creates if not.
+ if(state == 2){                                                   // and creates if not.
  File f = new File ("HighScore.csv");
  if(!f.exists()) {
  table = new Table();

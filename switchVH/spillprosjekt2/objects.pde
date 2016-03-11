@@ -1,7 +1,7 @@
 //<>// //<>// //<>// //<>//
 float h;
 float zoom;
-float aksO = 15;
+float aksO = 20;
 int direction = 0;
 
 PImage objekt;
@@ -16,7 +16,7 @@ class object {
 
     h = h + aksO;
     if (millis() - aksT >= 20000) {
-      aksO = aksO + 20;//20;
+      aksO = aksO + 30;//20;
       aksT = millis();
     }
 
@@ -30,7 +30,7 @@ class object {
 
         objekt = loadImage("øl.png");
         translate(800, 480);
-        zoom = map(600, 50 + h, width, 0.1, 0);
+       zoom = map(600, 50 + h, width, 0.1, 0);
         scale(zoom);
         image(objekt, -800, 300);
         if (h > 1450) {
