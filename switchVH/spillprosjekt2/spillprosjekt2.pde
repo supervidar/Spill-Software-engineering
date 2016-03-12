@@ -111,7 +111,7 @@ void draw()
     startTime = millis();
     coll.collisionDetect();
     cra.crashEffect(o.getIndex());
-    if (level > 4 ) {
+    if (level > 9 ) {
       sno.drawSnow();
     }
     if( level > 14) {

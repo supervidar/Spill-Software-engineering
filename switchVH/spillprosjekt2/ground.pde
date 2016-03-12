@@ -4,7 +4,7 @@ float a2;
 class ground {
   void drawGround() {   // lager bakken med elementer
  
- if(level > 0)                              // desert ground
+ if(level < 5)                              // desert ground
   {
   fill(179,107,0);
   rect(0,500,1600,600);  //ground
