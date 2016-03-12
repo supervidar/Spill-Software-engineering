@@ -58,4 +58,20 @@ class score {
  //noLoop();
  }
  }
-}
+ void scoreLevelUpdate() {
+   noStroke();
+     photoSky = loadImage("tavle.png");    
+      image(photoSky, 1350, 2); 
+      photoSky = loadImage("tavle.png");    
+      image(photoSky, 1350, 50);
+      photoSky = loadImage("tavle.png");    
+      image(photoSky, 1350, 98); 
+      fill(255);
+     textSize(60);
+     text("Level: " + level, 1420, 30);
+     textSize(60);
+     text("Poeng: " + score, 1420, 80);
+     textSize(60);
+     text("Liv: " + life, 1420, 130);
+ }
+ }

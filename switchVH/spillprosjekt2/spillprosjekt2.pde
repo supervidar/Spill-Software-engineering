@@ -107,28 +107,18 @@ void draw()
     g.drawGround();
     r.drawRoad();
     GrO.drawGObject();
-    if( level > 9) {
-    ni.drawNight();
-    }
     cs.drawSportsCar();
     startTime = millis();
     coll.collisionDetect();
     cra.crashEffect(o.getIndex());
-    fill(255);
-    textSize(60);
-    text("Level: " + level, 1420, 30);
-    textSize(60);
-    text("Poeng: " + score, 1420, 80);
-    textSize(60);
-    text("Liv: " + life, 1420, 130);
-
-    //sco.highScore();
     if (level > 4 ) {
       sno.drawSnow();
     }
-
-     sco.highScore();
-
+    if( level > 14) {
+    ni.drawNight();
+    }
+    sco.scoreLevelUpdate();
+    sco.highScore();
     o.drawObject();
 
     break;

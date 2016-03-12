@@ -11,12 +11,7 @@ class sky {
         a = -700;
       }
       noStroke();
-      photoSky = loadImage("tavle.png");    
-      image(photoSky, 1350, 2); 
-      photoSky = loadImage("tavle.png");    
-      image(photoSky, 1350, 50);
-      photoSky = loadImage("tavle.png");    
-      image(photoSky, 1350, 100); 
+     
     
     if (life == 3) {
       photoSky = loadImage("sunFull.png");    
@@ -42,5 +37,12 @@ class sky {
       photoSky = loadImage("skyBLow.png");
       image(photoSky, 0 + a, 30);
     }
+    noStroke();
+     photoSky = loadImage("tavle.png");    
+      image(photoSky, 1350, 2); 
+      photoSky = loadImage("tavle.png");    
+      image(photoSky, 1350, 50);
+      photoSky = loadImage("tavle.png");    
+      image(photoSky, 1350, 100); 
   }
 }

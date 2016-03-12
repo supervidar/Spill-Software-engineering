@@ -9,7 +9,7 @@ class road {
   rect(770,500,60,600);                          // road
   triangle(100,900,770,500,800,900);             //road
   triangle(830,900,830,500,1500,900);             //road
-  if(level > 4)
+  if(level > 9)
   {
     fill(255, 235, 204);
     triangle(-30,900,770,500,100,900);             //sidelines

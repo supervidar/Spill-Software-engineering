@@ -10,7 +10,7 @@ int maxSnowSize = 5;
 class Snow {
  void drawSnow() { 
         //background(0);
-  
+  fill(255);
   for(int i = 0; i < xP.length; i++) {
     
     ellipse(xP[i], yP[i], snowSize[i], snowSize[i]);
@@ -28,7 +28,7 @@ class Snow {
       yP[i] = -snowSize[i];
     }
   
-  } 
-  
+  }
+
 }
 }
