@@ -3,12 +3,20 @@ int l;
 float a1;
 int aksT;
 float aksC = 10;
+int scoreBonus;
+int levelBonus;
 class road {
   void drawRoad() {
   fill(102, 102, 102);
   rect(770,500,60,600);                          // road
   triangle(100,900,770,500,800,900);             //road
-  triangle(830,900,830,500,1500,900);             //road
+  triangle(830,900,830,500,1500,900);           //road
+  if(level > 9) {
+    fill(255,100);
+    rect(770,500,60,600);                          // road
+    triangle(100,900,770,500,770,900);             //road
+    triangle(830,900,830,500,1500,900);  
+  } 
   if(level > 9)
   {
     fill(255, 235, 204);
@@ -30,6 +38,7 @@ class road {
   rect(797,785 + a1,9,60);
   rect(797,895 + a1,11,80);
   rect(796,1025 + a1,13,100);
+  
   level = 1;                             // Increases level  by time
   level = level + l;
   a1 = a1 + aksC;                        // Increases accleration by time
@@ -40,11 +49,15 @@ class road {
   }
  
   if ( a1 > 50) {                         // counts score by distance driving
-       score = score + 50;
+       score = score + 25;
        a1 = 0;
      }
-  
-  
+     levelBonus = level;
+  if (levelBonus - scoreBonus >= 2) {
+    score = score + 3000;
+    scoreBonus = levelBonus;
+    
+  }
  fill(255,0,0);
  rect(300,700,100,2);
    fill(0,255,0);

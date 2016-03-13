@@ -1,7 +1,7 @@
 //<>// //<>// //<>// //<>//
 float h;
 float zoom;
-float aksO = 20;
+float aksO = 30;
 int direction = 0;
 
 PImage objekt;
@@ -16,7 +16,7 @@ class object {
 
     h = h + aksO;
     if (millis() - aksT >= 20000) {
-      aksO = aksO + 30;//20;
+      aksO = aksO + 20;//20;
       aksT = millis();
     }
 

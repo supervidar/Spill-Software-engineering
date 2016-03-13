@@ -14,7 +14,8 @@ class GroundObject {
      px1 = px1 + 15;
      py = py + 7.5;
      py1 = py1 + 7.5;
-   if(px > 200) {
+     
+   if(py > 220) {
      px = 0;
      py = 0;
    }
@@ -24,14 +25,14 @@ class GroundObject {
 }   
    if( level < 5) {
   GO = loadImage("cactus.png");
-  image(GO,500 - px1,450 + py1);
+  image(GO,500 - px,450 + py);
   GO = loadImage("cactus.png");
-  image(GO,50 - px1,675 + py1);
+  image(GO,50 - px,675 + py);
   
   GO = loadImage("cactus.png");
-  image(GO,1100 + px1,450 + py1);
+  image(GO,1100 + px,450 + py);
   GO = loadImage("cactus.png");
-  image(GO,1550 + px1,675 + py1);
+  image(GO,1550 + px,675 + py);
    }
   
    if(level > 4) {
@@ -65,14 +66,14 @@ class GroundObject {
    }
     if(level >= 10) {
   GO = loadImage("Snowman.png");
-  image(GO,500 - px1,450 + py1);
+  image(GO,500 - px,450 + py);
   GO = loadImage("Snowman.png");
-  image(GO,50 - px1,675 + py1);
+  image(GO,50 - px,675 + py);
   
   GO = loadImage("Snowman.png");
-  image(GO,1100 + px1,450 + py1);
+  image(GO,1100 + px,450 + py);
   GO = loadImage("Snowman.png");
-  image(GO,1550 + px1,675 + py1);
+  image(GO,1550 + px,675 + py);
      
    }
   
