@@ -46,6 +46,7 @@ void setup()
   font = createFont("game_over.ttf", 32);
   textFont(font);
 
+  frameRate(30);
 
   rectXS = width/2-rectSizeS+260;
   rectYS= height/2-270;
