@@ -44,7 +44,7 @@ class score {
    hs = 40;
    
  }
- fill(0);
+ fill(0);                                                    // prints  the sore when game finished.
  textSize(150);
  text("Highscores",100,50);
  textSize(100);
@@ -58,7 +58,7 @@ class score {
  //noLoop();
  }
  }
- void scoreLevelUpdate() {
+ void scoreLevelUpdate() {                                   // Table shows current life, level and score
    noStroke();
      photoSky = loadImage("tavle.png");    
       image(photoSky, 1350, 2); 

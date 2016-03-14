@@ -23,7 +23,7 @@ class GroundObject {
      px1 = 0;
      py1 = 0;
 }   
-   if( level < 5) {
+   if( level < 4 ) {                           // Draws desert with desert groundobjects.
   GO = loadImage("cactus.png");
   image(GO,500 - px,450 + py);
   GO = loadImage("cactus.png");
@@ -35,8 +35,7 @@ class GroundObject {
   image(GO,1550 + px,675 + py);
    }
   
-   if(level > 4) {
-  
+   if(level > 3 && level < 8) {                          // Draws forrest withe tree objects
   GO = loadImage("tre.png");
   image(GO,150 - px1,400 + py1);
   GO = loadImage("tre.png");
@@ -64,7 +63,7 @@ class GroundObject {
   
      
    }
-    if(level >= 10) {
+   if(level > 7) {                          // Draws snow landscapes ground objects.
   GO = loadImage("Snowman.png");
   image(GO,500 - px,450 + py);
   GO = loadImage("Snowman.png");

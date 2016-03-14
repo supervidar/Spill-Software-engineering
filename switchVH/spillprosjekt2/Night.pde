@@ -1,10 +1,18 @@
 int lys;
 int lys1;
+int m;
+int m1;
 class Night {
  void drawNight() { 
-  fill(0,220);
+   if(m < 220) {
+     m = m + 2;
+   }
+   if( m1 < 50) {
+     m1 = m1 + 2;
+   }
+  fill(0,0 + m);                                                                // filter for mørjelegging til natt
   rect(0,0,1600,900);
-  fill(255,255,0,50);
+  fill(255,255,0,0 + m1);
  // triangle(500,500,x1 + 150,800, 1000 ,500);
   if (carState == 1) {                                                        // funksjon av frontlys ved carstate 1
   if (keyPressed && (key == CODED)) 
@@ -36,7 +44,7 @@ class Night {
        else
       {
         triangle(600 + lys,500,x1 + 110,685,830 + lys,500);
-        triangle(770 + lys,500,x1 + 140,685, 1000 + lys ,500);
+        triangle(770 + lys,500,x1 + 150,685, 1000 + lys ,500);
         lys = 0;
       }
   }
@@ -146,10 +154,31 @@ class Night {
           rect(x1 + 218,750,4,28);
         }  
         if (x > 800) {
-          rect(x1 + 73,742,4,28);
-          rect(x1 + 240,738,4,28);
+          rect(x1 + 73,755,4,28);
+          rect(x1 + 240,750,4,28);
         }
       }
-   
+    fill(255);                                  // Fill sky with stars
+    rect(330,70,2,2);
+    rect(370,30,2,2);
+    rect(400,100,2,2);
+    rect(530,40,2,2);
+    rect(730,170,2,2);
+    rect(670,90,2,2);
+    rect(700,100,2,2);
+    rect(1230,240,2,2);
+    rect(1330,70,2,2);
+    rect(950,30,2,2);
+    rect(1110,100,2,2);
+    rect(1020,40,2,2);
+    rect(990,170,2,2);
+    rect(1202,90,2,2);
+    rect(830,100,2,2);
+    rect(790,240,2,2);
+    rect(150,250,2,2);
+    rect(1500,230,2,2);
+    rect(212,210,2,2);
+    rect(370,205,2,2);
+    rect(500,240,2,2);
    }
   }

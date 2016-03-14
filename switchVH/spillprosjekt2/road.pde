@@ -11,25 +11,25 @@ class road {
   rect(770,500,60,600);                          // road
   triangle(100,900,770,500,800,900);             //road
   triangle(830,900,830,500,1500,900);           //road
-  if(level > 9) {
+  if(level > 7) {                                       
     fill(255,100);
     rect(770,500,60,600);                          // road
     triangle(100,900,770,500,770,900);             //road
     triangle(830,900,830,500,1500,900);  
   } 
   
-   if(level < 5) {
+   if(level < 4) {                                 // Filters the the road to desert.
     fill(255,204,128);
     triangle(-30,900,770,500,100,900);             //sidelines
     triangle(1500,900,830,500,1630,900);            //sidelines
   }
-   if(level > 4)
+    if(level > 3 && level < 8)                                    // Filters the road to forrest.
   {
     fill(50);
     triangle(-30,900,770,500,100,900);             //sidelines
     triangle(1500,900,830,500,1630,900); 
   }
-  if(level > 9)
+    if(level > 7)                                        // Filters the road to snowy
   {
     fill(255, 235, 204);
     triangle(-30,900,770,500,100,900);             //sidelines
@@ -62,11 +62,12 @@ class road {
      }
      levelBonus = level;
   if (levelBonus - scoreBonus > 4) {
+    so.levelVo();
     score = score + 5000;
     scoreBonus = levelBonus;
     
   }
- fill(255,0,0);
+ fill(255,0,0);                     // test markers for collision
  rect(300,700,100,2);
    fill(0,255,0);
   rect(400,700,100,2);

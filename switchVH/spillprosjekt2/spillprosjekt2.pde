@@ -61,7 +61,7 @@ void setup()
     yP[i] = random(0, height);
     directionS[i] = round(random(0, 1));
   }
-  //reset(); 
+  reset(); 
   so.introSound();
 }
 
@@ -111,10 +111,10 @@ void draw()
     startTime = millis();
     coll.collisionDetect();
     cra.crashEffect(o.getIndex());
-    if (level > 9 ) {
+    if (level > 6) {
       sno.drawSnow();
     }
-    if( level > 0) {
+    if( level > 11) {
     ni.drawNight();
     }
     sco.scoreLevelUpdate();
@@ -170,6 +170,7 @@ void startSportsBil() {                 // Starter spill med sportsbil
   so.carMusic();
   state=1;   
   score = 0;
+  
  
 }
 
@@ -191,7 +192,7 @@ void intro () {
 void reset() {
   life = 3;
   score = 0;
-  level = 1;
+  level = 0;
   myName = " ";
   h = 0;
   aksC = 15;
@@ -201,6 +202,7 @@ void reset() {
   l = 0;
   startTime = 0;
 }
+
 
 
 void buttonUpdate(int x, int y)

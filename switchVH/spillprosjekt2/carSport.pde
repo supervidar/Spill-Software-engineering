@@ -61,7 +61,7 @@ class carSport {
         }  
         if (x > 800) {
           carS = loadImage("carR.png");
-          image(carS, x1, y1);
+          image(carS, x1, y1 + 15);
         }
       }
       
@@ -106,7 +106,7 @@ class carSport {
         }  
         if (x > 800) {
           carS = loadImage("carR.png");
-          image(carS, x1, y1);
+          image(carS, x1, y1 + 15);
         }
       }
     }
@@ -149,7 +149,7 @@ class carSport {
         }  
         if (x > 800) {
           carS = loadImage("carR.png");
-          image(carS, x1, y1);
+          image(carS, x1, y1 +15);
         }
       }
     }
@@ -190,7 +190,7 @@ class carSport {
         }  
         if (x > 800) {
           carS = loadImage("carR.png");
-          image(carS, x1, y1);
+          image(carS, x1, y1 + 15);
         }
       }
       

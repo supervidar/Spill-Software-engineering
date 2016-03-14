@@ -10,6 +10,7 @@ AudioPlayer breaking;
 AudioPlayer sVoice;
 AudioPlayer slurp;
 AudioPlayer eTune;
+AudioPlayer levelVoice;
 
 Minim minim;  
 
@@ -61,5 +62,9 @@ class sound {
    void endTune() {
     eTune = minim.loadFile("Coming Soon.mp3");
     eTune.play();
+  }
+  void levelVo() {
+    levelVoice = minim.loadFile("Be Prepared 2.mp3");
+    levelVoice.play();
   }
 }
