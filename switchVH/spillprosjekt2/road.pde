@@ -17,17 +17,25 @@ class road {
     triangle(100,900,770,500,770,900);             //road
     triangle(830,900,830,500,1500,900);  
   } 
+  
+   if(level < 5) {
+    fill(255,204,128);
+    triangle(-30,900,770,500,100,900);             //sidelines
+    triangle(1500,900,830,500,1630,900);            //sidelines
+  }
+   if(level > 4)
+  {
+    fill(50);
+    triangle(-30,900,770,500,100,900);             //sidelines
+    triangle(1500,900,830,500,1630,900); 
+  }
   if(level > 9)
   {
     fill(255, 235, 204);
     triangle(-30,900,770,500,100,900);             //sidelines
     triangle(1500,900,830,500,1630,900); 
   }
-  else {
-     fill(255,204,128);
-     triangle(-30,900,770,500,100,900);             //sidelines
-     triangle(1500,900,830,500,1630,900);            //sidelines
-  }
+ 
   
   
   fill(255);                                  // field divider
@@ -53,8 +61,8 @@ class road {
        a1 = 0;
      }
      levelBonus = level;
-  if (levelBonus - scoreBonus >= 2) {
-    score = score + 3000;
+  if (levelBonus - scoreBonus > 4) {
+    score = score + 5000;
     scoreBonus = levelBonus;
     
   }

@@ -114,7 +114,7 @@ void draw()
     if (level > 9 ) {
       sno.drawSnow();
     }
-    if( level > 14) {
+    if( level > 0) {
     ni.drawNight();
     }
     sco.scoreLevelUpdate();

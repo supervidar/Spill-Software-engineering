@@ -1,7 +1,7 @@
 //<>// //<>// //<>// //<>//
 float h;
 float zoom;
-float aksO = 30;
+float aksO = 25;
 int direction = 0;
 
 PImage objekt;
@@ -16,7 +16,7 @@ class object {
 
     h = h + aksO;
     if (millis() - aksT >= 20000) {
-      aksO = aksO + 20;//20;
+      aksO = aksO + 15;//20;
       aksT = millis();
     }
 
@@ -530,7 +530,7 @@ class object {
         }
       } else if (direction == 2)
       {
-        objekt = loadImage("papir.png");
+        objekt = loadImage("papir1.png");
         translate(800, 480);
         zoom = map(600, 50 + h, width, 0.1, 0);
         scale(zoom);
@@ -542,7 +542,7 @@ class object {
         }
       } else if (direction == 3)
       {
-        objekt = loadImage("papir.png");
+        objekt = loadImage("papir1.png");
         translate(800, 480);
         zoom = map(600, 50 + h, width, 0.1, 0);
         scale(zoom);
