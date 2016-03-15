@@ -67,24 +67,6 @@ class road {
     scoreBonus = levelBonus;
     
   }
- fill(255,0,0);                     // test markers for collision
- rect(300,700,100,2);
-   fill(0,255,0);
-  rect(400,700,100,2);
- fill(255,0,0);
- rect(500,700,100,2);
-     fill(0,255,0);
-  rect(600,700,100,2);
- fill(255,0,0);
- rect(700,700,100,2);
-   fill(0,255,0);
-  rect(800,700,100,2);
- fill(255,0,0);
- rect(900,700,100,2);
-  fill(0,255,0);
-  rect(1000,700,100,2);
- fill(255,0,0);
- rect(1100,700,100,2);
-  
+ 
   }
 }

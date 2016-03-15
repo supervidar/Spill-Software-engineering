@@ -12,7 +12,7 @@ class sky {
       }
       noStroke();
      
-  if(level > 0 && level < 12) {                             // Sol som viser listilstand ved dag
+  if(level > 2) {                             // Sol som viser listilstand ved dag
     if (life == 3) {
       photoSky = loadImage("sunFull.png");    
       image(photoSky, -100, -50); 
@@ -37,25 +37,6 @@ class sky {
       photoSky = loadImage("skyBLow.png");
       image(photoSky, 0 + a, 30);
     }
-    if (level > 11 && level < 17) {                                   // Måne som viser livstilstand ved natt
-       if (life == 3) {
-      photoSky = loadImage("sunFull.png");    
-      image(photoSky, -100, -50); 
-     
-     }
-    else if (life == 2) {
-      photoSky = loadImage("sunHalf.png");    
-      image(photoSky, -100, -50); 
-     
-     }
-     else if (life == 1) {
-      photoSky = loadImage("sunLow.png");    
-      image(photoSky, -100, -50); 
-    
-    }
-      
-    }
-  
   }
   }
 }

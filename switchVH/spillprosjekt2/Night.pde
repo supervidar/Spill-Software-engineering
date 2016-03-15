@@ -2,9 +2,10 @@ int lys;
 int lys1;
 int m;
 int m1;
+float mo;
 class Night {
  void drawNight() { 
-   if(m < 220) {
+   if(m < 225) {
      m = m + 2;
    }
    if( m1 < 50) {
@@ -12,7 +13,7 @@ class Night {
    }
   fill(0,0 + m);                                                                // filter for mørjelegging til natt
   rect(0,0,1600,900);
-  fill(255,255,0,0 + m1);
+  fill(255,0 + m1);
  // triangle(500,500,x1 + 150,800, 1000 ,500);
   if (carState == 1) {                                                        // funksjon av frontlys ved carstate 1
   if (keyPressed && (key == CODED)) 
@@ -22,7 +23,7 @@ class Night {
         
         if (keyCode == LEFT) {
          
-          if (lys < 400) {
+          if (lys < 500) {
             lys = lys + 50;
            
           }
@@ -120,7 +121,7 @@ class Night {
   }
       
       
-      
+      if(carState == 1 || carState == 3) {
        if (keyPressed && (key == CODED)) 
       {
         x1 = constrain(x, 300, 1000);                              // Bevegelse av baklykter på sportsbil
@@ -158,6 +159,47 @@ class Night {
           rect(x1 + 240,750,4,28);
         }
       }
+      }
+     if( carState == 2 || carState == 2 && carState == 3) {
+        if (keyPressed && (key == CODED)) 
+      {
+        x1 = constrain(x, 300, 1000);                              // Bevegelse av baklykter på sportsbil
+
+        if (keyCode == RIGHT) {
+          
+           fill(255,0,0);
+          rect(x1 + 128,755,4,20);
+          rect(x1 + 250,745,4,20);
+          
+        }
+        if (keyCode == LEFT) {
+          //so.breakSound();
+
+           fill(255,0,0);
+          rect(x1 + 13,738,4,20);
+          rect(x1 + 145,748,4,20);
+          
+        }
+      }
+       else
+      {
+        fill(255,0,0);
+        if (x <= 550) {
+          rect(x1 + 26,750,4,28);
+          rect(x1 + 198,755,4,28);
+         
+        } 
+        if (x > 550 && x <= 800) {
+           rect(x1 + 40,750,4,28);
+          rect(x1 + 218,750,4,28);
+        }  
+        if (x > 800) {
+          rect(x1 + 73,755,4,28);
+          rect(x1 + 240,750,4,28);
+        }
+      }
+      }
+     
     fill(255);                                  // Fill sky with stars
     rect(330,70,2,2);
     rect(370,30,2,2);
@@ -180,5 +222,10 @@ class Night {
     rect(212,210,2,2);
     rect(370,205,2,2);
     rect(500,240,2,2);
+     photoSky = loadImage("moon.png");    
+      image(photoSky, 0 + mo,0);                               // Måne som viser livstilstand ved natt
+      mo = mo + 0.01; 
+      
+    
+    }
    }
-  }

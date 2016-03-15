@@ -121,7 +121,7 @@ void draw()
     sco.scoreLevelUpdate();
     sco.highScore();
     o.drawObject();
-
+    
     break;
 
   case 2:                                           // spill avsluttet med score og tid.
