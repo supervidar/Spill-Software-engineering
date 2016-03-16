@@ -9,7 +9,7 @@ carSport cs = new carSport();
 sky s = new sky();
 object o = new object();
 collision coll = new collision();
-score sco = new score();
+//score sco = new score();
 sound so = new sound();
 PFont font;
 PImage end;
@@ -118,8 +118,8 @@ void draw()
     if( level > 11) {
     ni.drawNight();
     }
-    sco.scoreLevelUpdate();
-    sco.highScore();
+    //sco.scoreLevelUpdate();
+    //sco.highScore();
     o.drawObject();
     
     break;
@@ -158,7 +158,7 @@ void draw()
     textSize(80);
     text("Nytt", 1310, 140);
     text("spill", 1310, 170);
-    sco.showScore();
+    //sco.showScore();
 
     break;
   }

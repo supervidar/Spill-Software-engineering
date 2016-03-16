@@ -11,6 +11,12 @@ AudioPlayer sVoice;
 AudioPlayer slurp;
 AudioPlayer eTune;
 AudioPlayer levelVoice;
+AudioPlayer kollisjonP;
+AudioPlayer kollisjonRB;
+AudioPlayer kollisjonBB;
+AudioPlayer kollisjonGB;
+AudioPlayer kollisjonKu;
+
 
 Minim minim;  
 
@@ -28,6 +34,36 @@ class sound {
      beer.play();
      
   }
+  void kollisjonPoliti()
+ {
+     kollisjonP = minim.loadFile("politi.wav");
+     kollisjonP.play();
+     
+ }
+ void kollisjonRodBil()
+ {
+     kollisjonRB = minim.loadFile("youboys.wav");
+     kollisjonRB.play();    
+   
+ }
+ void kollisjonKu()
+ {
+     kollisjonKu = minim.loadFile("ku.wav");
+     kollisjonKu.play();    
+   
+ }
+ void kollisjonBloBil()
+ {
+     kollisjonBB = minim.loadFile("youdone.wav");
+     kollisjonBB.play();    
+   
+ }
+ void kollisjonGulBil()
+ {
+     kollisjonGB = minim.loadFile("hey.wav");
+     kollisjonGB.play();    
+   
+ }
   
    void Cslurp() {
      slurp = minim.loadFile("coffeSlurp.mp3");

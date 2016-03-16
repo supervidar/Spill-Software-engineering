@@ -71,11 +71,13 @@ class crashInObjects {
       case 3: //BCAR
 
         if (millis() - coTime >1000 && life == 3) {
+          so.kollisjonBloBil();
           life = 2;
           h = h +200;
           coTime = millis();
         }
         if (millis() - coTime >1000 && life == 2) {
+          so.kollisjonBloBil();
           life = 1;
           h = h +200;
           coTime = millis();
@@ -92,11 +94,13 @@ class crashInObjects {
       case 4: //POLICECAR
 
         if (millis() - coTime >1000 && life == 3) {
+          so.kollisjonPoliti();
           life = 2;
           h = h +200;
           coTime = millis();
         }
         if (millis() - coTime >1000 && life == 2) {
+          so.kollisjonPoliti();
           life = 1;
           h = h +200;
           coTime = millis();
@@ -112,11 +116,13 @@ class crashInObjects {
       case 5: // KU
 
         if (millis() - coTime >1000 && life == 3) {
+          so.kollisjonKu();
           life = 2;
           h = h +200;
           coTime = millis();
         }
         if (millis() - coTime >1000 && life == 2) {
+          so.kollisjonKu();
           life = 1;
           h = h +200;
           coTime = millis();
@@ -132,11 +138,13 @@ class crashInObjects {
       case 6: // OLDCAR
 
         if (millis() - coTime >1000 && life == 3) {
+          so.kollisjonRodBil();
           life = 2;
           h = h +200;
           coTime = millis();
         }
         if (millis() - coTime >1000 && life == 2) {
+          so.kollisjonRodBil();
           life = 1;
           h = h +200;
           coTime = millis();
@@ -172,11 +180,13 @@ class crashInObjects {
       case 8: // YCAR
 
         if (millis() - coTime >1000 && life == 3) {
+          so.kollisjonGulBil();
           life = 2;
           h = h +200;
           coTime = millis();
         }
         if (millis() - coTime >1000 && life == 2) {
+          so.kollisjonGulBil();
           life = 1;
           h = h +200;
           coTime = millis();
