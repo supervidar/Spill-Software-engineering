@@ -12,7 +12,7 @@ class sky {
       }
       noStroke();
      
-  if(level > 2) {                             // Sol som viser listilstand ved dag
+  if(level > 0) {                             // Sol som viser listilstand ved dag
     if (life == 3) {
       photoSky = loadImage("sunFull.png");    
       image(photoSky, -100, -50); 
