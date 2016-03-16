@@ -34,16 +34,19 @@ class crashInObjects {
       case 1: //LIV
 
         if (millis() - coTime >1000 && life == 1) {
+          so.kollisjonSol();
           life = 2;
           h = h +200;
           coTime = millis();
         }
         if (millis() - coTime >1000 && life == 2) {
+          so.kollisjonSol();
           life = 3;
           h = h +200;
           coTime = millis();
         }
         if (millis() - coTime > 1000 && life == 3) {
+          so.kollisjonSol();
           life = 3;
         } 
         crash = 0;
@@ -54,7 +57,7 @@ class crashInObjects {
       case 2: //OIL
 
         if (millis() - coTime >1000) {
-          
+          so.kollisjonOlje();
           if (carState == 2 ) {
             carState = 4;
           }

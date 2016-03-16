@@ -16,6 +16,8 @@ AudioPlayer kollisjonRB;
 AudioPlayer kollisjonBB;
 AudioPlayer kollisjonGB;
 AudioPlayer kollisjonKu;
+AudioPlayer kollisjonO;
+AudioPlayer kollisjonS;
 
 
 Minim minim;  
@@ -64,6 +66,17 @@ class sound {
      kollisjonGB.play();    
    
  }
+ void kollisjonOlje()
+ {
+   kollisjonO = minim.loadFile("oil.wav");
+   kollisjonO.play();
+ }
+ void kollisjonSol()
+{
+   kollisjonS = minim.loadFile("sol.wav");
+   kollisjonS.play();
+  
+}
   
    void Cslurp() {
      slurp = minim.loadFile("coffeSlurp.mp3");
